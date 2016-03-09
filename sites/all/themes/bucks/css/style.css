@@ -1,20 +1,2 @@
-/**
- Theme specific styling
-
-**/
-
-
-
-
-
-@media (min-width:768px) {
-	.sf-menu a {padding:10px 10px}
-	}	
-		
-@media screen and (min-width:992px) {
-	.sf-menu a {padding:10px 14px}
-	}
-
-@media screen and (min-width:1200px) {
-	.sf-menu a {padding:10px 16px}
-	}
+body {
+  display: none; }

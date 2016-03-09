@@ -8,7 +8,7 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-  sass: ['./scss/**/*.scss', './scss/*.scss', './sites/all/themes/mydea/css/sass/*.scss']
+  sass: ['./scss/**/*.scss', './scss/*.scss', './sites/all/themes/bucks/css/sass/*.scss']
 
 };
 
@@ -17,16 +17,16 @@ gulp.task('default', ['sass', 'sassx']);
 gulp.task('sassx', function(done) {
 
  //gulp.src('./sites/all/themes/mydea/css/sass/style.scss')
-    gulp.src('./sites/all/themes/mydea/css/sass/**/*.scss')
+    gulp.src('./sites/all/themes/bucks/css/sass/**/*.scss')
    .pipe(sass({
         errLogToConsole: true
    }))
-   .pipe(gulp.dest('./sites/all/themes/mydea/css/'))
+   .pipe(gulp.dest('./sites/all/themes/bucks/css/'))
    .pipe(minifyCss({
         keepSpecialComments: 0
    }))
    .pipe(rename({ extname: '.min.css' }))
-   .pipe(gulp.dest('./sites/all/themes/mydea/css/'))
+   .pipe(gulp.dest('./sites/all/themes/bucks/css/'))
    .on('end', done);
 });
 
