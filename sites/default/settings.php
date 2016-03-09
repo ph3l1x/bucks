@@ -217,9 +217,9 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'mydea',
-      'username' => 'mydea',
-      'password' => '5544332211',
+      'database' => 'bucks',
+      'username' => 'bucks',
+      'password' => '8F976rLvfvfywSPY',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
