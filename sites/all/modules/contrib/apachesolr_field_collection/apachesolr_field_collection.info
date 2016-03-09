@@ -1,0 +1,13 @@
+name = Apache Solr Field Collection
+description = Allows field collections to be indexed and faceted via the entity they are attached to.
+dependencies[] = apachesolr
+dependencies[] = field_collection
+package = Search Toolkit
+core = 7.x
+
+; Information added by Drupal.org packaging script on 2014-07-31
+version = "7.x-1.0-alpha2+2-dev"
+core = "7.x"
+project = "apachesolr_field_collection"
+datestamp = "1406835528"
+

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Bento Blog feature.
+ */
+
+include_once 'bento_blog.features.inc';

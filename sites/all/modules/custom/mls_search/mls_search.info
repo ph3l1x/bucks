@@ -1,0 +1,6 @@
+name = MLS Database Search
+description = Custom module that allows for searching the RETS MLS listings.
+core = 7.x
+package = Real Estate
+dependencies[] = drealty
+dependencies[] = views

@@ -1,0 +1,28 @@
+/* Events Theming Defaults for Bento     */
+
+.node-type-event .field-name-field-event-snippet {margin-top:15px;}
+.node-type-event .field-name-body {margin-top:15px;}
+.node-type-event .field-name-field-event-snippet .field-label,
+.node-type-event .field-name-body .field-label,
+.node-type-event .field-name-field-date .field-label {
+  border-bottom:1px dotted #ccc;
+}
+.dark-region .node-type-event .field-name-field-event-snippet .field-label,
+.dark-region .node-type-event .field-name-body .field-label,
+.dark-region .node-type-event .field-name-field-date .field-label {
+  border-bottom:1px dotted #444;
+}
+.view-events ul{margin-top:-40px;}
+.view-events ul li{margin-left:10px;}
+.view-events h2{margin:0;line-height:0;}
+.view-events .event-title{margin-bottom:-8px;font:20px;}
+.view-events .event-snippet{font:14px;color:#b5b5b5;}
+.view-events .event-date{font:13px;font-style:italic;margin-top:-11px;}
+.e-contain{background:transparent url('images/1px-darken.png');border:1px dotted #ccc;margin-top:1px;padding:6px;font:14px;color:b5b5b5;}
+.e-contain:hover{background:transparent url('images/1px-darken-2.png');}
+.dark-region .e-contain{background:transparent url('images/1px-lighten.png');border:1px dotted #444;margin-top:1px;padding:6px;font:14px;color:b5b5b5;}
+.dark-region .e-contain:hover{background:transparent url('images/1px-lighten-2.png');}
+.e-date{cmargin-top:3px;}
+.e-title{font-size:130%;}
+.view-events .more-link{margin-top:10px;}
+

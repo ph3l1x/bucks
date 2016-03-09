@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TM Logo Carousel 2013 feature.
+ */
+
+include_once 'tm_logo_carousel_2013.features.inc';

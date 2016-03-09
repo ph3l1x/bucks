@@ -1,0 +1,96 @@
+
+.fractionslider-wrapper {
+    background: none repeat scroll 0 0 #1B1B1B;
+    border: 1px solid #000000;
+    box-shadow: 0 3px 5px #666666;
+}
+.fractionslider {
+    height: 500px;
+}
+.fractionslider .views-field {
+    color: #FFFFFF;
+    position: absolute;
+    top: -200px;
+    white-space: normal;
+    z-index: 8000;
+}
+.fraction-slider {
+    height: 100%;
+    overflow: visible;
+    position: relative;
+    width: 100%;
+}
+.fraction-slider .slide {
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 5000;
+}
+.fraction-slider .active-slide {
+    z-index: 9999;
+}
+.fraction-slider .fs_obj {
+    display: none;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 7000;
+}
+.fraction-slider .fs_fixed_obj {
+    left: 0;
+    z-index: 6000;
+}
+.fraction-slider .fs_obj * {
+    display: inline-block;
+    left: 0;
+    position: relative;
+    top: 0;
+}
+.fs_loader {
+    background: url("images/fs.spinner.gif") no-repeat scroll center center transparent;
+    height: 400px;
+    width: 100%;
+}
+.fraction-slider .prev, .fraction-slider .next {
+    display: none;
+    height: 45px;
+    position: absolute;
+    width: 45px;
+    z-index: 9999;
+}
+.fraction-slider .prev {
+    background: url("images/fs.prevnext.png") no-repeat scroll 0 0 transparent;
+    left: 10px;
+    top: 45%;
+}
+.fraction-slider .prev:hover {
+    background: url("images/fs.prevnext.png") no-repeat scroll 0 -45px transparent;
+}
+.fraction-slider .next {
+    background: url("images/fs.prevnext.png") no-repeat scroll -45px 0 transparent;
+    right: 10px;
+    top: 185px;
+}
+.fraction-slider .next:hover {
+    background: url("images/fs.prevnext.png") no-repeat scroll -45px -45px transparent;
+}
+.fraction-slider:hover .prev, .fraction-slider:hover .next {
+    display: block;
+}
+.fs-pager-wrapper {
+    bottom: 10px;
+    left: 10px;
+    position: absolute;
+    z-index: 9999;
+}
+.fs-pager-wrapper a {
+    background: url("images/fs.pager.png") no-repeat scroll 0 -14px transparent;
+    display: inline-block;
+    height: 14px;
+    margin: 0 5px 0 0;
+    width: 14px;
+}
+.fs-pager-wrapper .active {
+    background: url("images/fs.pager.png") no-repeat scroll 0 0 transparent;
+}

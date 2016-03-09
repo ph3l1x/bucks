@@ -1,0 +1,115 @@
+/* Testimonials Theming Defaults for Bento     */
+
+.view-tribute-testimonials .views-row {
+	padding:10px;
+	border-bottom:1px 
+	dotted #ccc;
+}
+
+.dark-region .view-tribute-testimonials .views-row {
+	padding:10px;
+	border-bottom:1px 
+	dotted #333;
+}
+
+.view-tribute-testimonials .views-row:hover {
+	background-image: url('shades/1px-darken-10.png')
+}
+
+.dark-region .view-tribute-testimonials .views-row:hover {
+	background-image:url('shades/1px-lighten-10.png')
+}
+
+.view-tribute-testimonials .views-field-title, 
+.view-tribute-testimonials  .views-field-field-business-title, 
+.view-tribute-testimonials .views-field-field-business-name {
+  font-size:90%;
+  line-height:125%;
+}
+
+.view-tribute-testimonials .views-field-title {
+	padding-top:10px;
+}
+
+.view-tribute-testimonials .views-field-field-snippet {
+	font-style:italic;
+}
+	
+.block-views .view-tribute-testimonials .views-row {
+	padding:0px;
+	border-bottom:0px dotted transparent;
+}
+
+.block-views .view-tribute-testimonials .views-row:hover {
+	background-image:none;
+}
+
+.dark-region .block-views .view-tribute-testimonials .views-row:hover {
+	background-image:none;
+}
+
+.view-tribute-testimonials .views-row {
+	padding:10px;
+	border-bottom:1px dotted #ccc;
+}
+
+.dark-region .view-tribute-testimonials .views-row {
+	padding:10px;
+	border-bottom:1px dotted #333;
+}
+
+.view-tribute-testimonials .views-row:hover {
+	background-image:url('shades/1px-darken-10.png')
+}
+
+.dark-region .view-tribute-testimonials .views-row:hover {
+	background-image:url('shades/1px-lighten-10.png')
+}
+
+.view-tribute-testimonials .views-field-title, 
+.view-tribute-testimonials  .views-field-field-business-title, 
+.view-tribute-testimonials .views-field-field-business-name {
+  font-size:90%;
+  line-height:125%;
+}
+
+.view-tribute-testimonials .views-field-title {
+	padding-top:10px;
+}
+
+.view-tribute-testimonials .views-field-field-snippet {
+	font-style:italic;
+}
+
+.block-views .view-tribute-testimonials .views-row {
+	padding:0px;
+	border-bottom:0px dotted transparent;
+}
+
+.block-views .view-tribute-testimonials .views-row:hover {
+	background-image:none;
+}
+
+.dark-region .block-views .view-tribute-testimonials .views-row:hover {
+	background-image:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+; $Id$
+name=TCB User Management
+description=Validate login information from techcenterboise.com and log the user in as a given user
+package=Administration
+core=7.x
+configure=admin/config/tcbusermanagement
+files[]=tcbusermanagement.module

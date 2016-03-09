@@ -1,0 +1,33 @@
+
+/* ================= */
+/* = Slideshow     = */
+/* ================= */
+
+.slideshow-wrapper .slideshow-title-inner,
+.slideshow-wrapper .slideshow-subtitle-inner,
+.slideshow-wrapper .slideshow-text-inner {
+	color:#fff;
+	text-shadow: 2px 2px 5px #000;
+}
+
+/************ slideshow button  
+  *********** use this if you want to edit just the color of the slideshow button
+  *********** indpendendent of other buttons 
+ ************ /
+
+
+/*
+
+.slideshow-wrapper .slideshow-url-inner a {
+	background-color:#c90909;
+	color:#fff;
+}
+
+.slideshow-wrapper .slideshow-url-inner a:hover,
+.slideshow-wrapper .slideshow-url-inner a:focus {
+	color:#fff;
+	background-color:#a70909;
+	border-color:#c90909;
+}
+
+*/

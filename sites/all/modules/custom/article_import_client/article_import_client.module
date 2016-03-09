@@ -1,0 +1,99 @@
+<?php
+    
+function article_import_client_menu() {
+    // Only used for Testing. Visiting this page will manually run the script. Be sure to uncomment the name of the function below and comment out the current function name.
+    $items['admin/config/system/article_import'] = array(
+        'title' => 'Article Import Client',
+        'description' => 'Check if there are any document available for import through the Server',
+        'page callback' => 'article_import_client_check',
+        'page arguments' => array('article_import_client_check'),
+        'access arguments' => array('access content'),
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+//Replace the function name with below to manually run from admin/config/system/article_import
+//function article_import_client_check() {
+function article_import_client_cron() {
+  
+  $site_domain = url(NULL, array('absolute' => TRUE));
+  $site_domain = parse_url($site_domain);
+  $site_domain = $site_domain['host'];
+  if(strpos($site_domain, 'www') !== false) {
+    $site_domain = explode('www.', $site_domain);
+    $site_domain = $site_domain[1];
+
+  }
+
+  $serverURL = 'http://publisher.tributemedia.com/';
+  $content = file_get_contents($serverURL.'get_articles?domain='.$site_domain.'&action=done');
+
+  
+  $content = drupal_json_decode($content);
+
+
+  
+  foreach($content as $data) {
+    $title = $data['title'];
+    $url_path = $data['url_path'];
+    $published_Date = $data['published_Date'];
+    $tags = $data['tags'];
+    $tag = explode(',', $tags);
+    $image = $data['image'];
+    $keywords = $data['keywords'];
+    $description = $data['description'];
+    $content = $data['content'];
+    
+    $createdDate = strtotime($published_Date);
+    $createdDate1 = date("Y-m-d", $createdDate);
+
+    //Get Image
+    $imageURL = $serverURL.$image;
+    $filename = basename($imageURL);
+    $image = file_get_contents($imageURL);
+    $file = file_save_data($image, 'public://'.$filename, FILE_EXISTS_RENAME);
+    
+    //Create the Node
+    $node = new stdClass();
+    $node->title = $title;
+    $node->type = "article";
+    node_object_prepare($node); 
+    $node->language = LANGUAGE_NONE; 
+    $node->uid = '13'; 
+    $node->status = 1; 
+    $node->promote = 0; 
+    $node->comment = 0;
+    
+    $node->created = $createdDate;
+    
+    $vid = taxonomy_vocabulary_machine_name_load("Tags");
+    foreach($tag as $item) {
+        $tax = taxonomy_get_term_by_name($item, $vocabulary = NULL);
+        if($tax) {
+            foreach($tax as $data) {
+                $node->field_tags[$node->language][]['tid'] = $data->tid;
+            }
+        } else {
+            $term = new stdClass();
+            $term->name = $item;
+            $term->vid = $vid->vid;
+            taxonomy_term_save($term);
+            $node->field_tags[$node->language][]['tid'] = $term->tid;
+        }
+    }
+    $node->field_meta_description['und'][0]['metatags_quick'] = $description;
+    $node->field_meta_keywords['und'][0]['metatags_quick'] = $keywords;
+    $node->field_body['und'][0]['value'] = $content;
+    $node->field_body['und'][0]['format'] = 'full_html';
+    $node->body['und'][0]['format'] = 'full_html';
+    $node->body['und'][0]['safe_value'] = $content;
+    $node->body['und'][0]['value'] = $content;
+    $node->field_image['und'][0]['fid'] = $file->fid;
+    
+    node_save($node);
+  }
+  return " ";
+}
+
+
+?>

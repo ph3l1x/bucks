@@ -1,0 +1,15 @@
+name = Views Isotope: Advanced
+description = Create customize the Isotope implementation used by a view
+package = Customizations
+core = 7.x
+
+dependencies[] = views_isotope
+
+configure = admin/config/user-interface/views-isotope-advanced/settings
+
+; Information added by Drupal.org packaging script on 2014-08-05
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "views_isotope_advanced"
+datestamp = "1407262728"
+

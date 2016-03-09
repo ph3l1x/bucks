@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Bento Video Gallery feature.
+ */
+
+include_once 'bento_video_gallery.features.inc';

@@ -1,0 +1,336 @@
+<?php
+
+/**
+ * Implements hook_permission().
+ */
+function views_isotope_advanced_permission() {
+  return array(
+    'administer views_isotope_advanced' => array(
+      'title' => t('administer views_isotope_advanced.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu
+ * @return array 
+ */
+function views_isotope_advanced_menu () {
+  $items['admin/config/user-interface/views-isotope-advanced'] = array(
+      'title' => t('Advanced Isotope Configurations'),
+      'type' => MENU_NORMAL_ITEM,
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('views_isotope_advanced_settings_form'),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  $items['admin/config/user-interface/views-isotope-advanced/settings'] = array(
+      'title' => t('Settings'),
+      'type' => MENU_LOCAL_TASK,
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('views_isotope_advanced_settings_form'),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  $items['admin/config/user-interface/views-isotope-advanced/%'] = array(
+      'title' => t('Edit Isotope Instance'),
+      'type' => MENU_NORMAL_ITEM,
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('views_isotope_advanced_instance_edit_form', 4),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  $items['admin/config/user-interface/views-isotope-advanced/add'] = array(
+      'title' => t('Add Isotope Instance'),
+      'type' => MENU_LOCAL_TASK,
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('views_isotope_advanced_instance_add_form', 4),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  $items['admin/config/user-interface/views-isotope-advanced/%/export'] = array(
+      'title' => t('Export'),
+      'type' => MENU_LOCAL_ACTION,
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('views_isotope_advanced_instance_export_form', 4),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  $items['admin/config/user-interface/views-isotope-advanced/%/delete'] = array(
+      'title' => t('Delete'),
+      'type' => MENU_LOCAL_ACTION,
+      'page callback' => 'views_isotope_advanced_instance_delete',
+      'page arguments' => array(4, 5),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  $items['admin/config/user-interface/views-isotope-advanced/%/revert'] = array(
+      'title' => t('Revert'),
+      'type' => MENU_CALLBACK,
+      'page callback' => 'views_isotope_advanced_instance_delete',
+      'page arguments' => array(4, 5),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  $items['admin/config/user-interface/views-isotope-advanced/%/disable'] = array(
+      'title' => t('Disable'),
+      'type' => MENU_CALLBACK,
+      'page callback' => 'views_isotope_advanced_instance_disable',
+      'page arguments' => array(4),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  $items['admin/config/user-interface/views-isotope-advanced/%/enable'] = array(
+      'title' => t('Enable'),
+      'type' => MENU_CALLBACK,
+      'page callback' => 'views_isotope_advanced_instance_enable',
+      'page arguments' => array(4),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  $items['admin/config/user-interface/views-isotope-advanced/%/%/delete'] = array(
+      'title' => t('Delete'),
+      'type' => MENU_CALLBACK,
+      'page callback' => 'views_isotope_advanced_instance_breakpoint_delete',
+      'page arguments' => array(4, 5),
+      'access arguments' => array('administer views_isotope_advanced'),
+      'file' => './views_isotope_advanced.admin.inc',
+  );
+  
+  return $items;
+}
+
+/**
+ * Implements hook_init 
+ */
+// function views_isotope_advanced_init() {
+//   
+//   if(views_isotope_advanced_jquery_source()) {
+//     
+//     drupal_add_css(drupal_get_path('module', 'views_isotope_advanced') .'/views_isotope_advanced.css');
+//     drupal_add_js(libraries_get_path('jquery.isotope') . '/jquery.isotope.min.js');
+//     drupal_add_js(drupal_get_path('module', 'views_isotope_advanced') .'/views_isotope_advanced.js');
+//     
+//     $instances = views_isotope_advanced_instances();
+//     
+//     foreach($instances AS $instance => $data) {
+//       
+//     }
+//     
+//     $vars = array('views_isotope_advanced' => array(
+//         'jQuerySource' => views_isotope_advanced_jquery_source_js_object(views_isotope_advanced_jquery_source()),
+//         'instances' => $instances,
+//     ));
+//     
+//     drupal_add_js($vars, 'setting');
+//     
+//   } else {
+//     
+//     drupal_add_js(array('views_isotope_advanced' => false), 'setting');
+//     
+//   }
+// }
+
+/**
+ * Custom function to get available/chosen jquery source
+ */
+function views_isotope_advanced_jquery_source($set = NULL) {
+  
+  if(isset($set)) {
+    variable_set('views_isotope_advanced_jquery_source', $set);
+  }
+  
+  $saved_source = variable_get('views_isotope_advanced_jquery_source');
+  
+  $sources = views_isotope_advanced_jquery_sources();
+  
+  if(isset($sources[$saved_source])) {
+    return $saved_source;
+  }
+  
+  foreach ($sources AS $source => $values) {
+    return $source;
+  }
+  
+  return FALSE;
+  
+}
+
+function views_isotope_advanced_jquery_source_js_object($source) {
+  $sources = views_isotope_advanced_jquery_sources();
+  
+  if(isset($sources[$source]['js_object'])) {
+    return $sources[$source]['js_object'];
+  }
+  
+  return false;
+}
+
+function views_isotope_advanced_jquery_sources() {
+  static $sources = NULL;
+  
+  if(isset($sources)) {
+    return $sources;
+  }
+  
+  $sources = array();
+  foreach (module_implements('views_isotope_advanced_jquery_source_info') as $module) {
+    $module_sources = module_invoke($module, 'views_isotope_advanced_jquery_source_info');
+    $sources = array_merge($sources, $module_sources);
+  }
+  
+  drupal_alter('views_isotope_advanced_jquery_source_info', $sources);
+  
+  return $sources;
+}
+
+function views_isotope_advanced_views_isotope_advanced_jquery_source_info() {
+  $sources = array();
+  
+  if(module_exists('jqmulti')) {
+    $sources['jqmulti'] = array(
+        'title' => t('jQuery Multi: !version', array('!version' => jqmulti_get_version())),
+        'js_object' => 'jq' . str_replace('.', '', jqmulti_get_version()),
+    );
+  }
+  
+  if(module_exists('jquery_update')) {
+    $sources['jquery_update'] = array(
+        'title' => t('jQuery Update: !version', array('!version' => variable_get('jquery_update_jquery_version', '1.5'))),
+        'js_object' => 'jQuery',
+    );
+  }
+  
+  return $sources;
+}
+
+/**
+ * Custom function to get all instances, or by type (code/database)
+ * @param type $type
+ * @return type
+ */
+function views_isotope_advanced_instances($type = 'all') {
+  
+  static $module_instances_static = NULL;
+  static $all_instances_static = NULL;
+  
+  if(!isset($module_instances_static)) {
+    $module_instances_static = array();
+    foreach (module_implements('views_isotope_advanced_info') as $module) {
+      $module_instances = module_invoke($module, 'views_isotope_advanced_info');
+      foreach($module_instances AS $key => $value) {
+        views_isotope_advanced_instance_defaults_extend($module_instances[$key]);
+      }
+      $module_instances_static = array_merge($module_instances_static, $module_instances);
+    }
+  }
+  
+  $all_module_instancess = $module_instances_static;
+  
+  // uggh... this is not great
+  $database_instances = variable_get('views_isotope_advanced_instances', array());
+  
+  if(!isset($all_instances_static)) {
+    $all_instances_static = array_merge($all_module_instancess, $database_instances);
+    drupal_alter('views_isotope_advanced_info', $all_instances_static);
+  }
+  
+  $all_instances = $all_instances_static;
+    
+  switch ($type) {
+    case 'database':
+      return $database_instances;
+    case 'code':
+      return $all_module_instancess;
+    default:
+      return $all_instances;
+  }
+  
+}
+
+function views_isotope_advanced_instance_defaults_extend(&$instance) {
+  $defaults = array(
+      'enabled' => 1,
+      'container_selector' => '#block-views-tiles-block .view-content',
+      'item_selector' => '.views-row',
+      'breakpoints' => array(),
+      'detect_rtl' => 1,
+      'layout_mode' => 'masonry',
+      'init_animation' => 1,
+      'wait_for_images' => 1,
+//      'pages_filter_type' => 0,
+//      'pages' => '',
+//      'node_types' => '',
+  );
+  
+  $breakpoint_defaults = array(
+              'screen_width' => 0,
+              'number_of_columns' => 5,
+              'gutter_width' => 15,
+              'fluid' => 0,
+              'disable' => 0,
+          );
+  
+  $instance = array_merge($defaults, $instance);
+  
+  if(empty($instance['breakpoints']) || !is_array($instance['breakpoints'])) {
+    $instance['breakpoints'] = array($breakpoint_defaults);
+  } else {
+    foreach($instance['breakpoints'] AS $num => $values) {
+      $instance['breakpoints'][$num] = array_merge($breakpoint_defaults, $values);
+    }
+    
+    usort($instance['breakpoints'], "_views_isotope_advanced_breakpoints_sort");
+  }
+}
+
+function views_isotope_advanced_instance_save($instance_id, $instance) {
+  $instances = views_isotope_advanced_instances('database');
+  if(isset($instance)) {
+    $instances[$instance_id] = $instance;
+  } else {
+    unset($instances[$instance_id]);
+  }
+  variable_set('views_isotope_advanced_instances', $instances);
+}
+
+/**
+ * Implements hook_jqmulti_libraries()
+ * @return type 
+ */
+function views_isotope_advanced_jqmulti_libraries() {
+  if(views_isotope_advanced_jquery_source() == 'jqmulti') {
+    return array('jquery.isotope');
+  }
+  
+  return array();
+}
+
+/**
+ * Implements hook_jqmulti_files()
+ * @return type 
+ */
+function views_isotope_advanced_jqmulti_files() {
+  if(views_isotope_advanced_jquery_source() == 'jqmulti') {
+    return array(drupal_get_path('module', 'views_isotope_advanced') .'/views_isotope_advanced.js');
+  }
+  
+  return array();
+}
+
+function _views_isotope_advanced_breakpoints_sort($a, $b) {
+        if ($a['screen_width'] == $b['screen_width']) {
+                return 0;
+        }
+        return ($a['screen_width'] < $b['screen_width']) ? -1 : 1;
+}
+

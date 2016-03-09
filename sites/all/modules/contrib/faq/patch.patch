@@ -1,0 +1,34 @@
+From 410b6165662f2550beeb0647f100de2629f7d5d7 Mon Sep 17 00:00:00 2001
+From: Michael Strelan <mstrelan@gmail.com>
+Date: Tue, 3 May 2011 16:07:26 +1000
+Subject: [PATCH] Fix #1044848 - Call to undefined function node_prepare()
+
+---
+ faq.module |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/faq.module b/faq.module
+index b1d309e..8ad822b 100644
+--- a/faq.module
++++ b/faq.module
+@@ -903,7 +903,7 @@ function faq_highlights_block($num = 5) {
+ 
+   $items = array();
+   foreach ($nodes as $node) {
+-    $node = node_prepare($node);
++    node_object_prepare($node);
+     if (node_access('view', $node)) {
+       if ($disable_node_links) {
+         $items[] = l($node->question, 'faq', array('fragment' => 'n' . $node->nid));
+@@ -947,7 +947,7 @@ function faq_random_highlights_block($num = 5) {
+ 
+   $items = array();
+   foreach ($nodes as $node) {
+-    $node = node_prepare($node);
++    node_object_prepare($node);
+     if (node_access('view', $node)) {
+       if ($disable_node_links) {
+         $items[] = l($node->question, 'faq', array('fragment' => 'n' . $node->nid));
+-- 
+1.7.4
+

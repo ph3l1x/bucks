@@ -1,0 +1,225 @@
+/* Profile Theming Defaults for Bento     */
+
+html.js fieldset.collapsed {
+  height:2em;
+}
+html.js input.form-autocomplete {
+  background-position:100% 7px;
+}
+html.js input.throbbing {
+  background-position:100% -13px;
+}
+
+/*bootstrap override */
+
+abbr[title], abbr[data-original-title] {
+    border-bottom: 0px dotted transparent;
+    cursor: default;
+}
+
+
+/*end bootstrap override */
+
+
+#autocomplete {
+  background:#fff;
+}
+
+.dark-region #autocomplete {
+  background: #000;
+}
+
+.page-user-edit .vertical-tabs fieldset.vertical-tabs-pane {
+  padding-top:10px;
+}
+
+.location .form-item label {
+  float:none;
+}
+
+.user-meta {
+background:transparent url('shades/1px-darken-5.png');
+padding:10px 15px;
+border:1px #ccc solid;
+float:left;
+margin-right:10px;
+-webkit-border-radius: 3px;
+        border-radius: 3px;
+-webkit-background-clip: padding-box; background-clip: padding-box;
+}
+.user-profile-grid {
+  margin-top:25px;
+}
+.user-profile-grid .inner {
+  padding:10px 10px;
+  background:transparent url('shades/1px-darken-5.png');
+  border:1px #ccc solid;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  -webkit-background-clip: padding-box; background-clip: padding-box;
+
+}
+
+.dark-region .user-profile-grid .inner,
+.dark-region .user-meta {
+  border-color: #444;
+}
+.user-profile-grid .inner:hover {
+   background:transparent url('shades/1px-darken-10.png');
+}
+
+.dark-region .user-profile-grid .inner {
+  background:transparent url('shades/1px-lighten-5');
+}
+
+.dark-region .user-profile-grid .inner:hover {
+   background:transparent url('shades/1px-lighten-10.png');
+}
+.user-profile-picture {
+  height:auto;
+  width:100%;
+  margin-bottom:2px;
+}
+#profile-group {
+  margin-top:8px;
+}
+
+.user-profile-directory .inner {
+   background:transparent url('shades/1px-darken-5.png');
+   font-size:90%;
+   line-height:130%;
+   border:1px #ccc solid;
+   -webkit-border-radius: 3px;
+           border-radius: 3px;
+   -webkit-background-clip: padding-box; background-clip: padding-box;
+   margin-bottom:8px;
+   padding:5px 5px 2px;
+}
+
+.user-profile-directory .inner:hover {
+   background:transparent url('shades/1px-darken-10.png');
+}
+
+.dark-region .user-profile-directory .inner {
+   background:transparent url('shades/1px-lighten-5.png');
+}
+
+.dark-region .user-profile-directory .inner:hover {
+   background:transparent url('shades/1px-lighten-10.png');
+}
+.user-profile-directory .user-profile-picture {
+  float:left;
+  width: 100px;
+}
+
+
+.user-profile-directory .user-profile-name-group {
+  float:left;
+  margin-left:5px;
+  width:auto;
+}
+
+
+
+.dark-region .user-profile-grid .inner,
+.dark-region .user-profile-directory .inner,
+.dark-region .user-meta {
+  border-color: #444;
+}
+
+#user-profile-directory-2 {display:none;}
+
+.page-members fieldset.collapsed,
+.page-employees fieldset.collapsed,
+.page-employee-directory fieldset.collapsed,
+.page-member-directory fieldset.collapsed {
+  height:0;
+  padding-right:0;
+  padding-top:0;
+  padding-bottom:0;
+  margin:0;
+}
+
+.user-profile-directory-3 .user-profile-picture {
+  width:20%;
+  padding:1%;
+  float:left;
+}
+.user-profile-directory-3 .user-profile-name-group {
+  width:75%;
+  padding:1%;
+  float:left;
+}
+
+.user-profile-directory-3 .inner {
+  padding:5px;
+ border-bottom: 1px dotted #ccc;
+}
+
+.dark-region .user-profile-directory-3 .inner {
+
+ border-bottom: 1px dotted #444;
+}
+.user-profile-directory-3 .inner:hover {
+   background:transparent url('shades/1px-darken-5.png');
+
+}
+
+.dark-region .user-profile-directory-3 .inner:hover {
+   background:transparent url('shades/1px-lighten-5.png');
+   
+}
+.user-profile-directory-3 .user-profile-name {
+  font-size: 150%;
+  line-height:130%;
+}
+.user-profile-directory-3 .user-profile-title {
+  font-size:120%;
+    line-height:120%;
+}
+
+/*** member profile social icons ***/
+.profile-social-links {height:40px;margin-bottom:5px;}
+.field_user_twitter a,
+.field_user_facebook a,
+.field_user_linkedin a,
+.field_user_website a,
+.field_user_blog a{overflow:hidden;width:40px;height:40px;text-indent:9999em;text-transform:capitalize;display:inline-block;background-image:url('images/user-profile-social-icons.png');margin-right:0px;margin-bottom:-10px;cursor:pointer;margin-left:4px;float:left;}
+.field_user_twitter a{background-position:0 0;}
+.field_user_twitter a:hover{background-position:0 40px;}
+.field_user_facebook a{background-position:-40px 0;}
+.field_user_facebook a:hover{background-position:-40px 40px;}
+.field_user_linkedin a{background-position:-80px 0;}
+.field_user_linkedin a:hover{background-position:-80px 40px;}
+.field_user_website a{background-position:-120px 0;}
+.field_user_website a:hover{background-position:-120px 40px;}
+.field_user_blog a{background-position:-160px 0;}
+.field_user_blog a:hover{background-position:-160px 40px;}
+
+
+.user-profile-grid .inner {
+	text-align:center;
+}
+
+
+@media (min-width:768px) {
+	.user-profile-grid .inner {
+		height:280px;
+		text-align:left;
+	}
+	}	
+		
+@media screen and (min-width:992px) {
+	.user-profile-grid .inner {
+		height:350px;
+	}
+	}
+
+@media screen and (min-width:1200px) {
+	.user-profile-grid .inner {
+		height:320px;
+	}
+	}
+
+
+

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Downloadable Jump Menu feature.
+ */
+
+include_once 'downloadable_jump_menu.features.inc';

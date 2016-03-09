@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TM - Revolution 940 feature.
+ */
+
+include_once 'tm_revolution_940.features.inc';

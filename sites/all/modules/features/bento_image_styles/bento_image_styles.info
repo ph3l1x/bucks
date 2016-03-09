@@ -1,0 +1,15 @@
+name = Bento Image Styles
+description = Adds image styles to the Drupal site
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = bento_image_styles
+dependencies[] = features
+dependencies[] = image
+features[features_api][] = api:1
+features[filter][] = html_only_nofilter
+features[image][] = 100x100
+features[image][] = 220x220
+features[image][] = 250x250
+features[image][] = 312x312
+features[image][] = wide-home-banner

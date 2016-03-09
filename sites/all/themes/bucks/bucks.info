@@ -1,0 +1,215 @@
+name = Bucks 4x4 Custom Theme
+description = Custom theme for Bucks 4x4 created by Ryan Perry rperry@mindimage.net - 208-901-5888
+version = 1.0
+core = 7.x
+base theme = bento
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[header]         = 'Header'
+regions[mobile] 	= 'Mobile (visible on phones only)'
+regions[preface] 	= 'Preface'
+regions[sidebar_first]  = 'Sidebar First'
+regions[content_top]    = 'Content Top'
+regions[content]        = 'Content'
+regions[content_bottom] = 'Content Bottom'
+regions[sidebar_second] = 'Sidebar Last'
+regions[postscript] 	= 'Postscript'
+regions[footer]         = 'Footer'
+regions[information]    = 'Information - Below Copyright'
+regions[drawer] 	= 'Slideout Drawer'
+
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/profile.css
+stylesheets[all][] = css/gallery.css
+stylesheets[all][] = css/calendar.css
+stylesheets[all][] = css/events.css
+stylesheets[all][] = css/slideshow.css
+stylesheets[all][] = css/revolution.css
+stylesheets[all][] = css/careers.css
+stylesheets[all][] = css/testimonials.css
+stylesheets[all][] = css/email.css
+stylesheets[all][] = css/blog.css
+stylesheets[all][] = css/commerce.css
+stylesheets[all][] = css/misc.css
+stylesheets[all][] = css/feature-colors.css
+
+stylesheets[all][] = css/style.min.css
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+scripts[] = js/bucks.js
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Feature Defaults
+;;;;;;;;;;;;;;;;;;;;;
+
+settings[toggle_logo] = 1
+settings[toggle_name] = 1
+settings[toggle_slogan] = 0
+settings[toggle_node_user_picture] = 0
+settings[toggle_comment_user_picture] = 0
+settings[toggle_comment_user_verification] = 0
+settings[toggle_favicon] = 1
+settings[toggle_main_menu] = 1
+settings[toggle_secondary_menu] = 1
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; basic bento ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+settings[bootstrap_bento_name] 					= site-name-no-header
+;settings[bootstrap_bento_buttons] 				= button-style-1
+;settings[bootstrap_bento_blocks] 				= block-style-1
+;settings[bootstrap_bento_superfish] 			= superfish-style-1
+;settings[bootstrap_bento_superfish_alignment] 	= sf-right
+;settings[bootstrap_bento_fonts] 				= font-stack-1
+;settings[bootstrap_bento_social] 				= social-style-1
+;settings[bento_round_block] 					= round-corners-block-1
+;settings[bento_round_region] 					= round-corners-region-1
+;settings[bento_round_container] 				= round-corners-container-1
+;settings[bento_wrapper_no_padding] 			= wrapper-no-padding
+;settings[bento_fluid]							= -fluid
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; dark region ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;; dark region background ;;;;;;;;;;;;
+;settings[bdrb] = dark-region-background
+
+;;;;;;;;;;;;; dark region entire site ;;;;;;;;;;;;
+;settings[bdr] = dark-region
+
+;;;;;;;;;;;;; dark region secondary menu ;;;;;;;;;;;;
+;settings[bdrsm] = dark-region
+
+;;;;;;;;;;;;; dark region header ;;;;;;;;;;;;
+;settings[bdrh] = dark-region
+
+;;;;;;;;;;;;; dark region menu ;;;;;;;;;;;;
+;settings[bdrm] = dark-region
+
+;;;;;;;;;;;;; dark region content area  ;;;;;;;;;;;;
+;settings[bdrcw] = dark-region
+
+;;;;;;;;;;;;; dark region preface  ;;;;;;;;;;;;
+;settings[bdrpre] = dark-region
+
+;;;;;;;;;;;;; dark region content top  ;;;;;;;;;;;;
+;settings[bdrct] = dark-region
+
+;;;;;;;;;;;;; dark region sidebar left  ;;;;;;;;;;;;
+;settings[bdrsl] = dark-region
+
+;;;;;;;;;;;;; dark region content region  ;;;;;;;;;;;;
+;settings[bdrc] = dark-region
+
+;;;;;;;;;;;;; dark region sidebar right  ;;;;;;;;;;;;
+;settings[bdrsr] = dark-region
+
+;;;;;;;;;;;;; dark region content bottom  ;;;;;;;;;;;;
+;settings[bdrcb] = dark-region
+
+;;;;;;;;;;;;; dark region postscript  ;;;;;;;;;;;;
+;settings[bdrpost] = dark-region
+
+;;;;;;;;;;;;; dark region footer  ;;;;;;;;;;;;
+;settings[bdrf] = dark-region
+
+;;;;;;;;;;;;; dark region mobile only  ;;;;;;;;;;;;
+;settings[bdrmob] = dark-region
+
+;;;;;;;;;;;;; dark region drawer  ;;;;;;;;;;;;
+;settings[bdrdrawer] = dark-region
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; padding for blocks ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;; padding all blocks  ;;;;;;;;;;;;
+;settings[bp] 									= bp-all-5
+
+;;;;;;;;;;;;; padding all blocks in header  ;;;;;;;;;;;;
+;settings[bph] 									= bp-5
+
+;;;;;;;;;;;;; padding all blocks in preface  ;;;;;;;;;;;;
+;settings[bppre] 								= bp-5
+
+;;;;;;;;;;;;; padding all blocks in content top  ;;;;;;;;;;;;
+;settings[bpct] 								= bp-5
+
+;;;;;;;;;;;;; padding all blocks in sidebars  ;;;;;;;;;;;;
+;settings[bpside] 								= bp-5
+
+;;;;;;;;;;;;; padding all blocks in content bottom  ;;;;;;;;;;;;
+;settings[bpcb] 								= bp-5
+
+;;;;;;;;;;;;; padding all blocks in postscript  ;;;;;;;;;;;;
+;settings[bppost] 								= bp-5
+
+;;;;;;;;;;;;; padding all blocks in footer  ;;;;;;;;;;;;
+;settings[bpf] 									= bp-5
+
+;;;;;;;;;;;;; padding all blocks in attribution line  ;;;;;;;;;;;;
+;settings[bpa] 									= bp-5
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; padding for regions ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;; padding all regions  ;;;;;;;;;;;;
+;settings[br] 									= br-all-5
+
+;;;;;;;;;;;;; padding all regions in header  ;;;;;;;;;;;;
+;settings[brh] 									= br-5
+
+;;;;;;;;;;;;; padding all regions in preface  ;;;;;;;;;;;;
+;settings[brpre] 								= br-5
+
+;;;;;;;;;;;;; padding all regions in content top  ;;;;;;;;;;;;
+;settings[brct] 								= br-5
+
+;;;;;;;;;;;;; padding all regions in sidebars  ;;;;;;;;;;;;
+;settings[brside] 								= br-5
+
+;;;;;;;;;;;;; padding all regions in content bottom  ;;;;;;;;;;;;
+;settings[brcb] 								= br-5
+
+;;;;;;;;;;;;; padding all regions in postscript  ;;;;;;;;;;;;
+;settings[brpost] 								= br-5
+
+;;;;;;;;;;;;; padding all regions in footer  ;;;;;;;;;;;;
+;settings[brf] 									= br-5
+
+;;;;;;;;;;;;; padding all regions in attribution  ;;;;;;;;;;;;
+;settings[bra] 									= br-5
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; padding for containers ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;; padding all containers ;;;;;;;;;;;;; 
+;settings[bc] 									= bc-all-5
+
+;;;;;;;;;;;;; padding all containers in secondary menu ;;;;;;;;;;;;; 
+;settings[bcs]
+
+;;;;;;;;;;;;; padding all containers in header ;;;;;;;;;;;;; 
+;settings[bch] 									= bc-5
+
+;;;;;;;;;;;;; padding all containers in preface  ;;;;;;;;;;;;
+;settings[bcpre] 								= bc-5
+
+;;;;;;;;;;;;; padding all containers in content  ;;;;;;;;;;;;
+;settings[bcc] 								= bc-5
+
+;;;;;;;;;;;;; padding all containers in postscript  ;;;;;;;;;;;;
+;settings[bcpost] 								= bc-5
+
+;;;;;;;;;;;;; padding all containers in footer  ;;;;;;;;;;;;
+;settings[bcf] 									= bc-5
+
+

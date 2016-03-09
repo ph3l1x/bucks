@@ -1,0 +1,14 @@
+name = TM New Product Notification 2014
+description = Notifies site admin of new products that have been added to the product catalog.
+core = 7.x
+package = Features
+php = 5.2.4
+version = 7.x-1.0
+project = tm_new_product_notification_2014
+dependencies[] = entity_token
+dependencies[] = product_catalog
+dependencies[] = rules
+dependencies[] = rules_admin
+dependencies[] = token
+features[features_api][] = api:1
+features[rules_config][] = rules_new_product_notification

@@ -1,0 +1,14 @@
+; $Id: $
+name = Webform Hint
+description = Allows you to have text disapear on clicking the input
+core = 7.x
+package = webformhint
+
+; Files that contain classes:
+
+
+version = "7.x-3.18"
+core = "7.x"
+project = "webformhint"
+datestamp = "1336890411"
+

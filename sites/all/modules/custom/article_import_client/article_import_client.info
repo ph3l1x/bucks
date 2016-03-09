@@ -1,0 +1,5 @@
+name = Tribute Media Article Import CLIENT
+description = Tribute Media Article CLIENT Import script client side module.
+core = 7.x
+package = TM Article Import
+

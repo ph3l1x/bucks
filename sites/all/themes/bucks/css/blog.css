@@ -1,0 +1,10 @@
+/* Blog Theming Defaults for Bento     */
+
+.page-blog .region-content .view .view-content .views-row {
+	padding-bottom:20px;
+	border-bottom:1px dotted #888;
+}
+
+.page-blog .region-content .view .view-content .views-row.views-row-last {
+	border-bottom:none;
+}

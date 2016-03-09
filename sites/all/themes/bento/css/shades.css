@@ -1,0 +1,296 @@
+/* Shades and Gradients 
+
+  You can use these classes on elements or simply use the images
+  Most commonly you'll use the lower shades but all work          */
+
+/* 
+Shades:
+
+
+When using these classes, it will only apply the background shade. 
+
+For example: 1px-darken-5.png will darken your background color with
+             .png that is 5% opacity of black (very little darkness added)
+             
+			 1px-white-50.png will darken your background color with
+             .png that is 50% opacity of white. (lighten quite a bit.)
+
+Make sure that you only use background-color for your css or you'll 
+overwrite the background-image
+
+*/
+
+
+.darken5 {background-image:url('shades/1px-darken-5.png');}
+.darken10{background-image:url('shades/1px-darken-10.png');}
+.darken15{background-image:url('shades/1px-darken-15.png');}
+.darken20{background-image:url('shades/1px-darken-20.png');}
+.darken25{background-image:url('shades/1px-darken-25.png');}
+.darken30{background-image:url('shades/1px-darken-30.png');}
+.darken35{background-image:url('shades/1px-darken-35.png');}
+.darken40{background-image:url('shades/1px-darken-40.png');}
+.darken45{background-image:url('shades/1px-darken-45.png');}
+.darken50{background-image:url('shades/1px-darken-50.png');}
+.darken55{background-image:url('shades/1px-darken-55.png');}
+.darken60{background-image:url('shades/1px-darken-60.png');}
+.darken65{background-image:url('shades/1px-darken-65.png');}
+.darken70{background-image:url('shades/1px-darken-70.png');}
+.darken65{background-image:url('shades/1px-darken-65.png');}
+.darken70{background-image:url('shades/1px-darken-70.png');}
+.darken75{background-image:url('shades/1px-darken-75.png');}
+.darken80{background-image:url('shades/1px-darken-80.png');}
+.darken85{background-image:url('shades/1px-darken-85.png');}
+.darken90{background-image:url('shades/1px-darken-90.png');}
+.darken95{background-image:url('shades/1px-darken-95.png');}
+
+
+.lighten5 {background-image:url('shades/1px-lighten-5.png');}
+.lighten10{background-image:url('shades/1px-lighten-10.png');}
+.lighten15{background-image:url('shades/1px-lighten-15.png');}
+.lighten20{background-image:url('shades/1px-lighten-20.png');}
+.lighten25{background-image:url('shades/1px-lighten-25.png');}
+.lighten30{background-image:url('shades/1px-lighten-30.png');}
+.lighten35{background-image:url('shades/1px-lighten-35.png');}
+.lighten40{background-image:url('shades/1px-lighten-40.png');}
+.lighten45{background-image:url('shades/1px-lighten-45.png');}
+.lighten50{background-image:url('shades/1px-lighten-50.png');}
+.lighten55{background-image:url('shades/1px-lighten-55.png');}
+.lighten60{background-image:url('shades/1px-lighten-60.png');}
+.lighten65{background-image:url('shades/1px-lighten-65.png');}
+.lighten70{background-image:url('shades/1px-lighten-70.png');}
+.lighten65{background-image:url('shades/1px-lighten-65.png');}
+.lighten70{background-image:url('shades/1px-lighten-70.png');}
+.lighten75{background-image:url('shades/1px-lighten-75.png');}
+.lighten80{background-image:url('shades/1px-lighten-80.png');}
+.lighten85{background-image:url('shades/1px-lighten-85.png');}
+.lighten90{background-image:url('shades/1px-lighten-90.png');}
+.lighten95{background-image:url('shades/1px-lighten-95.png');}
+
+
+/* 
+Gradient:
+
+
+When using these classes, it will only apply the background gradient. 
+
+Naming convention:
+
+1st letter is d or l. D is for darken. L is for lighten.
+Next is top or bottom. Top is for gradient from top down. Bottomis for gradient from bottom up.
+Number is 10 - 100 in increments of 10. Indicates opacity level in percentage.
+Last is letter w, s, m or t. w is for wee (50px hight). s for short (200px high). m for medium (500px high). t for tall (800px high)
+
+Use wee for tiny applications like small buttons.
+Use short for small applications like large button.
+Use medium for medium applications like blocks or headers, footers, etc.
+Use tall for long applications like pages or body backgrounds. 
+
+For example: a button with a dbottom40s will be a gradient that starts at 40% opacity
+             at the bottom and fades up for 200px.
+			 a button with a hover of dtop40s will be a gradient that starts at 40% opacity
+			 at the top and fades down for 200px.
+
+Make sure that you only use background-color for your css or you'll 
+overwrite the background-image
+
+*/
+
+/* tall */
+
+	/*light from bottom */
+.lbottom10t  {background-image:url('shades/lbottom10t.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom20t  {background-image:url('shades/lbottom20t.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom30t  {background-image:url('shades/lbottom30t.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom40t  {background-image:url('shades/lbottom40t.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom50t  {background-image:url('shades/lbottom50t.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom60t  {background-image:url('shades/lbottom60t.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom70t  {background-image:url('shades/lbottom70t.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom80t  {background-image:url('shades/lbottom80t.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom90t  {background-image:url('shades/lbottom90t.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom100t{background-image:url('shades/lbottom100t.png');background-position:left bottom;background-repeat:repeat-x;}
+
+	/*light from top */
+.ltop10t  {background-image:url('shades/ltop10t.png');background-position:left top;background-repeat:repeat-x;}
+.ltop20t  {background-image:url('shades/ltop20t.png');background-position:left top;background-repeat:repeat-x;}
+.ltop30t  {background-image:url('shades/ltop30t.png');background-position:left top;background-repeat:repeat-x;}
+.ltop40t  {background-image:url('shades/ltop40t.png');background-position:left top;background-repeat:repeat-x;}
+.ltop50t  {background-image:url('shades/ltop50t.png');background-position:left top;background-repeat:repeat-x;}
+.ltop60t  {background-image:url('shades/ltop60t.png');background-position:left top;background-repeat:repeat-x;}
+.ltop70t  {background-image:url('shades/ltop70t.png');background-position:left top;background-repeat:repeat-x;}
+.ltop80t  {background-image:url('shades/ltop80t.png');background-position:left top;background-repeat:repeat-x;}
+.ltop90t  {background-image:url('shades/ltop90t.png');background-position:left top;background-repeat:repeat-x;}
+.ltop100t{background-image:url('shades/ltop100t.png');background-position:left top;background-repeat:repeat-x;}
+
+	/*dark from bottom */
+.dbottom10t  {background-image:url('shades/dbottom10t.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom20t  {background-image:url('shades/dbottom20t.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom30t  {background-image:url('shades/dbottom30t.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom40t  {background-image:url('shades/dbottom40t.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom50t  {background-image:url('shades/dbottom50t.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom60t  {background-image:url('shades/dbottom60t.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom70t  {background-image:url('shades/dbottom70t.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom80t  {background-image:url('shades/dbottom80t.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom90t  {background-image:url('shades/dbottom90t.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom100t{background-image:url('shades/dbottom100t.png');background-position:left bottom;background-repeat:repeat-x;}
+
+	/*dark from top */
+.dtop10t  {background-image:url('shades/dtop10t.png');background-position:left top;background-repeat:repeat-x;}
+.dtop20t  {background-image:url('shades/dtop20t.png');background-position:left top;background-repeat:repeat-x;}
+.dtop30t  {background-image:url('shades/dtop30t.png');background-position:left top;background-repeat:repeat-x;}
+.dtop40t  {background-image:url('shades/dtop40t.png');background-position:left top;background-repeat:repeat-x;}
+.dtop50t  {background-image:url('shades/dtop50t.png');background-position:left top;background-repeat:repeat-x;}
+.dtop60t  {background-image:url('shades/dtop60t.png');background-position:left top;background-repeat:repeat-x;}
+.dtop70t  {background-image:url('shades/dtop70t.png');background-position:left top;background-repeat:repeat-x;}
+.dtop80t  {background-image:url('shades/dtop80t.png');background-position:left top;background-repeat:repeat-x;}
+.dtop90t  {background-image:url('shades/dtop90t.png');background-position:left top;background-repeat:repeat-x;}
+.dtop100t{background-image:url('shades/dtop100t.png');background-position:left top;background-repeat:repeat-x;}
+
+/* medium */
+
+	/*light from bottom */
+.lbottom10m {background-image:url('shades/lbottom10m.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom20m {background-image:url('shades/lbottom20m.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom30m {background-image:url('shades/lbottom30m.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom40m {background-image:url('shades/lbottom40m.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom50m {background-image:url('shades/lbottom50m.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom60m {background-image:url('shades/lbottom60m.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom70m {background-image:url('shades/lbottom70m.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom80m {background-image:url('shades/lbottom80m.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom90m {background-image:url('shades/lbottom90m.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom100{background-image:url('shades/lbottom100m.png');background-position:left bottom;background-repeat:repeat-x;}
+
+	/*light from top */
+.ltop10m {background-image:url('shades/ltop10m.png');background-position:left top;background-repeat:repeat-x;}
+.ltop20m {background-image:url('shades/ltop20m.png');background-position:left top;background-repeat:repeat-x;}
+.ltop30m {background-image:url('shades/ltop30m.png');background-position:left top;background-repeat:repeat-x;}
+.ltop40m {background-image:url('shades/ltop40m.png');background-position:left top;background-repeat:repeat-x;}
+.ltop50m {background-image:url('shades/ltop50m.png');background-position:left top;background-repeat:repeat-x;}
+.ltop60m {background-image:url('shades/ltop60m.png');background-position:left top;background-repeat:repeat-x;}
+.ltop70m {background-image:url('shades/ltop70m.png');background-position:left top;background-repeat:repeat-x;}
+.ltop80m {background-image:url('shades/ltop80m.png');background-position:left top;background-repeat:repeat-x;}
+.ltop90m {background-image:url('shades/ltop90m.png');background-position:left top;background-repeat:repeat-x;}
+.ltop100{background-image:url('shades/ltop100m.png');background-position:left top;background-repeat:repeat-x;}
+
+	/*dark from bottom */
+.dbottom10m  {background-image:url('shades/dbottom10m.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom20m  {background-image:url('shades/dbottom20m.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom30m  {background-image:url('shades/dbottom30m.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom40m  {background-image:url('shades/dbottom40m.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom50m  {background-image:url('shades/dbottom50m.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom60m  {background-image:url('shades/dbottom60m.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom70m  {background-image:url('shades/dbottom70m.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom80m  {background-image:url('shades/dbottom80m.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom90m  {background-image:url('shades/dbottom90m.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom100m{background-image:url('shades/dbottom100m.png');background-position:left bottom;background-repeat:repeat-x;}
+
+	/*dark from top */
+.dtop10m {background-image:url('shades/dtop10m.png');background-position:left top;background-repeat:repeat-x;}
+.dtop20m {background-image:url('shades/dtop20m.png');background-position:left top;background-repeat:repeat-x;}
+.dtop30m {background-image:url('shades/dtop30m.png');background-position:left top;background-repeat:repeat-x;}
+.dtop40m {background-image:url('shades/dtop40m.png');background-position:left top;background-repeat:repeat-x;}
+.dtop50m {background-image:url('shades/dtop50m.png');background-position:left top;background-repeat:repeat-x;}
+.dtop60m {background-image:url('shades/dtop60m.png');background-position:left top;background-repeat:repeat-x;}
+.dtop70m {background-image:url('shades/dtop70m.png');background-position:left top;background-repeat:repeat-x;}
+.dtop80m {background-image:url('shades/dtop80m.png');background-position:left top;background-repeat:repeat-x;}
+.dtop90m {background-image:url('shades/dtop90m.png');background-position:left top;background-repeat:repeat-x;}
+.dtop100{background-image:url('shades/dtop100m.png');background-position:left top;background-repeat:repeat-x;}
+
+/* short */
+
+	/*light from bottom */
+.lbottom10s  {background-image:url('shades/lbottom10s.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom20s  {background-image:url('shades/lbottom20s.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom30s  {background-image:url('shades/lbottom30s.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom40s  {background-image:url('shades/lbottom40s.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom50s  {background-image:url('shades/lbottom50s.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom60s  {background-image:url('shades/lbottom60s.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom70s  {background-image:url('shades/lbottom70s.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom80s  {background-image:url('shades/lbottom80s.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom90s  {background-image:url('shades/lbottom90s.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom100s{background-image:url('shades/lbottom100s.png');background-position:left bottom;background-repeat:repeat-x;}
+
+	/*light from top */
+.ltop10s  {background-image:url('shades/ltop10s.png');background-position:left top;background-repeat:repeat-x;}
+.ltop20s  {background-image:url('shades/ltop20s.png');background-position:left top;background-repeat:repeat-x;}
+.ltop30s  {background-image:url('shades/ltop30s.png');background-position:left top;background-repeat:repeat-x;}
+.ltop40s  {background-image:url('shades/ltop40s.png');background-position:left top;background-repeat:repeat-x;}
+.ltop50s  {background-image:url('shades/ltop50s.png');background-position:left top;background-repeat:repeat-x;}
+.ltop60s  {background-image:url('shades/ltop60s.png');background-position:left top;background-repeat:repeat-x;}
+.ltop70s  {background-image:url('shades/ltop70s.png');background-position:left top;background-repeat:repeat-x;}
+.ltop80s  {background-image:url('shades/ltop80s.png');background-position:left top;background-repeat:repeat-x;}
+.ltop90s  {background-image:url('shades/ltop90s.png');background-position:left top;background-repeat:repeat-x;}
+.ltop100s{background-image:url('shades/ltop100s.png');background-position:left top;background-repeat:repeat-x;}
+
+	/*dark from bottom */
+.dbottom10s  {background-image:url('shades/dbottom10s.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom20s  {background-image:url('shades/dbottom20s.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom30s  {background-image:url('shades/dbottom30s.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom40s  {background-image:url('shades/dbottom40s.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom50s  {background-image:url('shades/dbottom50s.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom60s  {background-image:url('shades/dbottom60s.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom70s  {background-image:url('shades/dbottom70s.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom80s  {background-image:url('shades/dbottom80s.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom90s  {background-image:url('shades/dbottom90s.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom100s{background-image:url('shades/dbottom100s.png');background-position:left bottom;background-repeat:repeat-x;}
+
+	/*dark from top */
+.dtop10s  {background-image:url('shades/dtop10s.png');background-position:left top;background-repeat:repeat-x;}
+.dtop20s  {background-image:url('shades/dtop20s.png');background-position:left top;background-repeat:repeat-x;}
+.dtop30s  {background-image:url('shades/dtop30s.png');background-position:left top;background-repeat:repeat-x;}
+.dtop40s  {background-image:url('shades/dtop40s.png');background-position:left top;background-repeat:repeat-x;}
+.dtop50s  {background-image:url('shades/dtop50s.png');background-position:left top;background-repeat:repeat-x;}
+.dtop60s  {background-image:url('shades/dtop60s.png');background-position:left top;background-repeat:repeat-x;}
+.dtop70s  {background-image:url('shades/dtop70s.png');background-position:left top;background-repeat:repeat-x;}
+.dtop80s  {background-image:url('shades/dtop80s.png');background-position:left top;background-repeat:repeat-x;}
+.dtop90s  {background-image:url('shades/dtop90s.png');background-position:left top;background-repeat:repeat-x;}
+.dtop100s{background-image:url('shades/dtop100s.png');background-position:left top;background-repeat:repeat-x;}
+
+/* wee */
+
+	/*light from bottom */
+.lbottom10w  {background-image:url('shades/lbottom10w.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom20w  {background-image:url('shades/lbottom20w.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom30w  {background-image:url('shades/lbottom30w.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom40w  {background-image:url('shades/lbottom40w.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom50w  {background-image:url('shades/lbottom50w.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom60w  {background-image:url('shades/lbottom60w.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom70w  {background-image:url('shades/lbottom70w.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom80w  {background-image:url('shades/lbottom80w.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom90w  {background-image:url('shades/lbottom90w.png');background-position:left bottom;background-repeat:repeat-x;}
+.lbottom100w{background-image:url('shades/lbottom100w.png');background-position:left bottom;background-repeat:repeat-x;}
+
+	/*light from top */
+.ltop10w  {background-image:url('shades/ltop10w.png');background-position:left top;background-repeat:repeat-x;}
+.ltop20w  {background-image:url('shades/ltop20w.png');background-position:left top;background-repeat:repeat-x;}
+.ltop30w  {background-image:url('shades/ltop30w.png');background-position:left top;background-repeat:repeat-x;}
+.ltop40w  {background-image:url('shades/ltop40w.png');background-position:left top;background-repeat:repeat-x;}
+.ltop50w  {background-image:url('shades/ltop50w.png');background-position:left top;background-repeat:repeat-x;}
+.ltop60w  {background-image:url('shades/ltop60w.png');background-position:left top;background-repeat:repeat-x;}
+.ltop70w  {background-image:url('shades/ltop70w.png');background-position:left top;background-repeat:repeat-x;}
+.ltop80w  {background-image:url('shades/ltop80w.png');background-position:left top;background-repeat:repeat-x;}
+.ltop90w  {background-image:url('shades/ltop90w.png');background-position:left top;background-repeat:repeat-x;}
+.ltop100w{background-image:url('shades/ltop100w.png');background-position:left top;background-repeat:repeat-x;}
+
+	/*dark from bottom */
+.dbottom10w  {background-image:url('shades/dbottom10w.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom20w  {background-image:url('shades/dbottom20w.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom30w  {background-image:url('shades/dbottom30w.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom40w  {background-image:url('shades/dbottom40w.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom50w  {background-image:url('shades/dbottom50w.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom60w  {background-image:url('shades/dbottom60w.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom70w  {background-image:url('shades/dbottom70w.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom80w  {background-image:url('shades/dbottom80w.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom90w  {background-image:url('shades/dbottom90w.png');background-position:left bottom;background-repeat:repeat-x;}
+.dbottom100w{background-image:url('shades/dbottom100w.png');background-position:left bottom;background-repeat:repeat-x;}
+
+	/*dark from top */
+.dtop10w  {background-image:url('shades/dtop10w.png');background-position:left top;background-repeat:repeat-x;}
+.dtop20w  {background-image:url('shades/dtop20w.png');background-position:left top;background-repeat:repeat-x;}
+.dtop30w  {background-image:url('shades/dtop30w.png');background-position:left top;background-repeat:repeat-x;}
+.dtop40w  {background-image:url('shades/dtop40w.png');background-position:left top;background-repeat:repeat-x;}
+.dtop50w  {background-image:url('shades/dtop50w.png');background-position:left top;background-repeat:repeat-x;}
+.dtop60w  {background-image:url('shades/dtop60w.png');background-position:left top;background-repeat:repeat-x;}
+.dtop70w  {background-image:url('shades/dtop70w.png');background-position:left top;background-repeat:repeat-x;}
+.dtop80w  {background-image:url('shades/dtop80w.png');background-position:left top;background-repeat:repeat-x;}
+.dtop90w  {background-image:url('shades/dtop90w.png');background-position:left top;background-repeat:repeat-x;}
+.dtop100w{background-image:url('shades/dtop100w.png');background-position:left top;background-repeat:repeat-x;}

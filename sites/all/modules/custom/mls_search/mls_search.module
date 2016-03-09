@@ -1,0 +1,98 @@
+<?php
+function mls_search_init() { 
+    drupal_add_library('system', 'ui');
+}
+
+//function mls_search_views_pre_render(&$view) {
+//    $view->shitballs = "Balls of shit mang!";
+//}
+
+function mls_search_form_alter(&$form, &$form_state, $form_id){
+    if($form_id == "drealty_listing_edit_form") {
+        $form['field_featured']['und']['#title'] = 'Featured Listing';
+//    if($form_id == 'views_exposed_form') {
+
+//        $form['field_mls_list_price_value']['#info'] = 1;
+//        $form['field_mls_list_price_value_1']['#info'] = -10;
+//        $form['field_mls_city_tid']['#weight'] = 0;
+//        $form['field_mls_special_search'] = array(
+//          '#type' => 'select',
+//          '#options' => array (
+//              'default' => '-- Home Type --',
+//              'luxury' => 'Luxury'
+//          ),
+//          '#info' => 9
+//        );
+//      kpr($form);
+
+    }
+}
+
+function mls_search_menu()
+{
+    $items['mls_search'] = array(
+        'title' => 'MLS Database Search',
+        'page callback' => 'mls_search_html_page',
+        'access callback' => TRUE,
+    );
+    $items['ajax/mls_city_autocomplete'] = array(
+        'title' => 'AJAX MLS RESULTS',
+        'page callback' => 'mls_city_autocomplete',
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+    );
+    return $items;
+}
+
+function mls_city_autocomplete() {
+
+    $term = $_GET['term'];
+    $query = db_query("SELECT name,tid  FROM taxonomy_term_data WHERE name LIKE '%{$term}%' and vid='8'");
+
+    foreach($query as $data) {
+        $theArray[] = array(
+            'tid' => $data->tid,
+            'value' => $data->name,
+            'label' => $data->name,
+        );
+    }
+
+  return drupal_json_output($theArray);
+
+
+}
+//
+//function mls_query_view() {
+//    $view = views_get_view('mls_search');
+//    $displayID = 'page';
+//    $view->set_display($displayID);
+//
+//    $item = $view->get_item($displayID, 'filter', 'field_mls_beds_value');
+//    $item['value'] = array('value' => '8');
+//    $view->set_item($displayID, 'filter', 'field_mls_beds_value', $item);
+//    $view->set_items_per_page(3);
+//
+//    return drupal_json_output($view->render());
+//}
+//
+//function mls_search_theme($existing, $type, $theme, $path)
+//{
+//    return array(
+//        'mls_search_template' => array(
+//            'variables' => array('varx' => NULL, 'vary' => NULL),
+//            'template' => 'mls_search_template',
+//        ),
+//    );
+//}
+//
+//function mls_search_html_page() {
+//    $varx = node_load(15);
+//    $output = array(
+//        '#theme' => 'mls_search_template',
+//        '#type' => 'markup',
+//        '#varx' => $varx,
+//        '#vary' => 'Variable 2',
+//    );
+//    return $output;
+//}
+

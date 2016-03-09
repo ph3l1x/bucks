@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TM Conference Agenda 2013 feature.
+ */
+
+include_once 'tm_conference_agenda_2013.features.inc';

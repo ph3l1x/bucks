@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Bento Image Styles feature.
+ */
+
+include_once 'bento_image_styles.features.inc';

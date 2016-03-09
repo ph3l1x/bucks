@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Bento Related Content feature.
+ */
+
+include_once 'bento_related_content.features.inc';

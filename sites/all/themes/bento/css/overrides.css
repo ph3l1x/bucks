@@ -1,0 +1,268 @@
+/* This is for general overrides for Bento - Bootstrap */
+
+/* ============================ */
+/* = Good to Know Styles      = */
+/* ============================ */
+
+.clear-all {
+	clear:both;
+}
+
+/* ========================== */
+/* = logged in / logged out = */
+/* ========================== */
+
+.not-logged-in .hidewhileout {display:none !important;}
+.logged-in .hidewhilein {display:none !important;}
+
+/* ============= */
+/* = reCaptcha = */
+/* ============= */
+
+#recaptcha_image {
+width:80% !important;
+}
+#edit-captcha-form img {
+max-width:222px !important;
+}
+
+
+/* ====================== */
+/* = General Styles     = */
+/* ====================== */
+
+.wrapper {
+	padding:0;
+}
+.content-top-wrapper {
+	padding-top:0;
+}
+.content-region {
+	padding-bottom:5px;
+}
+.region .block {
+	margin-bottom:10px;
+}
+.region .block:last-child {
+	margin-bottom:10px;
+}
+
+.header-region {
+	padding-left:0;
+	padding-right:0;
+}
+.container {
+	margin-top:-1px;
+	margin-left:-15px;
+	margin-right:-15px;
+}
+.row {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.sidebar,
+.brpre,
+.header-inner,
+.brpost,
+.brf {
+	margin-left:15px;
+	margin-right:15px;
+	padding-left:0px;
+	padding-right:0px;
+}
+.region-footer {clear:both;}
+/* ========================================= */
+/* = Image Overrides - Defaults for Images = */
+/* ========================================= */
+
+img {
+	max-width:100%;
+	height:auto !important;
+}
+img.float.left {
+	float:none;
+	margin-right:0px;
+	max-width:100%;
+	height:auto !important;
+}
+img.float.right {
+	float:none;
+	margin-left:0px;
+	max-width:100%;
+	height:auto !important;
+}
+
+/* ******
+recommended for image upload field in content type
+
+Use an image style with image resized to a maximum of
+600 pixels. If you use an image style that is smaller
+then on larger displays the image will appear short.
+You can use the original image size but then it will
+be larger than it needs to be but will look okay.
+
+Make sure you make this change for both the default
+display and the teaser display at:
+
+/admin/structure/types/manage/page/display
+
+Consider more characters for your teaser text as well.
+****** */
+
+.field-type-image {
+	float:right;
+	margin-left:10px;
+	width:50%;
+	height:auto;
+}
+.field-type-image img.float {
+	float:none;
+	margin-left:0;
+	max-width:100%;
+}
+
+/* ====================================== */
+/* = Phone versus Desktop Visibility    = */
+/* ====================================== */
+
+/* use these classes to make it easy to hide/display
+   regions, divs, etc in phone/desktop */
+
+.desktop {
+	display:none;
+}
+
+.phone {
+	display:block;
+}
+
+/* ================= */
+/* = Breadcrumbs   = */
+/* ================= */
+
+.breadcrumb {
+	background-color:none;
+	margin-bottom:0;
+}
+.breadcrumb-wrapper {
+	background-color: #F5F5F5;
+}
+
+/* =========================== */
+/* = Block Stylings          = */
+/* =========================== */
+
+.block .block-inner .content p:last-child {
+	margin:0;
+}
+/* ====================================== */
+/* = Header section           			= */
+/* = Bootstap Terminalogy calls this	= */
+/* = navbar in the classes for			= */
+/* = everything to work right.			= */
+/* ====================================== */
+
+
+header {
+	padding:0;
+}
+.navbar {
+	margin-bottom:0;
+}
+#site-info {
+	text-align:center;
+}
+.site-name {
+	line-height:100%;
+	padding-top:5px;
+}
+.site-name a {
+	font-size:200%;
+	line-height:100%;
+}
+.site-slogan {
+	font-size:120%;
+}
+
+/* ===================================================== */
+/* = Contextual Links - To Make Them Consistent, y'All = */
+/* ===================================================== */
+
+.block-block .contextual-links-wrapper ul li a {
+	font-size: 14px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	line-height:16px;
+	color: #333333 !important;
+    display: block;
+    margin: 0.25em 0;
+    padding: 0.25em 1em 0.25em 0.5em;
+	font-weight:normal;
+}
+.block-block .contextual-links-wrapper ul li a:hover {
+	text-decoration:underline;
+	
+}
+
+/* ============= */
+/* = search    = */
+/* ============= */
+
+#block-search-form {
+	margin-bottom:10px;
+}
+/* ============================= */
+/* = Footer & Attribution Line = */
+/* ============================= */
+
+#attribution-line {
+	padding:10px 0;
+}
+/* ======================= */
+/* = Maintenance Page    = */
+/* ======================= */
+
+.maintenance-page{background:#111;}
+.maintenance-page .page{min-width:300px;max-width:600px;background:#fff;margin:20px auto;padding:10px;text-align:center;-webkit-border-radius:12px;border-radius:12px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;}
+
+
+
+@media (min-width:768px) {
+	.region .block:last-child {
+		margin-bottom:0px;
+	}
+	header {
+		padding:10px 0;
+	}
+	.wrapper {
+		padding:5px 0;
+	}
+	.content-top-wrapper {
+		padding-top:0;
+		padding-bottom:0;
+	}
+	.container {
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.sidebar,
+	.brpre,
+	.header-inner,
+	.brpost,
+	.brf {
+		padding-left:0px;
+		padding-right:0px;
+		margin-left:0px;
+		margin-right:0px;
+	}
+	}	
+		
+@media screen and (min-width:992px) {
+	
+	}
+
+@media screen and (min-width:1200px) {
+	
+	}
+
+

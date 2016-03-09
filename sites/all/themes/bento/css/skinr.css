@@ -1,0 +1,482 @@
+/*  Skinr Styles   */
+
+/* ============================== */
+/* = logged-in or not-logged-in = */
+/* ============================== */
+
+.logged-in .login-hidden {
+	display:none;
+}
+
+.not-logged-in .logout-hidden {
+    display:none;
+}
+
+
+/* =================== */
+/* = Dark Region     = */
+/* =================== */
+/************* dark region specific *************/
+.dark-region-background.dark-region,
+.dark-region-background .dark-region.bdrsm,
+.dark-region-background .dark-region.bdrh,
+.dark-region-background .dark-region.bdrm,
+.dark-region-background .dark-region.bdrpre,
+.dark-region-background .dark-region.bdrcw,
+.dark-region-background .dark-region.bdrct,
+.dark-region-background .dark-region.bdrsl,
+.dark-region-background .dark-region.bdrc,
+.dark-region-background .dark-region.bdrsr,
+.dark-region-background .dark-region.bdrcb,
+.dark-region-background .dark-region.bdrpost,
+.dark-region-background .dark-region.bdrf,
+.dark-region-background .dark-region.bdrmob,
+.dark-region-background .dark-region.bdrdrawer,
+.dark-region.dbg {background:#000;}
+.dark-region .alert-info {background:#1B98E5;}
+.dark-region h1,
+.dark-region h1.title,
+.dark-region h2,
+.dark-region h2.title,
+.dark-region h2 a,
+.dark-region h3,
+.dark-region h4,
+.dark-region h5,
+.dark-region h6,
+.dark-region div,
+.dark-region p,
+.dark-region ol,
+.dark-region ul,
+.dark-region dl,
+.dark-region blockquote,
+.dark-region fieldset,
+.dark-region label,
+.dark-region .fieldset-legend{color:#fff;}
+.dark-region .breadcrumb-wrapper{background:#111;}
+.dark-region ul.tabs li a.active{background:#666;color:#fff;border-color:#555;}
+.dark-region ul.tabs li a{background:#555;border-color:#444;}
+.dark-region ul.tabs{border-color:#666;}
+.dark-region .profile h3{border-color:#666;}
+.dark-region .submitted{border-color:#aaa;}
+.dark-region .caret{border-top-color: #000;}
+
+
+
+/* =================== */
+/* = border colors   = */
+/* =================== */
+
+.border-color-red .block-inner{border-color:red;}
+.border-color-orange .block-inner{border-color:orange;}
+.border-color-yellow .block-inner{border-color:yellow;}
+.border-color-green .block-inner{border-color:green;}
+.border-color-blue .block-inner{border-color:blue;}
+.border-color-purple .block-inner{border-color:purple;}
+.border-color-black .block-inner{border-color:black;}
+.border-color-white .block-inner{border-color:white;}
+.border-color-gray .block-inner{border-color:#888888;}
+.border-color-darkgray .block-inner{border-color:#444444;}
+.border-color-lightgray .block-inner{border-color:#cccccc;}
+
+/*add default border width and style */
+.border-color-red .block-inner,.border-color-orange .block-inner,.border-color-yellow .block-inner,
+.border-color-green .block-inner,.border-color-blue .block-inner,.border-color-purple .block-inner,
+.border-color-black .block-inner,.border-color-white .block-inner,.border-color-gray .block-inner,
+.border-color-darkgray .block-inner,.border-color-lightgray .block-inner {border-width:1px;border-style:solid;}
+
+
+/* ==================== */
+/* = round corners    = */
+/* ==================== */
+
+.round-corners-1,.round-corners-1 .block-inner{-webkit-border-radius:1px;border-radius:1px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-2,.round-corners-2 .block-inner{-webkit-border-radius:2px;border-radius:2px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-3,.round-corners-3 .block-inner{-webkit-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-4,.round-corners-4 .block-inner{-webkit-border-radius:4px;border-radius:4px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-5,.round-corners-5 .block-inner{-webkit-border-radius:5px;border-radius:5px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-6,.round-corners-6 .block-inner{-webkit-border-radius:6px;border-radius:6px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-7,.round-corners-7 .block-inner{-webkit-border-radius:7px;border-radius:7px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-8,.round-corners-8 .block-inner{-webkit-border-radius:8px;border-radius:8px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-9,.round-corners-9 .block-inner{-webkit-border-radius:9px;border-radius:9px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-10,.round-corners-10 .block-inner{-webkit-border-radius:10px;border-radius:10px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-11,.round-corners-11 .block-inner{-webkit-border-radius:11px;border-radius:11px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-12,.round-corners-12 .block-inner{-webkit-border-radius:12px;border-radius:12px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+
+.round-corners-block-1 .block,.round-corners-block-1 .block-inner  {-webkit-border-radius:1px;border-radius:1px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-2 .block,.round-corners-block-2 .block-inner  {-webkit-border-radius:2px;border-radius:2px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-3 .block,.round-corners-block-3 .block-inner  {-webkit-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-4 .block,.round-corners-block-4 .block-inner  {-webkit-border-radius:4px;border-radius:4px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-5 .block,.round-corners-block-5 .block-inner  {-webkit-border-radius:5px;border-radius:5px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-6 .block,.round-corners-block-6 .block-inner  {-webkit-border-radius:6px;border-radius:6px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-7 .block,.round-corners-block-7 .block-inner  {-webkit-border-radius:7px;border-radius:7px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-8 .block,.round-corners-block-8 .block-inner  {-webkit-border-radius:8px;border-radius:8px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-9 .block,.round-corners-block-9 .block-inner  {-webkit-border-radius:9px;border-radius:9px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-10 .block,.round-corners-block-10 .block-inner {-webkit-border-radius:10px;border-radius:10px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-11 .block,.round-corners-block-11 .block-inner {-webkit-border-radius:11px;border-radius:11px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-12 .block,.round-corners-block-12 .block-inner {-webkit-border-radius:12px;border-radius:12px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-13 .block,.round-corners-block-13 .block-inner {-webkit-border-radius:13px;border-radius:13px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-14 .block,.round-corners-block-14 .block-inner {-webkit-border-radius:14px;border-radius:14px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-15 .block,.round-corners-block-15 .block-inner {-webkit-border-radius:15px;border-radius:15px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-20 .block,.round-corners-block-20 .block-inner {-webkit-border-radius:20px;border-radius:20px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-block-25 .block,.round-corners-block-25 .block-inner {-webkit-border-radius:25px;border-radius:25px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+
+.round-corners-region-1 .region {-webkit-border-radius:1px;border-radius:1px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-2 .region {-webkit-border-radius:2px;border-radius:2px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-3 .region {-webkit-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-4 .region {-webkit-border-radius:4px;border-radius:4px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-5 .region {-webkit-border-radius:5px;border-radius:5px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-6 .region {-webkit-border-radius:6px;border-radius:6px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-7 .region {-webkit-border-radius:7px;border-radius:7px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-8 .region {-webkit-border-radius:8px;border-radius:8px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-9 .region {-webkit-border-radius:9px;border-radius:9px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-10 .region {-webkit-border-radius:10px;border-radius:10px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-11 .region {-webkit-border-radius:11px;border-radius:11px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-12 .region {-webkit-border-radius:12px;border-radius:12px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-13 .region {-webkit-border-radius:13px;border-radius:13px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-14 .region {-webkit-border-radius:14px;border-radius:14px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-15 .region {-webkit-border-radius:15px;border-radius:15px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-20 .region {-webkit-border-radius:20px;border-radius:20px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+.round-corners-region-25 .region {-webkit-border-radius:25px;border-radius:25px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+
+
+
+
+/* ==================== */
+/* = border width     = */
+/* ==================== */
+
+.border-width-1 .block-inner{border-width:1px;}
+.border-width-2 .block-inner{border-width:2px;}
+.border-width-3 .block-inner{border-width:3px;}
+.border-width-4 .block-inner{border-width:4px;}
+.border-width-5 .block-inner{border-width:5px;}
+
+
+/* ===================== */
+/* = border shadow     = */
+/* ===================== */
+
+.dark.outer-shadow-1 .block-inner {-webkit-box-shadow:0px 0px 1px 0px #000;box-shadow:0px 0px 1px 0px #000;}
+.dark.outer-shadow-2 .block-inner {-webkit-box-shadow:0px 0px 2px 0px #000;box-shadow:0px 0px 2px 0px #000;}
+.dark.outer-shadow-3 .block-inner {-webkit-box-shadow:0px 0px 3px 0px #000;box-shadow:0px 0px 3px 0px #000;}
+.dark.outer-shadow-4 .block-inner {-webkit-box-shadow:0px 0px 4px 0px #000;box-shadow:0px 0px 4px 0px #000;}
+.dark.outer-shadow-5 .block-inner {-webkit-box-shadow:0px 0px 5px 0px #000;box-shadow:0px 0px 5px 0px #000;}
+.dark.outer-shadow-6 .block-inner {-webkit-box-shadow:0px 0px 6px 0px #000;box-shadow:0px 0px 6px 0px #000;}
+.dark.outer-shadow-7 .block-inner {-webkit-box-shadow:0px 0px 7px 0px #000;box-shadow:0px 0px 7px 0px #000;}
+.dark.outer-shadow-8 .block-inner {-webkit-box-shadow:0px 0px 8px 0px #000;box-shadow:0px 0px 8px 0px #000;}
+.dark.outer-shadow-9 .block-inner {-webkit-box-shadow:0px 0px 9px 0px #000;box-shadow:0px 0px 9px 0px #000;}
+.dark.inner-shadow-1 .block-inner {-webkit-box-shadow:inset 0px 0px 1px 0px #000;box-shadow:inset 0px 0px 1px 0px #000;}
+.dark.inner-shadow-2 .block-inner {-webkit-box-shadow:inset 0px 0px 2px 0px #000;box-shadow:inset 0px 0px 2px 0px #000;}
+.dark.inner-shadow-3 .block-inner {-webkit-box-shadow:inset 0px 0px 3px 0px #000;box-shadow:inset 0px 0px 3px 0px #000;}
+.dark.inner-shadow-4 .block-inner {-webkit-box-shadow:inset 0px 0px 4px 0px #000;box-shadow:inset 0px 0px 4px 0px #000;}
+.dark.inner-shadow-5 .block-inner {-webkit-box-shadow:inset 0px 0px 5px 0px #000;box-shadow:inset 0px 0px 5px 0px #000;}
+.dark.inner-shadow-6 .block-inner {-webkit-box-shadow:inset 0px 0px 6px 0px #000;box-shadow:inset 0px 0px 6px 0px #000;}
+.dark.inner-shadow-7 .block-inner {-webkit-box-shadow:inset 0px 0px 7px 0px #000;box-shadow:inset 0px 0px 7px 0px #000;}
+.dark.inner-shadow-8 .block-inner {-webkit-box-shadow:inset 0px 0px 8px 0px #000;box-shadow:inset 0px 0px 8px 0px #000;}
+.dark.inner-shadow-9 .block-inner {-webkit-box-shadow:inset 0px 0px 9px 0px #000;box-shadow:inset 0px 0px 9px 0px #000;}
+
+.light.outer-shadow-1 .block-inner{-webkit-box-shadow:0px 0px 1px 0px #fff;box-shadow:0px 0px 1px 0px #fff;}
+.light.outer-shadow-2 .block-inner{-webkit-box-shadow:0px 0px 2px 0px #fff;box-shadow:0px 0px 2px 0px #fff;}
+.light.outer-shadow-3 .block-inner{-webkit-box-shadow:0px 0px 3px 0px #fff;box-shadow:0px 0px 3px 0px #fff;}
+.light.outer-shadow-4 .block-inner{-webkit-box-shadow:0px 0px 4px 0px #fff;box-shadow:0px 0px 4px 0px #fff;}
+.light.outer-shadow-5 .block-inner{-webkit-box-shadow:0px 0px 5px 0px #fff;box-shadow:0px 0px 5px 0px #fff;}
+.light.outer-shadow-6 .block-inner{-webkit-box-shadow:0px 0px 6px 0px #fff;box-shadow:0px 0px 6px 0px #fff;}
+.light.outer-shadow-7 .block-inner{-webkit-box-shadow:0px 0px 7px 0px #fff;box-shadow:0px 0px 7px 0px #fff;}
+.light.outer-shadow-8 .block-inner{-webkit-box-shadow:0px 0px 8px 0px #fff;box-shadow:0px 0px 8px 0px #fff;}
+.light.outer-shadow-9 .block-inner{-webkit-box-shadow:0px 0px 9px 0px #fff;box-shadow:0px 0px 9px 0px #fff;}
+.light.inner-shadow-1 .block-inner{-webkit-box-shadow:inset 0px 0px 1px 0px #fff;box-shadow:inset 0px 0px 1px 0px #fff;}
+.light.inner-shadow-2 .block-inner{-webkit-box-shadow:inset 0px 0px 2px 0px #fff;box-shadow:inset 0px 0px 2px 0px #fff;}
+.light.inner-shadow-3 .block-inner{-webkit-box-shadow:inset 0px 0px 3px 0px #fff;box-shadow:inset 0px 0px 3px 0px #fff;}
+.light.inner-shadow-4 .block-inner{-webkit-box-shadow:inset 0px 0px 4px 0px #fff;box-shadow:inset 0px 0px 4px 0px #fff;}
+.light.inner-shadow-5 .block-inner{-webkit-box-shadow:inset 0px 0px 5px 0px #fff;box-shadow:inset 0px 0px 5px 0px #fff;}
+.light.inner-shadow-6 .block-inner{-webkit-box-shadow:inset 0px 0px 6px 0px #fff;box-shadow:inset 0px 0px 6px 0px #fff;}
+.light.inner-shadow-7 .block-inner{-webkit-box-shadow:inset 0px 0px 7px 0px #fff;box-shadow:inset 0px 0px 7px 0px #fff;}
+.light.inner-shadow-8 .block-inner{-webkit-box-shadow:inset 0px 0px 8px 0px #fff;box-shadow:inset 0px 0px 8px 0px #fff;}
+.light.inner-shadow-9 .block-inner{-webkit-box-shadow:inset 0px 0px 9px 0px #fff;box-shadow:inset 0px 0px 9px 0px #fff;}
+
+
+
+/* =================== */
+/* = border style    = */
+/* =================== */
+
+
+.border-style-dotted .block-inner{border-style:dotted;}
+.border-style-dashed .block-inner{border-style:dashed;}
+.border-style-double .block-inner{border-style:double;}
+
+/* ================== */
+/* = box padding    = */
+/* ================== */
+
+.block-padding-5px .block-inner{padding:5px;}
+.block-padding-10px .block-inner{padding:10px;}
+.block-padding-15px .block-inner{padding:15px;}
+.block-padding-20px .block-inner{padding:20px;}
+.block-padding-25px .block-inner{padding:25px;}
+
+/*sitewide block padding */
+
+.bp-all-5 .block-inner,  .bp-all-5 .attribution-line-inside {padding:5px;}
+.bp-all-10 .block-inner, .bp-all-10 .attribution-line-inside  {padding:10px;}
+.bp-all-15 .block-inner, .bp-all-15 .attribution-line-inside  {padding:15px;}
+.bp-all-20 .block-inner, .bp-all-20 .attribution-line-inside  {padding:20px;}
+
+.bp-5 .block-inner {padding:5px;}
+.bp-10 .block-inner {padding:10px;}
+.bp-15 .block-inner {padding:15px;}
+.bp-20 .block-inner {padding:20px;}
+
+/*sitewide region padding */
+
+.br-all-5 .region,  .br-all-5 .attribution-line-inside {padding:5px;}
+.br-all-10 .region, .br-all-10 .attribution-line-inside {padding:10px;}
+.br-all-15 .region, .br-all-15 .attribution-line-inside {padding:15px;}
+.br-all-20 .region, .br-all-20 .attribution-line-inside {padding:20px;}
+
+.br-5 {padding:5px;}
+.br-10 {padding:10px;}
+.br-15 {padding:15px;}
+.br-20 {padding:20px;}
+
+
+/*sitewide container padding */
+
+.bc-all-5 .container {padding:5px;}
+.bc-all-10 .container {padding:10px;}
+.bc-all-15 .container {padding:15px;}
+.bc-all-20 .container {padding:20px;}
+
+.bc-5 {padding:5px;}
+.bc-10 {padding:10px;}
+.bc-15 {padding:15px;}
+.bc-20 {padding:20px;}
+
+.bc-all-5 .main-navigation.container {padding:0;}
+.bc-all-10 .main-navigation.container {padding:0;}
+.bc-all-15 .main-navigation.container {padding:0;}
+.bc-all-20 .main-navigation.container {padding:0;}
+
+/* remove padding on wrapper classes throughout */
+.wrapper-no-padding .wrapper {padding:0;}
+.wrapper-no-padding .preface-wrapper {padding:1px 0;}
+
+/* ================== */
+/* = box shading    = */
+/* ================== */
+
+/*box shading is defined in the shades.css file */
+
+
+/* =================================== */
+/* = Skinr Styles for Typography     = */
+/* =================================== */
+
+
+/*****
+ *****     Block Styles
+ *****/
+
+
+/* block style 1 */
+
+.block-style-1 .sidebar .block .block-inner,
+.bento .region .block-style-1.block .block-inner {
+	padding:15px;
+}
+
+
+/* block style 2 */
+
+.block-style-2 .sidebar .block .block-inner,
+.bento .region .block-style-2.block .block-inner {
+	padding:15px;
+	border-style:solid;
+	border-width:2px;
+}
+
+
+
+/* block style 3 */
+
+.block-style-3 .sidebar .block,
+.bento .region .block-style-3.block {
+	background-repeat:repeat-x;
+	background-position:center top;
+}
+
+.block-style-3 .sidebar .block .block-inner,
+.bento .region .block-style-3.block .block-inner {
+	padding:15px;
+}
+
+
+/* block style 4 */
+
+.block-style-4 .sidebar .block,
+.bento .region .block-style-4.block {
+	background-repeat:repeat-x;
+	background-position:center bottom;
+}
+
+.block-style-4 .sidebar .block .block-inner,
+.bento .region .block-style-4.block .block-inner {
+	padding:15px;
+}
+
+/* block style 5 */
+
+.block-style-5 .sidebar .block .block-inner,
+.bento .region .block-style-5.block .block-inner {
+	padding:15px;
+}
+
+
+
+
+/*****
+ *****     List Styles
+ *****/
+
+/*more link default */
+.more-link {text-align:right;}
+.more-link a:hover {text-decoration:underline;}
+
+
+/* list style 1 */
+.list-style-1.block .content ul{margin-left:0;padding-left:0;}
+.list-style-1.block .content ul li{padding:6px;margin:1px 0 0;list-style:none;margin-left:0;}
+.list-style-1.block .content ul li:hover{background-image:url('shades/1px-lighten-15.png');}
+.list-style-1.block .content ul li a{text-decoration:none;}
+.list-style-1.block .content ul li a:hover{text-decoration:underline;}
+.list-style-1.block .content ul li.views-row-last,
+.list-style-1.block .content ul li.last{margin-bottom:5px;}
+/* more link style 1 */
+.list-style-1.block .more-link a{padding:2px 6px;-webkit-border-radius:2px;border-radius:2px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;}
+.list-style-1.block .more-link a:hover,
+.list-style-1.block .more-link a:active{text-decoration:none;}
+
+/* end list style 1 */
+
+/* list style 2 */
+.list-style-2.block .block-inner{}
+.list-style-2.block .content ul{padding-left:0;}
+.list-style-2.block .content ul li{padding:6px;margin:1px 0 0;list-style:none;margin-left:0;border-left:7px solid #999;}
+.list-style-2.block .content ul li:hover{background-image:url('shades/1px-lighten-15.png');border-left:7px solid #bbb;}
+.list-style-2.block .content ul li a{text-decoration:none;}
+.list-style-2.block .content ul li a:hover{text-decoration:underline;}
+.list-style-2.block .content ul li.views-row-last,
+.list-style-2.block .content ul li.last{margin-bottom:5px;}
+/* more link style 2 */
+.list-style-2.block .more-link{margin-top:5px;}
+.list-style-2.block .more-link a{padding:2px 10px 2px 5px;background:transparent url('images/arrow.png') right 6px no-repeat;}
+.list-style-2.block .more-link a:hover,
+.list-style-2.block .more-link a:active{background:transparent url('images/arrow-dark.png') right 6px no-repeat;text-decoration:none;}
+
+/* end list style 2 */
+
+/* list style 3*/
+.list-style-3.block .block-inner{padding:0;}
+.list-style-3.block .content ul{padding-left:0;}
+.list-style-3.block .content ul li,.list-style-4 .content .views-row{border-bottom:1px dashed #ccc;list-style:none outside none;margin-left:0px;margin-bottom:0px;padding:5px;width:100%;}
+.list-style-3.block .content ul li:hover,.list-style-4 .content .views-row:hover{background:transparent url('shades/1px-darken-10.png');}
+.list-style-3.block .content ul li a,.list-style-4 .content .views-row a{padding:4px 8px 4px 0;}
+/* more link style 3*/
+.list-style-3.block .more-link{padding:2px 10px 2px;}
+.list-style-3.block .more-link:hover,
+.list-style-3.block .more-link:active{border-bottom:1px dashed #aaa;text-decoration:none;}
+
+/* end list style 3 */
+
+/* list style 4*/
+.list-style-4.block .block-inner{}
+.list-style-4.block .content ul{padding-left:0;}
+.list-style-4.block .content ul li{padding:6px;margin:1px 0 0;list-style:none;margin-left:0;border-left:7px solid #555;}
+.list-style-4.block .content ul li:hover{border-left:7px solid #000;text-decoration:underline;}
+.list-style-4.block .content ul li a{text-decoration:none;}
+.list-style-4.block .content ul li.views-row-last,
+.list-style-4.block .content ul li.last{margin-bottom:5px;}
+
+/* end list style 4 */
+/* list style 5 */
+.list-style-5.block .content ul{padding-left:5px;}
+.list-style-5.block .content ul li{border-bottom:1px solid #666;padding:5px;margin:0 0 0 10px;}
+.list-style-5.block .content ul li a{padding:3px 5px 3px 0;}
+
+/* end list style 5 */
+/* list style 6*/
+.list-style-6.block .content ul{padding-left:0;}
+.list-style-6.block .content ul li{padding:5px 5px 5px 12px;list-style:none;margin:0 0 0 3px;background:transparent url('images/arrow.png') left 11px no-repeat;}
+.list-style-6.block .content ul li:hover{background:transparent url('images/arrow-dark.png') left 11px no-repeat;}
+.list-style-6.block .content ul li a{padding:3px 5px 3px 0;}
+/* end list style 6 */
+
+
+
+/*****
+ *****     Superfish Styles
+ *****/
+
+/* see superfish.css for these styles */
+
+
+
+
+
+/*****
+ *****     Font Stack Options
+ *****/
+
+/* see typography.css for these styles */
+
+
+
+
+/*****
+ *****     Social Button Styles
+ *****/
+
+/* see social.css for these styles */
+
+/* ============================== */
+/* = Hide Site Name from Header = */
+/* ============================== */
+
+.site-name-no-header .site-name {display:none;}
+
+/* ============================ */
+/* = Non-Mobile Adjustments   = */
+/* ============================ */
+
+
+@media (min-width:768px) {
+	.round-corners-container-1 .container {-webkit-border-radius:1px;border-radius:1px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-2 .container {-webkit-border-radius:2px;border-radius:2px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-3 .container {-webkit-border-radius:3px;border-radius:3px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-4 .container {-webkit-border-radius:4px;border-radius:4px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-5 .container {-webkit-border-radius:5px;border-radius:5px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-6 .container {-webkit-border-radius:6px;border-radius:6px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-7 .container {-webkit-border-radius:7px;border-radius:7px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-8 .container {-webkit-border-radius:8px;border-radius:8px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-9 .container {-webkit-border-radius:9px;border-radius:9px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-10 .container {-webkit-border-radius:10px;border-radius:10px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-11 .container {-webkit-border-radius:11px;border-radius:11px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-12 .container {-webkit-border-radius:12px;border-radius:12px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-13 .container {-webkit-border-radius:13px;border-radius:13px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-14 .container {-webkit-border-radius:14px;border-radius:14px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-15 .container {-webkit-border-radius:15px;border-radius:15px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-20 .container {-webkit-border-radius:20px;border-radius:20px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	.round-corners-container-25 .container {-webkit-border-radius:25px;border-radius:25px;-moz-background-clip:padding;-webkit-background-clip:padding-box;background-clip:padding-box;overflow:hidden;}
+	}	
+		
+@media screen and (min-width:992px) {
+	
+	}
+
+@media screen and (min-width:1200px) {
+	
+	}
+	
+	
+	
+	

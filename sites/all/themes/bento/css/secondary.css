@@ -1,0 +1,42 @@
+/* Secondary Menu Theming Defaults for Bento */
+
+
+/**** change text align here to adjust where secondary links are positioned ****/
+
+ul#secondary-menu {
+	margin:0;
+	text-align:center;
+}
+
+.secondary-navigation .list-inline > li.first,
+.secondary-navigation .list-inline li  {
+	padding:10px 5px;
+	
+}
+
+.drawer-nav {width:80%;margin:0 auto;}
+
+
+
+/* ============================ */
+/* = Non-Mobile Adjustments   = */
+/* ============================ */
+
+
+@media (min-width:768px) {
+	ul#secondary-menu {
+		margin:0;
+		text-align:right;
+	}
+	.drawer-nav {width:100%;margin:0;}
+	}	
+		
+@media screen and (min-width:992px) {
+	
+	}
+
+@media screen and (min-width:1200px) {
+	
+	}
+		
+

@@ -1,0 +1,15 @@
+name = TM OPN Feed 2014
+description = Office Product News Feed view
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = tm_opn_feed_2014
+dependencies[] = feeds
+dependencies[] = feeds_news
+dependencies[] = feeds_ui
+dependencies[] = job_scheduler
+dependencies[] = views
+dependencies[] = views_ui
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[views_view][] = opn_news_feed

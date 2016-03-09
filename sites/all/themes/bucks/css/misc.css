@@ -1,0 +1,12 @@
+/* Misc Theming Defaults for Bento     */
+
+
+.webform-component-fieldset {
+     border:0;
+   -webkit-box-shadow: 0px 0px 0px 0px #ffffff;
+           box-shadow: 0px 0px 0px 0px #ffffff;
+     margin-bottom:0;
+}
+.webform-component-fieldset .panel-body {
+     padding:0;
+}

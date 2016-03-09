@@ -1,0 +1,407 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function feed_path_publisher_menu() {
+  $items = array();
+
+  $items['admin/config/content/feed_path_publisher'] = array(
+    'title' => 'Feed Path Publisher',
+    'description' => 'Settings for feeds across the site.',
+    'page callback' => 'feed_path_publisher_list',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/config/content/feed_path_publisher/list'] = array(
+    'title' => 'List',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -1,
+    'access arguments' => array('administer site configuration'),
+  );
+
+  $items['admin/config/content/feed_path_publisher/add'] = array(
+    'title' => 'Add Feed',
+    'type' => MENU_LOCAL_TASK,
+    'page callback' => 'feed_path_publisher_add',
+    'access arguments' => array('administer site configuration'),
+  );
+
+  $items['admin/config/content/feed_path_publisher/%/edit'] = array(
+    'page callback' => 'feed_path_publisher_edit',
+    'page arguments' => array(4),
+    'access arguments' => array('administer site configuration'),
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_init().
+ */
+function feed_path_publisher_init() {
+  _feed_path_publisher_add_feeds($_GET['q']);
+}
+
+function _feed_path_publisher_add_feeds($internal_path) {
+  global $user;
+
+  $aliased_path = $internal_path;
+  $front_page_path = $internal_path;
+
+  // Add feeds based on aliased paths
+  if (module_exists('path')) {
+    $aliased_path = drupal_get_path_alias($internal_path);
+  }
+
+  if (drupal_is_front_page()) {
+    $front_page_path = '<front>';
+  }
+
+  $res = db_query('SELECT title, feed, fppid
+    FROM {feed_path_publisher}
+    WHERE path_prefix = LEFT(:internal_path,  LENGTH(path_prefix))
+      OR path_prefix = LEFT(:aliased_path, LENGTH(path_prefix)) 
+      OR path_prefix = LEFT(:front_page_path, LENGTH(path_prefix)) 
+    ORDER BY weight, path_prefix', 
+    array(
+      ':internal_path' => $internal_path,
+      ':aliased_path' => $aliased_path,
+      ':front_page_path' => $front_page_path,
+    ));
+
+  foreach ($res as $row) {
+    $path_rids = db_select('feed_path_publisher_roles', 'fppr')
+      ->fields('fppr', array('rids'))
+      ->condition('fppid', $row->fppid)
+      ->execute()
+      ->fetchField();
+    $path_rids = explode(',', $path_rids);
+
+    if ($path_rids) {
+      $show_hide = db_select('feed_path_publisher_roles', 'fppr')
+        ->fields('fppr', array('show_hide'))
+        ->condition('fppid', $row->fppid)
+        ->execute()
+        ->fetchField();
+      $role_found = false;
+
+      foreach ($user->roles as $key => $value) {
+        if (in_array($key, $path_rids)) {
+          $role_found = true;
+        }
+      }
+
+      if ((!$role_found && $show_hide == 'show') || ($role_found && $show_hide == 'hide')) {
+        continue;
+      }
+    }
+
+    drupal_add_feed(url($row->feed), $row->title);
+  }
+}
+
+
+/**
+ * Menu callback for admin/config/content/feed_path_publisher/list
+ * 
+ * Displays the list of feeds
+ */
+function feed_path_publisher_list() {
+  drupal_set_title('Feed path publisher');
+
+  $result = db_select('feed_path_publisher', 'fpp')
+    ->fields('fpp')
+    ->orderBy('weight')
+    ->orderBy('path_prefix')
+    ->orderBy('title')
+    ->execute();
+
+  $cols = array(
+    'Title',
+    'Path Prefix',
+    'Feed',
+    'Weight',
+    'Operations',
+  );
+
+  $rows = array();
+  while($row = $result->fetchObject()) {
+    $ops = array();
+    $ops[] = l('edit', 'admin/config/content/feed_path_publisher/' . $row->fppid . '/edit');
+
+    $path_prefix = $row->path_prefix;
+
+    $rows[] = array(
+      check_plain($row->title),
+      ($row->path_prefix == '' ? '<em>Global</em>' : check_plain($path_prefix)),
+      check_plain($row->feed),
+      $row->weight,
+      implode(' ', $ops),
+    );
+  }
+
+  if (empty($rows)) {
+    $rows[] = array(
+      array(
+        'data' => t('Use the Add Feed tab to add new feeds.'),
+        'colspan' => count($cols)
+      ),
+    );
+  }
+
+  $content = theme('table', array('header' => $cols, 'rows' => $rows));
+
+  return $content;
+}
+
+/**
+ * Page callback for admin/config/content/feed_path_publisher/add
+ * 
+ * Displays feed add form.
+ */
+function feed_path_publisher_add() {
+  return drupal_get_form('feed_path_publisher_edit_form');
+}
+
+/**
+ * Page callback for admin/config/content/feed_path_publisher/%/edit
+ * 
+ * Edit form to modify a feed
+ */
+function feed_path_publisher_edit($fppid) {
+  return drupal_get_form('feed_path_publisher_edit_form', $fppid);
+}
+
+/**
+ * Form to edit feed.
+ */
+function feed_path_publisher_edit_form($form, $unknown = NULL, $fppid = NULL) {
+  $form = array();
+
+  $use_roles = false;
+  $show_hide = 0;
+  $checked_roles = array();
+  $item = (object) NULL;
+  if (isset($fppid)) {
+    $item = db_select('feed_path_publisher', 'fpp')
+      ->fields('fpp')
+      ->condition('fppid', $fppid)
+      ->execute()
+      ->fetchObject();
+    
+    $item_count = db_select('feed_path_publisher_roles', 'fppr')
+      ->fields('fppr', array('fppid'))
+      ->condition('fppid', $fppid)
+      ->execute()
+      ->rowCount();
+    
+    if ($item_count > 0) {
+      $use_roles = true;
+      
+      $showhide = db_select('feed_path_publisher_roles', 'fppr')
+        ->fields('fppr', array('show_hide'))
+        ->condition('fppid', $fppid)
+        ->execute()
+        ->fetchField();
+        
+      if ($showhide == 'show' ) {
+        $show_hide = 0;
+      }
+      else {
+        $show_hide = 1;
+      }
+
+      $rids = db_select('feed_path_publisher_roles', 'fppr')
+        ->fields('fppr', array('rids'))
+        ->condition('fppid', $fppid)
+        ->execute()
+        ->fetchField();
+      $checked_roles = explode(',', $rids);
+    }
+
+    $form['fppid'] = array(
+      '#type' => 'hidden',
+      '#value' => isset($item->fppid) ? $item->fppid : 0,
+    );
+  }
+
+  $form['title'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title'),
+    '#default_value' => isset($item->title) ? $item->title : '',
+    '#required' => TRUE,
+  );
+
+  $form['path_prefix'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Path prefix'),
+    '#default_value' => isset($item->path_prefix) ? $item->path_prefix : '',
+    '#description' => t('Leaving this blank publishes to the entire site. You can use <front> to have your feed link added only to the home page. Keep in mind that rss.xml will always be added to the homepage if using the default path (node) for the front page.'),
+  );
+
+  $form['feed'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Feed'),
+    '#default_value' => isset($item->feed) ? $item->feed : '',
+    '#required' => TRUE,
+    '#description' => t('Relative paths should not begin with a slash.'),
+  );
+
+  $form['weight'] = array(
+    '#type' => 'weight',
+    '#title' => t('Weight'),
+    '#default_value' => isset($item->weight) ? $item->weight : '',
+    '#description' => t('Optional. In the feed listings, the heavier items will sink and the lighter items will be positioned nearer the top.'),
+  );
+
+  $form['roles'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Role-based feed publishing'),
+    '#collapsible' => TRUE,
+    '#collapsed' => ($use_roles ? FALSE : TRUE),
+  );
+  $form['roles']['enable_roles'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable role-based feed publishing according to role'),
+    '#default_value' => $use_roles,
+    '#collapsed' => TRUE,
+  );
+  $form['roles']['show_hide'] = array(
+    '#type' => 'radios',
+    '#title' => t('Behavior'),
+    '#default_value' => $show_hide,
+    '#options' => array(t('Show this feed for the following roles'), t('Hide this feed for the following roles')),
+  );
+  $roles = db_select('role', 'role')->fields('role')->execute();
+
+  while ($role = $roles->fetchObject()) {
+    $options[$role->rid] = $role->name;
+  }
+
+  $form['roles']['roles_list'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Roles'),
+    '#default_value' => $checked_roles,
+    '#options' => $options,
+  );
+
+  $form[] = array(
+    '#type' => 'submit',
+    '#value' => t('Save'),
+  );
+
+  if (isset($fppid)) {
+    $form[] = array(
+      '#type' => 'submit',
+      '#value' => t('Delete'),
+    );
+  }
+
+  return $form;
+}
+
+/**
+ * Submit handler for feed_path_publisher_edit_form
+ */
+function feed_path_publisher_edit_form_submit($form, &$form_state) {
+  $rids = array();
+  foreach ($form_state['values']['roles_list'] as $role => $value) {
+    if ($value) {
+      $rids[] = $role;
+    }
+  }
+  $show_hide = '';
+  if ($form_state['values']['show_hide'] == 1) {
+    $show_hide = 'hide';
+  }
+  else {
+    $show_hide = 'show';
+  }
+
+  if (isset($form_state['values']['fppid'])) {
+    if ($form_state['values']['op'] == t('Delete')) {
+      db_delete('feed_path_publisher')
+        ->condition('fppid', $form_state['values']['fppid'])
+        ->execute();
+      db_delete('feed_path_publisher_roles')
+        ->condition('fppid', $form_state['values']['fppid'])
+        ->execute();
+      drupal_set_message(t('Feed path deleted.'));
+    }
+    else {
+      db_update('feed_path_publisher')
+        ->fields(array(
+          'title' => $form_state['values']['title'],
+          'path_prefix' => $form_state['values']['path_prefix'],
+          'feed' => $form_state['values']['feed'],
+          'weight' => $form_state['values']['weight'],
+        ))
+        ->condition('fppid', $form_state['values']['fppid'])
+        ->execute();
+      if ($form_state['values']['enable_roles'] == 1) {
+        $rids = implode(',', $rids);
+
+        $id = db_select('feed_path_publisher_roles', 'fppr')
+          ->fields('fppr', array('fpprid'))
+          ->condition('fppid', $form_state['values']['fppid'])
+          ->execute()
+          ->fetchField();
+        if ($id) {
+          db_update('feed_path_publisher_roles')
+            ->fields(array(
+              'show_hide' => $show_hide,
+              'rids' => $rids,
+            ))
+            ->condition('fpprid', $id)
+            ->execute();
+        }
+        else {
+          $id = db_insert('feed_path_publisher_roles')
+            ->fields(array(
+              'fppid' => $form_state['values']['fppid'],
+              'show_hide' => $show_hide,
+              'rids' => $rids,
+            ))
+            ->execute();
+        }
+      }
+      else {
+        db_delete('feed_path_publisher_roles')
+          ->condition('fppid', $form_state['values']['fppid'])
+          ->execute();
+      }
+      drupal_set_message(t('Feed path updated.'));
+    }
+  }
+  else {
+    $id = db_insert('feed_path_publisher')
+      ->fields(array(
+        'title' => $form_state['values']['title'],
+        'path_prefix' => $form_state['values']['path_prefix'],
+        'feed' => $form_state['values']['feed'],
+        'weight' => $form_state['values']['weight'],
+      ))
+      ->execute();
+
+    if ($form_state['values']['enable_roles'] == 1) {
+      $fppid = db_query("select last_insert_id()")->fetchField();
+      if ($rids) {
+        $rids = implode(',', $rids);
+        $id = db_insert('feed_path_publisher_roles')
+          ->fields(array(
+            'fppid' => $fppid,
+            'show_hide' => $show_hide,
+            'rids' => $rids,
+          ))
+          ->execute();
+      }
+    }
+
+    drupal_set_message(t('Feed path created.'));
+  }
+
+  $form_state['redirect'] = 'admin/config/content/feed_path_publisher';
+}

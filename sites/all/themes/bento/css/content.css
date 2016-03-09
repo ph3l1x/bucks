@@ -1,0 +1,168 @@
+/* content column - not sidebars */
+
+.unpublished .nav-tabs {
+	background: #fff2f2 url('images/unpublished.png') right center no-repeat;
+    border-radius: 3px 3px 0 0;
+    background-clip: padding-box;
+}
+
+.jumbotron {
+	padding-top:20px;
+	padding-bottom:20px;
+	margin-bottom:0;
+}
+.container .jumbotron {
+	padding-left:30px;
+	padding-right:30px;
+	background-color:#66AFE9;
+	color:#fff;
+}
+.container .jumbotron a {
+	color:#000;
+}
+.container .jumbotron a:hover {
+	color:#000;
+	text-decoration:underline;
+}
+
+/* action links like clone content button */
+
+.nav.nav-tabs {
+	margin-bottom:10px;
+}
+
+ul.action-links {
+	padding-left:10px;
+}
+ul.action-links li {
+	display:inline;
+	list-style:none;
+	background:#cdcdcd;
+	padding:6px 8px;
+	border-radius: 4px;
+    background-clip: padding-box;
+	margin-right:5px;
+}
+ul.action-links li:hover {
+	background:#ababab;
+}
+ul.action-links li a {
+	color: #222;
+}
+ul.action-links li:hover a {
+	text-decoration:none;
+	color:#fff;
+}
+
+/* submitted line */
+
+.submitted {
+	margin:10px 0;
+	padding:5px 0;
+	border-top:1px dotted #eeeeee;
+	border-bottom:1px dotted #eeeeee;
+}
+
+
+
+/* gives the teaser view of a blog a clearfix   */
+
+.region-content .view .view-content .content .field-name-body:after {
+	visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.region-content .view .view-content .content .field-name-body {
+	margin-bottom:10px;
+	padding-bottom:10px;
+	border-bottom:1px dotted #eee;
+}
+.region-content .view .view-content .content .field-name-body p:last-child {
+	margin-bottom:0;
+}
+
+
+/* tags styling */
+
+.field-type-taxonomy-term-reference .field-items .field-item {
+	float:left;
+}
+
+.field-type-taxonomy-term-reference .field-items .field-item {
+	background:transparent url('images/tagdot.png') right center no-repeat;
+	padding-right:7px;
+	margin-right:5px;
+}
+.field-type-taxonomy-term-reference .field-items .field-item:last-child {
+	background:none;
+}
+.field-type-taxonomy-term-reference .field-label {
+	float:left;
+}
+.field-type-taxonomy-term-reference .field-items {
+	margin-bottom:10px;
+}
+.field-type-taxonomy-term-reference .field-items:after {
+	visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+/*sharethis overrides */
+.sharethis-buttons {
+	clear:both;
+	padding-top:10px;
+}
+.sharethis-buttons .stButton {
+	margin:0;
+}
+/* readmore link styling */
+ul.links {
+	padding-left: 0;
+}
+.links .node-readmore.glyphicon:after {
+    content: "";
+	font-size:11px;
+	margin-left:3px;
+	}
+.links .node-readmore.glyphicon {
+	height:23px;
+	padding:3px 8px;
+	border-radius: 3px;
+	background-clip: padding-box;
+}
+.links .node-readmore.glyphicon:hover {
+	background-image:url('shades/1px-darken-15.png');
+
+}
+.links .node-readmore.glyphicon a {
+	text-transform:uppercase;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-decoration:none;
+}
+
+
+
+/* =============================== */
+/* = Dark Region Color Overrides = */
+/* =============================== */
+
+.dark-region .region-content .view .view-content .content .field-name-body {
+	border-color:#222;
+}
+.dark-region .submitted {
+	border-color:#222;
+}
+
+.dark-region .links .node-readmore.glyphicon:hover {
+	background-image:url('shades/1px-lighten-15.png');	
+}
+
+

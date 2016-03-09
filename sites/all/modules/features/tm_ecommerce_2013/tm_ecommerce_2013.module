@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TM eCommerce 2013 feature.
+ */
+
+include_once 'tm_ecommerce_2013.features.inc';

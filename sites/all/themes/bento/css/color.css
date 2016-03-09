@@ -1,0 +1,645 @@
+/* colors for this theme */
+
+
+/* =================== */
+/* = Main Colors     = */
+/* =================== */
+
+body {
+	color:#333333;
+}
+
+
+/* ==================== */
+/* = Link Colors      = */
+/* ==================== */
+
+a {
+	color:#428BCA;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+	color:#3673A5;
+}
+
+.dark-region a {
+	color:#428BCA;
+}
+
+.dark-region a:hover,
+.dark-region a:focus,
+.dark-region a:active,
+.dark-region a.active {
+	color:#3673A5;
+}
+
+
+/* ================= */
+/* = Readmore Link = */
+/* ================= */	
+
+.links .node-readmore.glyphicon:after,
+.links .node-readmore.glyphicon a {
+	color:#fff;
+}
+
+.links .node-readmore.glyphicon {
+	background-color:#aa0000;
+}
+
+/* ====================== */
+/* = Slideout Drawer    = */
+/* ====================== */
+
+.drawer-tab {
+	background-color:#aa0000;
+	color:#cc0000;
+}
+.drawer-tab:hover {
+	background-image:url('shades/1px-darken-15.png');/*change to 1px-darken-15.png if your background color is light */
+}
+
+
+/* ===================== */
+/* = Button Colors     = */
+/* ===================== */
+
+/*default */
+.btn,.button,.link-as-button .content a {
+	color: #222222;
+	background-color:#dedede;
+	border-color:#cdcdcd;
+}
+.btn:hover,.btn:focus,.button:hover,.button:focus,.link-as-button .content a:hover,.link-as-button .content a:focus {
+	color:#fff;
+	background-image:url('shades/1px-darken-35.png');/*change to 1px-darken-35.png if your background color is light */
+	border-color:#999;
+}
+
+/* all button styles - override below */
+.button-style-1 .button,.button-style-1 .btn,.button-style-1.block .btn,.button-style-1 .link-as-button .content a,.button-style-1.block-block .button,.button-style-1.block-block.link-as-button .content a,
+.button-style-2 .button,.button-style-2 .btn,.button-style-2.block .btn,.button-style-2 .link-as-button .content a,.button-style-2.block-block .button,.button-style-2.block-block.link-as-button .content a,
+.button-style-3 .button,.button-style-3 .btn,.button-style-3.block .btn,.button-style-3 .link-as-button .content a,.button-style-3.block-block .button,.button-style-3.block-block.link-as-button .content a,
+.button-style-4 .button,.button-style-4 .btn,.button-style-4.block .btn,.button-style-4 .link-as-button .content a,.button-style-4.block-block .button,.button-style-4.block-block.link-as-button .content a,
+.button-style-5 .button,.button-style-5 .btn,.button-style-5.block .btn,.button-style-5 .link-as-button .content a,.button-style-5.block-block .button,.button-style-5.block-block.link-as-button .content a,
+.button-style-6 .button,.button-style-6 .btn,.button-style-6.block .btn,.button-style-6 .link-as-button .content a,.button-style-6.block-block .button,.button-style-6.block-block.link-as-button .content a,
+.button-style-7 .button,.button-style-7 .btn,.button-style-7.block .btn,.button-style-7 .link-as-button .content a,.button-style-7.block-block .button,.button-style-7.block-block.link-as-button .content a,
+.button-style-8 .button,.button-style-8 .btn,.button-style-8.block .btn,.button-style-8 .link-as-button .content a,.button-style-8.block-block .button,.button-style-8.block-block.link-as-button .content a,
+.button-style-9 .button,.button-style-9 .btn,.button-style-9.block .btn,.button-style-9 .link-as-button .content a,.button-style-9.block-block .button,.button-style-9.block-block.link-as-button .content a,
+.button-style-10 .button,.button-style-10 .btn,.button-style-10.block .btn,.button-style-10 .link-as-button .content a,.button-style-10.block-block .button,.button-style-10.block-block.link-as-button .content a,
+.button-style-11 .button,.button-style-11 .btn,.button-style-11.block .btn,.button-style-11 .link-as-button .content a,.button-style-11.block-block .button,.button-style-11.block-block.link-as-button .content a,
+.button-style-12 .button,.button-style-12 .btn,.button-style-12.block .btn,.button-style-12 .link-as-button .content a,.button-style-12.block-block .button,.button-style-12.block-block.link-as-button .content a {
+	background-color:#444;
+	color:#fff;
+}
+
+.button-style-1 .button:hover,.button-style-1 .button:focus, .button-style-1 .btn:hover,.button-style-1 .btn:focus,.button-style-1.block .btn:hover,.button-style-1.block .btn:focus,.button-style-1 .link-as-button .content a:hover,.button-style-1 .link-as-button .content a:focus,.button-style-1.block-block .button:hover,.button-style-1.block-block.link-as-button .content a:focus,.button-style-1.block-block .button:focus,.button-style-1.block-block.link-as-button .content a:hover,
+.button-style-2 .button:hover,.button-style-2 .button:focus, .button-style-2 .btn:hover,.button-style-2 .btn:focus,.button-style-2.block .btn:hover,.button-style-2.block .btn:focus,.button-style-2 .link-as-button .content a:hover,.button-style-2 .link-as-button .content a:focus,.button-style-2.block-block .button:hover,.button-style-2.block-block.link-as-button .content a:focus,.button-style-2.block-block .button:focus,.button-style-2.block-block.link-as-button .content a:hover,
+.button-style-3 .button:hover,.button-style-3 .button:focus, .button-style-3 .btn:hover,.button-style-3 .btn:focus,.button-style-3.block .btn:hover,.button-style-3.block .btn:focus,.button-style-3 .link-as-button .content a:hover,.button-style-3 .link-as-button .content a:focus,.button-style-3.block-block .button:hover,.button-style-3.block-block.link-as-button .content a:focus,.button-style-3.block-block .button:focus,.button-style-3.block-block.link-as-button .content a:hover,
+.button-style-7 .button:hover,.button-style-7 .button:focus, .button-style-7 .btn:hover,.button-style-7 .btn:focus,.button-style-7.block .btn:hover,.button-style-7.block .btn:focus,.button-style-7 .link-as-button .content a:hover,.button-style-7 .link-as-button .content a:focus,.button-style-7.block-block .button:hover,.button-style-7.block-block.link-as-button .content a:focus,.button-style-7.block-block .button:focus,.button-style-7.block-block.link-as-button .content a:hover,
+.button-style-8 .button:hover,.button-style-8 .button:focus, .button-style-8 .btn:hover,.button-style-8 .btn:focus,.button-style-8.block .btn:hover,.button-style-8.block .btn:focus,.button-style-8 .link-as-button .content a:hover,.button-style-8 .link-as-button .content a:focus,.button-style-8.block-block .button:hover,.button-style-8.block-block.link-as-button .content a:focus,.button-style-8.block-block .button:focus,.button-style-8.block-block.link-as-button .content a:hover,
+.button-style-9 .button:hover,.button-style-9 .button:focus, .button-style-9 .btn:hover,.button-style-9 .btn:focus,.button-style-9.block .btn:hover,.button-style-9.block .btn:focus,.button-style-9 .link-as-button .content a:hover,.button-style-9 .link-as-button .content a:focus,.button-style-9.block-block .button:hover,.button-style-9.block-block.link-as-button .content a:focus,.button-style-9.block-block .button:focus,.button-style-9.block-block.link-as-button .content a:hover,
+.button-style-10 .button:hover,.button-style-10 .button:focus, .button-style-10 .btn:hover,.button-style-10 .btn:focus,.button-style-10.block .btn:hover,.button-style-10.block .btn:focus,.button-style-10 .link-as-button .content a:hover,.button-style-10 .link-as-button .content a:focus,.button-style-10.block-block .button:hover,.button-style-10.block-block.link-as-button .content a:focus,.button-style-10.block-block .button:focus,.button-style-10.block-block.link-as-button .content a:hover,
+.button-style-11 .button:hover,.button-style-11 .button:focus, .button-style-11 .btn:hover,.button-style-11 .btn:focus,.button-style-11.block .btn:hover,.button-style-11.block .btn:focus,.button-style-11 .link-as-button .content a:hover,.button-style-11 .link-as-button .content a:focus,.button-style-11.block-block .button:hover,.button-style-11.block-block.link-as-button .content a:focus,.button-style-11.block-block .button:focus,.button-style-11.block-block.link-as-button .content a:hover,
+.button-style-12 .button:hover,.button-style-12 .button:focus, .button-style-12 .btn:hover,.button-style-12 .btn:focus,.button-style-12.block .btn:hover,.button-style-12.block .btn:focus,.button-style-12 .link-as-button .content a:hover,.button-style-12 .link-as-button .content a:focus,.button-style-12.block-block .button:hover,.button-style-12.block-block.link-as-button .content a:focus,.button-style-12.block-block .button:focus,.button-style-12.block-block.link-as-button .content a:hover {
+	background-color:#444;
+	color:#fff;
+}
+
+/*buttons 4, 5 and 6 outline element */
+
+.button-style-4 .button:hover,.button-style-4 .button:focus, .button-style-4 .btn:hover,.button-style-4 .btn:focus,.button-style-4.block .btn:hover,.button-style-4.block .btn:focus,.button-style-4 .link-as-button .content a:hover,.button-style-4 .link-as-button .content a:focus,.button-style-4.block-block .button:hover,.button-style-4.block-block.link-as-button .content a:focus,.button-style-4.block-block .button:focus,.button-style-4.block-block.link-as-button .content a:hover,
+.button-style-5 .button:hover,.button-style-5 .button:focus, .button-style-5 .btn:hover,.button-style-5 .btn:focus,.button-style-5.block .btn:hover,.button-style-5.block .btn:focus,.button-style-5 .link-as-button .content a:hover,.button-style-5 .link-as-button .content a:focus,.button-style-5.block-block .button:hover,.button-style-5.block-block.link-as-button .content a:focus,.button-style-5.block-block .button:focus,.button-style-5.block-block.link-as-button .content a:hover,
+.button-style-6 .button:hover,.button-style-6 .button:focus, .button-style-6 .btn:hover,.button-style-6 .btn:focus,.button-style-6.block .btn:hover,.button-style-6.block .btn:focus,.button-style-6 .link-as-button .content a:hover,.button-style-6 .link-as-button .content a:focus,.button-style-6.block-block .button:hover,.button-style-6.block-block.link-as-button .content a:focus,.button-style-6.block-block .button:focus,.button-style-6.block-block.link-as-button .content a:hover {
+	background-color:#eee;
+	color:#000;
+	border-color:#000;
+}
+
+
+/* button style 1 */
+
+.button-style-1 .button,.button-style-1 .btn,.button-style-1.block .btn,.button-style-1 .link-as-button .content a,.button-style-1.block-block .button,.button-style-1.block-block.link-as-button .content a {
+/*	background-color:#444;
+	color:#fff;*/
+}
+
+
+.button-style-1 .button:hover,.button-style-1 .button:focus, .button-style-1 .btn:hover,.button-style-1 .btn:focus,.button-style-1.block .btn:hover,.button-style-1.block .btn:focus,.button-style-1 .link-as-button .content a:hover,.button-style-1 .link-as-button .content a:focus,.button-style-1.block-block .button:hover,.button-style-1.block-block.link-as-button .content a:focus,.button-style-1.block-block .button:focus,.button-style-1.block-block.link-as-button .content a:hover {
+	background-image:url('shades/1px-lighten-35.png');/* change lighten to darken if you background is light */
+/*	background-color:#444;
+	color:#fff;*/
+}
+
+/* button style 2 */
+
+.button-style-2 .button,.button-style-2 .btn,.button-style-2.block .btn,.button-style-2 .link-as-button .content a,.button-style-2.block-block .button,.button-style-2.block-block.link-as-button .content a {
+/*	background-color:#444;
+	color:#fff;*/
+}
+
+
+.button-style-2 .button:hover,.button-style-2 .button:focus, .button-style-2 .btn:hover,.button-style-2 .btn:focus,.button-style-2.block .btn:hover,.button-style-2.block .btn:focus,.button-style-2 .link-as-button .content a:hover,.button-style-2 .link-as-button .content a:focus,.button-style-2.block-block .button:hover,.button-style-2.block-block.link-as-button .content a:focus,.button-style-2.block-block .button:focus,.button-style-2.block-block.link-as-button .content a:hover {
+	background-image:url('shades/1px-lighten-35.png'); /* change lighten to darken if you background is light */
+/*	background-color:#444;
+	color:#fff;*/
+}
+
+/* button style 3 */
+
+.button-style-3 .button,.button-style-3 .btn,.button-style-3.block .btn,.button-style-3 .link-as-button .content a,.button-style-3.block-block .button,.button-style-3.block-block.link-as-button .content a {
+/*	background-color:#444;
+	color:#fff;*/
+}
+
+
+.button-style-3 .button:hover,.button-style-3 .button:focus, .button-style-3 .btn:hover,.button-style-3 .btn:focus,.button-style-3.block .btn:hover,.button-style-3.block .btn:focus,.button-style-3 .link-as-button .content a:hover,.button-style-3 .link-as-button .content a:focus,.button-style-3.block-block .button:hover,.button-style-3.block-block.link-as-button .content a:focus,.button-style-3.block-block .button:focus,.button-style-3.block-block.link-as-button .content a:hover {
+	background-image:url('shades/1px-lighten-35.png');/* change lighten to darken if you background is light */
+/*	background-color:#444;
+	color:#fff;*/
+}
+	
+
+
+/* button style 4 */
+
+.button-style-4 .button,.button-style-4 .btn,.button-style-4.block .btn,.button-style-4 .link-as-button .content a,.button-style-4.block-block .button,.button-style-4.block-block.link-as-button .content a {
+/*	background-color:#444; */
+	border-color:#eee;
+	color:#fff;*/
+}
+
+
+.button-style-4 .button:hover,.button-style-4 .button:focus, .button-style-4 .btn:hover,.button-style-4 .btn:focus,.button-style-4.block .btn:hover,.button-style-4.block .btn:focus,.button-style-4 .link-as-button .content a:hover,.button-style-4 .link-as-button .content a:focus,.button-style-4.block-block .button:hover,.button-style-4.block-block.link-as-button .content a:focus,.button-style-4.block-block .button:focus,.button-style-4.block-block.link-as-button .content a:hover {
+	background-image:none;
+/*	background-color:#eee;*/
+/*	border-color:#000;*/
+/*	color:#000;*/
+
+}
+/* button style 5 */
+
+.button-style-5 .button,.button-style-5 .btn,.button-style-5.block .btn,.button-style-5 .link-as-button .content a,.button-style-5.block-block .button,.button-style-5.block-block.link-as-button .content a {
+/*	background-color:#444;*/
+	border-color:#eee;
+/*	color:#fff;*/
+}
+
+
+.button-style-5 .button:hover,.button-style-5 .button:focus, .button-style-5 .btn:hover,.button-style-5 .btn:focus,.button-style-5.block .btn:hover,.button-style-5.block .btn:focus,.button-style-5 .link-as-button .content a:hover,.button-style-5 .link-as-button .content a:focus,.button-style-5.block-block .button:hover,.button-style-5.block-block.link-as-button .content a:focus,.button-style-5.block-block .button:focus,.button-style-5.block-block.link-as-button .content a:hover {
+	background-image:none;
+/*	background-color:#eee;*/
+/*	border-color:#000;*/
+/*	color:#000;*/
+
+}
+
+
+/* button style 6 */
+
+.button-style-6 .button,.button-style-6 .btn,.button-style-6.block .btn,.button-style-6 .link-as-button .content a,.button-style-6.block-block .button,.button-style-6.block-block.link-as-button .content a {
+/*	background-color:#444;*/
+	border-color:#eee;
+	color:#fff;
+}
+
+
+.button-style-6 .button:hover,.button-style-6 .button:focus, .button-style-6 .btn:hover,.button-style-6 .btn:focus,.button-style-6.block .btn:hover,.button-style-6.block .btn:focus,.button-style-6 .link-as-button .content a:hover,.button-style-6 .link-as-button .content a:focus,.button-style-6.block-block .button:hover,.button-style-6.block-block.link-as-button .content a:focus,.button-style-6.block-block .button:focus,.button-style-6.block-block.link-as-button .content a:hover {
+	background-image:none;
+/*	background-color:#eee;*/
+/*	border-color:#000;*/
+/*	color:#000;*/
+
+}
+
+/* button style 7 */
+
+.button-style-7 .button,.button-style-7 .btn,.button-style-7.block .btn,.button-style-7 .link-as-button .content a,.button-style-7.block-block .button,.button-style-7.block-block.link-as-button .content a {
+/*	background-color:#444;*/
+	border-color:#555;
+	background-image:url('shades/ltop50w.png');/*change to dtop50w.png if your background color is light */
+/*	color:#fff;*/
+}
+
+
+.button-style-7 .button:hover,.button-style-7 .button:focus,.button-style-7 .btn:hover,.button-style-7 .btn:focus,.button-style-7.block .btn:hover,.button-style-7.block .btn:focus, .button-style-7 .link-as-button .content a:hover,.button-style-7 .link-as-button .content a:focus,.button-style-7.block-block .button:hover,.button-style-7.block-block.link-as-button .content a:focus,.button-style-7.block-block .button:focus,.button-style-7.block-block.link-as-button .content a:hover {
+/*	background-color:#444;*/
+	border-color:#111;
+	background-image:url('shades/lbottom50w.png');/*change to dbottom50w.png if your background color is light */
+/*	color:#fff;*/
+
+}
+
+/* button style 8 */
+
+.button-style-8 .button,.button-style-8 .btn,.button-style-8.block .btn,.button-style-8 .link-as-button .content a,.button-style-8.block-block .button,.button-style-8.block-block.link-as-button .content a {
+/*	background-color:#444;*/
+	border-color:#555;
+	background-image:url('shades/ltop50w.png');/*change to dtop50w.png if your background color is light */
+/*	color:#fff;*/
+}
+
+
+.button-style-8 .button:hover,.button-style-8 .button:focus, .button-style-8 .btn:hover,.button-style-8 .btn:focus,.button-style-8.block .btn:hover,.button-style-8.block .btn:focus,.button-style-8 .link-as-button .content a:hover,.button-style-8 .link-as-button .content a:focus,.button-style-8.block-block .button:hover,.button-style-8.block-block.link-as-button .content a:focus,.button-style-8.block-block .button:focus,.button-style-8.block-block.link-as-button .content a:hover {
+/*	background-color:#444;*/
+	border-color:#111;
+	background-image:url('shades/lbottom50w.png');/*change to dbottom50w.png if your background color is light */
+/*	color:#fff;*/
+
+}
+
+/* button style 9 */
+
+.button-style-9 .button,.button-style-9 .btn,.button-style-9.block .btn,.button-style-9 .link-as-button .content a,.button-style-9.block-block .button,.button-style-9.block-block.link-as-button .content a {
+/*	background-color:#444;*/
+	border-color:#555;
+	background-image:url('shades/ltop50w.png');/*change to dtop50w.png if your background color is light */
+/*	color:#fff;*/
+}
+
+
+.button-style-9 .button:hover,.button-style-9 .button:focus, .button-style-9 .btn:hover,.button-style-9 .btn:focus,.button-style-9.block .btn:hover,.button-style-9.block .btn:focus,.button-style-9 .link-as-button .content a:hover,.button-style-9 .link-as-button .content a:focus,.button-style-9.block-block .button:hover,.button-style-9.block-block.link-as-button .content a:focus,.button-style-9.block-block .button:focus,.button-style-9.block-block.link-as-button .content a:hover {
+/*	background-color:#444;*/
+	border-color:#111;
+	background-image:url('shades/lbottom50w.png');/*change to dbottom50w.png if your background color is light */
+/*	color:#fff;*/
+
+}
+
+/* button style 10 */
+
+.button-style-10 .button,.button-style-10 .btn,.button-style-10.block .btn,.button-style-10 .link-as-button .content a,.button-style-10.block-block .button,.button-style-10.block-block.link-as-button .content a {
+/*	background-color:#444;*/
+	border-color:#111;
+	background-image:url('shades/ltop30w.png');/*change to dtop30w.png if your background color is light */
+/*	color:#fff;*/
+}
+
+
+.button-style-10 .button:hover,.button-style-10 .button:focus, .button-style-10 .btn:hover,.button-style-10 .btn:focus,.button-style-10.block .btn:hover,.button-style-10.block .btn:focus,.button-style-10 .link-as-button .content a:hover,.button-style-10 .link-as-button .content a:focus,.button-style-10.block-block .button:hover,.button-style-10.block-block.link-as-button .content a:focus,.button-style-10.block-block .button:focus,.button-style-10.block-block.link-as-button .content a:hover {
+/*	background-color:#444;*/
+	border-color:#111;
+	background-image:url('shades/ltop50w.png');/*change to dtop50w.png if your background color is light */
+/*	color:#fff;*/
+
+}
+
+/* button style 11 */
+
+.button-style-11 .button,.button-style-11 .btn,.button-style-11.block .btn,.button-style-11 .link-as-button .content a,.button-style-11.block-block .button,.button-style-11.block-block.link-as-button .content a {
+/*	background-color:#444;*/
+	border-color:#111;
+	background-image:url('shades/ltop30w.png');/*change to dtop30w.png if your background color is light */
+/*	color:#fff;*/
+}
+
+
+.button-style-11 .button:hover,.button-style-11 .button:focus, .button-style-11 .btn:hover,.button-style-11 .btn:focus,.button-style-11.block .btn:hover,.button-style-11.block .btn:focus,.button-style-11 .link-as-button .content a:hover,.button-style-11 .link-as-button .content a:focus,.button-style-11.block-block .button:hover,.button-style-11.block-block.link-as-button .content a:focus,.button-style-11.block-block .button:focus,.button-style-11.block-block.link-as-button .content a:hover {
+/*	background-color:#444;*/
+	border-color:#111;
+	background-image:url('shades/ltop50w.png');/*change to dtop50w.png if your background color is light */
+/*	color:#fff;*/
+
+}
+
+/* button style 12 */
+
+.button-style-12 .button,.button-style-12 .btn,.button-style-12.block .btn,.button-style-12 .link-as-button .content a,.button-style-12.block-block .button,.button-style-12.block-block.link-as-button .content a {
+/*	background-color:#444;*/
+	border-color:#111;
+	background-image:url('shades/ltop30w.png');/*change to dtop30w.png if your background color is light */
+/*	color:#fff;*/
+}
+
+
+.button-style-12 .button:hover,.button-style-12 .button:focus, .button-style-12 .btn:hover,.button-style-12 .btn:focus,.button-style-12.block .btn:hover,.button-style-12.block .btn:focus,.button-style-12 .link-as-button .content a:hover,.button-style-12 .link-as-button .content a:focus,.button-style-12.block-block .button:hover,.button-style-12.block-block.link-as-button .content a:focus,.button-style-12.block-block .button:focus,.button-style-12.block-block.link-as-button .content a:hover {
+/*	background-color:#444;*/
+	border-color:#111;
+	background-image:url('shades/ltop50w.png');/*change to dtop50w.png if your background color is light */
+/*	color:#fff;*/
+
+}
+
+
+/* ===================== */
+/* = Mobile Menu       = */
+/* ===================== */
+
+.mobile-wrapper .block:first-child h2 {
+	background-color:#bbb;
+}
+.mobile-wrapper .block {
+	background:#eee;
+}
+
+.mobile-wrapper .content li {
+	background-color:#888;
+}
+.mobile-wrapper .content li a {
+	color:#fff;
+}
+
+.mobile-wrapper .content li:hover,
+.mobile-wrapper .content li:active {
+	background-color:#666;
+}
+
+/* =============================== */
+/* = superfish colors            = */
+/* =============================== */
+
+/* note that all hover and focus are called out
+   the same. If you'd like to have your focus
+   a different color than your hover, you'll need
+   to break them out on separate lines.
+*/
+/******************** superfish defaults *********************/
+
+/*main wrapper color */
+.main-navigation {
+
+}
+
+.main-navigation-wrapper {
+
+}
+
+/*drop down menu color */
+.sf-menu ul {
+	background-color:#fff;
+}
+
+/*link colors */
+.sf-menu a,.sf-menu .dropdown-menu a {
+	color:#000;
+}
+/*color of the caret that goes with drop down links If you want them different */
+.sf-arrows .sf-with-ul:after {
+	color:inherit;
+}
+
+.sf-arrows ul .sf-with-ul:after {
+	color:inherit;
+}
+
+.sf-menu a:hover,.sf-menu .dropdown-menu > li a:hover,
+.sf-menu a:focus,.sf-menu .dropdown-menu > li a:focus {
+	background-image:url('shades/1px-darken-20.png');/*change to 1px-lighten-20.png if your background color is dark */
+	color:#000;
+}
+
+.sf-menu > .active > a,.dropdown-menu > .active > a,
+.sf-menu > .active > a:hover, .dropdown-menu > .active > a:hover,
+.sf-menu > .active > a:focus, .dropdown-menu > .active > a:focus {
+	background-image:url('shades/1px-darken-20.png');/*change to 1px-lighten-20.png if your background color is dark */
+	color:#000;
+}
+
+
+/*all preset styles defaults  for styles 1-12 *
+  You should be able to change most colors in this all 
+  preset styles section and it will affect whichever preset style you select. */
+
+/*main wrapper color */
+.superfish-style-1 .main-navigation,.superfish-style-2 .main-navigation-wrapper,.superfish-style-3 .main-navigation,.superfish-style-4 .main-navigation,.superfish-style-5 .main-navigation-wrapper,.superfish-style-6 .main-navigation,
+.superfish-style-7 .main-navigation,.superfish-style-8 .main-navigation-wrapper,.superfish-style-9 .main-navigation,.superfish-style-10 .main-navigation,.superfish-style-11 .main-navigation-wrapper,.superfish-style-12 .main-navigation {
+	background-color:#444;
+}
+
+/*drop down menu color */
+.superfish-style-1 .sf-menu ul,.superfish-style-2 .sf-menu ul,.superfish-style-3 .sf-menu ul,.superfish-style-4 .sf-menu ul,.superfish-style-5 .sf-menu ul,.superfish-style-6 .sf-menu ul,
+.superfish-style-7 .sf-menu ul,.superfish-style-8 .sf-menu ul,.superfish-style-9 .sf-menu ul,.superfish-style-10 .sf-menu ul,.superfish-style-11 .sf-menu ul,.superfish-style-12 .sf-menu ul {
+	background-color:#444;
+}
+
+/* color of links */
+.superfish-style-1 .sf-menu a,.superfish-style-1 .sf-menu .dropdown-menu a,.superfish-style-2 .sf-menu a,.superfish-style-2 .sf-menu .dropdown-menu a,.superfish-style-3 .sf-menu a,.superfish-style-3 .sf-menu .dropdown-menu a,.superfish-style-4 .sf-menu a,.superfish-style-4 .sf-menu .dropdown-menu a,
+.superfish-style-5 .sf-menu a,.superfish-style-5 .sf-menu .dropdown-menu a,.superfish-style-6 .sf-menu a,.superfish-style-6 .sf-menu .dropdown-menu a,.superfish-style-7 .sf-menu a,.superfish-style-7 .sf-menu .dropdown-menu a,.superfish-style-8 .sf-menu a,.superfish-style-8 .sf-menu .dropdown-menu a,
+.superfish-style-9 .sf-menu a,.superfish-style-9 .sf-menu .dropdown-menu a,.superfish-style-10 .sf-menu a,.superfish-style-10 .sf-menu .dropdown-menu a,.superfish-style-11 .sf-menu a,.superfish-style-11 .sf-menu .dropdown-menu a,.superfish-style-12 .sf-menu a,.superfish-style-12 .sf-menu .dropdown-menu a {
+	color:#fff;
+}
+/*color of the caret that goes with drop down links */
+.superfish-style-1 .sf-arrows .sf-with-ul:after,.superfish-style-2 .sf-arrows .sf-with-ul:after,.superfish-style-3 .sf-arrows .sf-with-ul:after,.superfish-style-4 .sf-arrows .sf-with-ul:after,
+.superfish-style-5 .sf-arrows .sf-with-ul:after,.superfish-style-6 .sf-arrows .sf-with-ul:after,.superfish-style-7 .sf-arrows .sf-with-ul:after,.superfish-style-8 .sf-arrows .sf-with-ul:after,
+.superfish-style-9 .sf-arrows .sf-with-ul:after,.superfish-style-10 .sf-arrows .sf-with-ul:after,.superfish-style-11 .sf-arrows .sf-with-ul:after,.superfish-style-12 .sf-arrows .sf-with-ul:after {
+	color:inherit;
+}
+/*color of the caret that goes with drop down links */
+.superfish-style-1 .sf-arrows ul .sf-with-ul:after,.superfish-style-2 .sf-arrows ul .sf-with-ul:after,.superfish-style-3 .sf-arrows ul .sf-with-ul:after,.superfish-style-4 .sf-arrows ul .sf-with-ul:after,
+.superfish-style-5 .sf-arrows ul .sf-with-ul:after,.superfish-style-6 .sf-arrows ul .sf-with-ul:after,.superfish-style-7 .sf-arrows ul .sf-with-ul:after,.superfish-style-8 .sf-arrows ul .sf-with-ul:after,
+.superfish-style-9 .sf-arrows ul .sf-with-ul:after,.superfish-style-10 .sf-arrows ul .sf-with-ul:after,.superfish-style-11 .sf-arrows ul .sf-with-ul:after,.superfish-style-12 .sf-arrows ul .sf-with-ul:after {
+	color:inherit;
+}
+
+/*link hover and focus */
+.superfish-style-1 .sf-menu a:hover,.superfish-style-1 .sf-menu .dropdown-menu > li a:hover,.superfish-style-2 .sf-menu a:hover,.superfish-style-2 .sf-menu .dropdown-menu > li a:hover,.superfish-style-3 .sf-menu a:hover,.superfish-style-3 .sf-menu .dropdown-menu > li a:hover,.superfish-style-7 .sf-menu a:hover,.superfish-style-7 .sf-menu .dropdown-menu > li a:hover,.superfish-style-8 .sf-menu a:hover,.superfish-style-8 .sf-menu .dropdown-menu > li a:hover,.superfish-style-9 .sf-menu a:hover,.superfish-style-9 .sf-menu .dropdown-menu > li a:hover,.superfish-style-10 .sf-menu a:hover,.superfish-style-10 .sf-menu .dropdown-menu > li a:hover,.superfish-style-11 .sf-menu a:hover,.superfish-style-11 .sf-menu .dropdown-menu > li a:hover,.superfish-style-12 .sf-menu a:hover,.superfish-style-12 .sf-menu .dropdown-menu > li a:hover,
+.superfish-style-1 .sf-menu a:focus,.superfish-style-1 .sf-menu .dropdown-menu > li a:focus,.superfish-style-2 .sf-menu a:focus,.superfish-style-2 .sf-menu .dropdown-menu > li a:focus,.superfish-style-3 .sf-menu a:focus,.superfish-style-3 .sf-menu .dropdown-menu > li a:focus,.superfish-style-7 .sf-menu a:focus,.superfish-style-7 .sf-menu .dropdown-menu > li a:focus,.superfish-style-8 .sf-menu a:focus,.superfish-style-8 .sf-menu .dropdown-menu > li a:focus,.superfish-style-9 .sf-menu a:focus,.superfish-style-9 .sf-menu .dropdown-menu > li a:focus,.superfish-style-10 .sf-menu a:focus,.superfish-style-10 .sf-menu .dropdown-menu > li a:focus,.superfish-style-11 .sf-menu a:focus,.superfish-style-11 .sf-menu .dropdown-menu > li a:focus,.superfish-style-12 .sf-menu a:focus,.superfish-style-12 .sf-menu .dropdown-menu > li a:focus {
+	background-color:inherit;
+	background-image:url('shades/1px-lighten-20.png'); /*change to 1px-darken-20.png if your background color is light */
+	color:#fff;
+}
+
+
+.superfish-style-1 .sf-menu > .active > a,.superfish-style-1 .dropdown-menu > .active > a,.superfish-style-1 .sf-menu > .active > a:hover,.superfish-style-1 .dropdown-menu > .active > a:hover,.superfish-style-1 .sf-menu > .active > a:focus,.superfish-style-1 .dropdown-menu > .active > a:focus,
+.superfish-style-2 .sf-menu > .active > a,.superfish-style-2 .dropdown-menu > .active > a,.superfish-style-2 .sf-menu > .active > a:hover,.superfish-style-2 .dropdown-menu > .active > a:hover,.superfish-style-2 .sf-menu > .active > a:focus,.superfish-style-2 .dropdown-menu > .active > a:focus,
+.superfish-style-3 .sf-menu > .active > a,.superfish-style-3 .dropdown-menu > .active > a,.superfish-style-3 .sf-menu > .active > a:hover,.superfish-style-3 .dropdown-menu > .active > a:hover,.superfish-style-3 .sf-menu > .active > a:focus,.superfish-style-3 .dropdown-menu > .active > a:focus,
+.superfish-style-7 .sf-menu > .active > a,.superfish-style-7 .dropdown-menu > .active > a,.superfish-style-7 .sf-menu > .active > a:hover,.superfish-style-7 .dropdown-menu > .active > a:hover,.superfish-style-7 .sf-menu > .active > a:focus,.superfish-style-7 .dropdown-menu > .active > a:focus,
+.superfish-style-8 .sf-menu > .active > a,.superfish-style-8 .dropdown-menu > .active > a,.superfish-style-8 .sf-menu > .active > a:hover,.superfish-style-8 .dropdown-menu > .active > a:hover,.superfish-style-8 .sf-menu > .active > a:focus,.superfish-style-8 .dropdown-menu > .active > a:focus,
+.superfish-style-9 .sf-menu > .active > a,.superfish-style-9 .dropdown-menu > .active > a,.superfish-style-9 .sf-menu > .active > a:hover,.superfish-style-9 .dropdown-menu > .active > a:hover,.superfish-style-9 .sf-menu > .active > a:focus,.superfish-style-9 .dropdown-menu > .active > a:focus,
+.superfish-style-10 .sf-menu > .active > a,.superfish-style-10 .dropdown-menu > .active > a,.superfish-style-10 .sf-menu > .active > a:hover,.superfish-style-10 .dropdown-menu > .active > a:hover,.superfish-style-10 .sf-menu > .active > a:focus,.superfish-style-10 .dropdown-menu > .active > a:focus,
+.superfish-style-11 .sf-menu > .active > a,.superfish-style-11 .dropdown-menu > .active > a,.superfish-style-11 .sf-menu > .active > a:hover,.superfish-style-11 .dropdown-menu > .active > a:hover,.superfish-style-11 .sf-menu > .active > a:focus,.superfish-style-11 .dropdown-menu > .active > a:focus,
+.superfish-style-12 .sf-menu > .active > a,.superfish-style-12 .dropdown-menu > .active > a,.superfish-style-12 .sf-menu > .active > a:hover,.superfish-style-12 .dropdown-menu > .active > a:hover,.superfish-style-12 .sf-menu > .active > a:focus,.superfish-style-12 .dropdown-menu > .active > a:focus {
+	background-color:inherit;
+	background-image:url('shades/1px-lighten-20.png');/*change to 1px-darken-20.png if your background color is light */
+	color:#fff;
+}
+
+
+/********** backgrounds for styles 4, 5 and 6 ***************/
+
+/*link hover and focus */
+.superfish-style-4 .sf-menu a:hover,.superfish-style-4 .sf-menu .dropdown-menu > li a:hover,.superfish-style-5 .sf-menu a:hover,.superfish-style-5 .sf-menu .dropdown-menu > li a:hover,.superfish-style-6 .sf-menu a:hover,.superfish-style-6 .sf-menu .dropdown-menu > li a:hover,
+.superfish-style-4 .sf-menu a:focus,.superfish-style-4 .sf-menu .dropdown-menu > li a:focus,.superfish-style-5 .sf-menu a:focus,.superfish-style-5 .sf-menu .dropdown-menu > li a:focus,.superfish-style-6 .sf-menu a:focus,.superfish-style-6 .sf-menu .dropdown-menu > li a:focus {
+	background-color:#ededed;
+	background-image:none;
+	color:#000;
+}
+
+.superfish-style-4 .sf-menu > .active > a,.superfish-style-4 .dropdown-menu > .active > a,.superfish-style-4 .sf-menu > .active > a:hover, .superfish-style-4 .dropdown-menu > .active > a:hover,.superfish-style-4 .sf-menu > .active > a:focus, .superfish-style-4 .dropdown-menu > .active > a:focus,
+.superfish-style-5 .sf-menu > .active > a,.superfish-style-5 .dropdown-menu > .active > a,.superfish-style-5 .sf-menu > .active > a:hover, .superfish-style-5 .dropdown-menu > .active > a:hover,.superfish-style-5 .sf-menu > .active > a:focus, .superfish-style-5 .dropdown-menu > .active > a:focus,
+.superfish-style-6 .sf-menu > .active > a,.superfish-style-6 .dropdown-menu > .active > a,.superfish-style-6 .sf-menu > .active > a:hover, .superfish-style-6 .dropdown-menu > .active > a:hover,.superfish-style-6 .sf-menu > .active > a:focus, .superfish-style-6 .dropdown-menu > .active > a:focus {
+		background-color:inherit;
+		background-image:none;
+		color:#fff;
+	}
+	
+/*************background image for gradients on styles 7, 8 & 9 ***********/	
+	
+.superfish-style-7 .main-navigation,.superfish-style-8 .main-navigation-wrapper,.superfish-style-9 .main-navigation {
+	background-image:url('shades/ltop50w.png');/*change to dtop50.png if your background color is light */
+}
+
+
+/************superfish style 13 & 14 *****************/
+
+.superfish-style-13 .main-navigation,.superfish-style-14 .main-navigation-wrapper {
+	border-bottom-color:#bbb;
+}
+
+/*drop down menu color */
+.superfish-style-13 .sf-menu ul,.superfish-style-14 .sf-menu ul {
+
+}
+
+
+.superfish-style-13 .sf-menu > li > a,.superfish-style-14 .sf-menu > li > a {
+		border-color:#eee;
+		
+}
+
+.superfish-style-13 .sf-menu > li.active > a,.superfish-style-14 .sf-menu > li.active > a {
+	border-color:#bbb #bbb #fff;
+}
+
+.superfish-style-13 .sf-menu a:hover,.superfish-style-13 .sf-menu .dropdown-menu > li a:hover,.superfish-style-14 .sf-menu a:hover,.superfish-style-14 .sf-menu .dropdown-menu > li a:hover,
+.superfish-style-13 .sf-menu a:focus,.superfish-style-13 .sf-menu .dropdown-menu > li a:focus,.superfish-style-14 .sf-menu a:focus,.superfish-style-14 .sf-menu .dropdown-menu > li a:focus {
+	background-color:inherit;
+	background-image:url('shades/1px-darken-10.png');/*change to 1px-lighten-10.png if your background color is dark */
+	color:#000;
+}
+
+
+.superfish-style-13 .sf-menu > .active > a,.superfish-style-13 .dropdown-menu > .active > a,.superfish-style-13 .sf-menu > .active > a:hover, .superfish-style-13 .dropdown-menu > .active > a:hover,.superfish-style-13 .sf-menu > .active > a:focus, .superfish-style-13 .dropdown-menu > .active > a:focus,.superfish-style-14 .sf-menu > .active > a,
+.superfish-style-14 .dropdown-menu > .active > a,.superfish-style-14 .sf-menu > .active > a:hover, .superfish-style-14 .dropdown-menu > .active > a:hover,.superfish-style-14 .sf-menu > .active > a:focus, .superfish-style-14 .dropdown-menu > .active > a:focus {
+	background-color:inherit;	
+	background-image:url('shades/1px-darken-10.png');/*change to 1px-lighten-10.png if your background color is dark */
+	color:#000;
+}
+
+/* superfish styles 15 & 16 */
+
+
+
+/*drop down menu color */
+.superfish-style-15 .sf-menu ul,.superfish-style-16 .sf-menu ul {
+	border-color:#999;
+	background-color:#ccc;
+}
+
+
+.superfish-style-15 .sf-menu > li > a,.superfish-style-16 .sf-menu > li > a {
+		border-color:#999;
+		background-color:#ccc;
+		
+}
+
+.superfish-style-15 .sf-menu > li.active > a,.superfish-style-16 .sf-menu > li.active > a {
+	
+}
+
+.superfish-style-15 .sf-menu a:hover,.superfish-style-15 .sf-menu .dropdown-menu > li a:hover,.superfish-style-16 .sf-menu a:hover,.superfish-style-16 .sf-menu .dropdown-menu > li a:hover,
+.superfish-style-15 .sf-menu a:focus,.superfish-style-15 .sf-menu .dropdown-menu > li a:focus,.superfish-style-16 .sf-menu a:focus,.superfish-style-16 .sf-menu .dropdown-menu > li a:focus {
+	background-color:#ccc;
+	background-image:url('shades/1px-darken-20.png');/*change to 1px-lighten-20.png if your background color is dark */
+	color:#000;
+}
+
+
+.superfish-style-15 .sf-menu > .active > a,.superfish-style-15 .dropdown-menu > .active > a,.superfish-style-15 .sf-menu > .active > a:hover, .superfish-style-15 .dropdown-menu > .active > a:hover,.superfish-style-15 .sf-menu > .active > a:focus, .superfish-style-15 .dropdown-menu > .active > a:focus,
+.superfish-style-16 .sf-menu > .active > a,.superfish-style-16 .dropdown-menu > .active > a,.superfish-style-16 .sf-menu > .active > a:hover, .superfish-style-16 .dropdown-menu > .active > a:hover,.superfish-style-16 .sf-menu > .active > a:focus, .superfish-style-16 .dropdown-menu > .active > a:focus {
+	background-color:#ccc;	
+	background-image:url('shades/1px-darken-20.png');/*change to 1px-lighten-20.png if your background color is dark */
+	color:#000;
+}
+
+
+
+
+/* ===================== */
+/* = Skinr Colors      = */
+/* ===================== */
+
+/****** block styles *******/
+
+/* block style 1 */
+.block-style-1 .sidebar .block,
+.bento .region .block-style-1.block {
+	background-color:#ccc;
+	color:#000;
+}
+
+/* block style 2 */
+.block-style-2 .sidebar .block,
+.bento .region .block-style-2.block {
+	background-color:#fff;
+	color:#000;
+}
+
+.block-style-2 .sidebar .block .block-inner,
+.bento .region .block-style-2.block .block-inner {
+	border-color:#000;
+}
+
+/* block style 3 */
+.block-style-3 .sidebar .block,
+.bento .region .block-style-3.block {
+	background-color:#e2e2e2;
+	background-image:url('shades/dtop30m.png'); /* change d top*** to ltop*** if you have a dark background. change the ***30m to ***30s if you have shorter blocks */
+	color:#000;
+}
+
+/* block style 4 */
+.block-style-4 .sidebar .block,
+.bento .region .block-style-4.block {
+	background-color:#e2e2e2;
+	background-image:url('shades/dbottom30m.png'); /* change dbottom*** to lbottom*** if you have a dark background. change the ***30m to ***30s if you have shorter blocks */
+	color:#000;
+}
+
+/* block style 5 */
+.block-style-5 .sidebar .block,
+.bento .region .block-style-5.block {
+	background-color:#e2e2e2;
+	color:#000;
+	-webkit-box-shadow: inset 0px -4px 6px -3px #000; /* change this to #fff if your background is too dark */
+	        box-shadow: inset 0px -4px 6px -3px #000; /* change this to #fff if your background is too dark */
+}
+
+
+
+/****** list styles *******/
+/*list style 1*/
+.list-style-1.block .content ul li {background-color:#444;}
+.list-style-1.block .content ul li a{color:#fff;}
+/* more link style 1 */
+.list-style-1.block .more-link a{background-color:#555;color:#fff;}
+.list-style-1.block .more-link a:hover,
+.list-style-1.block .more-link a:active{background-color:#333;}
+
+/*list style 2*/
+.list-style-2.block .content ul li {background-color:#444;border-color:#999;}
+.list-style-2.block .content ul li:hover {border-color:#bbb;}
+.list-style-2.block .content ul li a {color:#fff;}
+.list-style-2.block .more-link a {color:#000;}
+
+/*list style 3*/
+.list-style-3.block .content ul li,.list-style-3 .content .views-row{border-color:#A3907F;}
+.list-style-3.block .more-link a {}
+
+
+/*list style 4*/
+.list-style-4.block .content ul li{border-color:#555;}
+.list-style-4.block .content ul li:hover{border-color:#000;}
+
+/*list style 5*/
+.list-style-5.block .content ul li{border-color:1px solid #666;}
+.list-style-5.block .content ul li:hover{background-image:url('shades/1px-darken-10.png');} /* change image to 1px-darken-10.png if the background is dark */
+
+/*list style 6*/
+
+
+
+

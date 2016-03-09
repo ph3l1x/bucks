@@ -1,0 +1,89 @@
+name = Bento
+description = Bento is the <a href="http://www.tributemedia.com" target="_blank">Tribute Media</a> base theme for building awesomeness.
+version = 1.0
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[header]         = 'Header'
+regions[mobile] 		= 'Mobile (visible on phones only)'
+regions[preface] 		= 'Preface'
+regions[sidebar_first]  = 'Sidebar First'
+regions[content_top]    = 'Content Top'
+regions[content]        = 'Content'
+regions[content_bottom] = 'Content Bottom'
+regions[sidebar_second] = 'Sidebar Last'
+regions[postscript] 	= 'Postscript'
+regions[footer]         = 'Footer'
+regions[information]    = 'Information - Below Copyright'
+regions[drawer] 		= 'Slideout Drawer'
+
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/drawer.css
+stylesheets[all][] = css/typography.css
+stylesheets[all][] = css/shades.css
+stylesheets[all][] = css/superfish.css
+stylesheets[all][] = css/forms.css
+stylesheets[all][] = css/buttons.css
+stylesheets[all][] = css/social.css
+stylesheets[all][] = css/secondary.css
+stylesheets[all][] = css/forms.css
+stylesheets[all][] = css/content.css
+stylesheets[all][] = css/overrides.css
+stylesheets[all][] = css/color.css
+stylesheets[all][] = css/skinr.css
+stylesheets[all][] = css/mobile.css
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+scripts[] = js/hoverIntent.js
+scripts[] = js/superfish.js
+scripts[] = js/bento.js
+scripts[] = js/bentosuperfish.js
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; Skinr
+;;;;;;;;;;;;;;;;;;;;;;
+
+
+skinr[api] = 2
+skinr[directory] = skins
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Theme Settings Overrides
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Breadcrumbs
+; --------------
+settings[bootstrap_breadcrumb] = 0
+
+
+; Region Wells
+; --------------
+settings[bootstrap_region_well-sidebar_first] = ''
+
+
+; Navbar
+; --------------
+settings[bootstrap_bento_bento] = ''
+
+
+
+; For information on overriding Bootstrap, please read the Drupal
+; Bootstrap sub-theme "how-to" documentation:
+; https://drupal.org/node/1978010
+
