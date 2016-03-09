@@ -1,2 +1,1 @@
-# mydea
 # bucksx4x
