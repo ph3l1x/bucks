@@ -68,10 +68,10 @@
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-    width:100%;
-	background: #356fa2;
+	border: 1px solid #999999/*{borderColorHover}*/;
+	background: #dadada/*{bgColorHover}*/ url(images/ui-bg_glass_75_dadada_1x400.png)/*{bgImgUrlHover}*/ 50%/*{bgHoverXPos}*/ 50%/*{bgHoverYPos}*/ repeat-x/*{bgHoverRepeat}*/;
 	font-weight: normal/*{fwDefault}*/;
-	color: #ffffff/*{fcHover}*/;
+	color: #212121/*{fcHover}*/;
 }
 .ui-state-hover a,
 .ui-state-hover a:hover,
@@ -370,7 +370,6 @@
 .ui-corner-left,
 .ui-corner-tl {
 	border-top-left-radius: 4px/*{cornerRadius}*/;
-    padding:5px;
 }
 .ui-corner-all,
 .ui-corner-top,
