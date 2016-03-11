@@ -1,0 +1,5 @@
+name = Bucks Custom Commerce Import Script
+description = Custom import script for updating the Drupal Commerce website products.
+core = 7.x
+package = Bucks Import Script
+

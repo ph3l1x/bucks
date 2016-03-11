@@ -1,5 +1,5 @@
 {
-  "name": "mydea",
+  "name": "bucks",
   "version": "1.0.0",
   "description": "CONTENTS OF THIS FILE ---------------------",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ph3l1x/mydea.git"
+    "url": "git://github.com/ph3l1x/bucks.git"
   },
   "author": "",
   "license": "ISC",
