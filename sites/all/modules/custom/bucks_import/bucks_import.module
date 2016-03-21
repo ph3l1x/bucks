@@ -35,12 +35,13 @@ function bucks_import_form($node, &$form_state) {
   return $form;
 }
 
+
 function bucks_import_form_submit($form, &$form_state) {
 
   global $user;
-  drupal_set_message("FORM SUBMITTED");
   require_once dirname(__FILE__) . '/classes/PHPExcel/IOFactory.php';
 
+  /* Upload file and move to correct folder */
   $file = file_load($form_state['values']['file']);
   $file->status = FILE_STATUS_PERMANENT;
   $inputFileName = drupal_realpath($file->uri);
@@ -58,140 +59,302 @@ function bucks_import_form_submit($form, &$form_state) {
   $highestRow = $sheet->getHighestRow();
   $highestColumn = $sheet->getHighestColumn();
 
-  /* DELETE ALL PRODUCTS.... Temporary */
+  /* DELETE ALL PRODUCTS.... */
   $product_ids = db_select('commerce_product', 'p')->fields('p', array('product_id'))->execute()->fetchCol();
   commerce_product_delete_multiple($product_ids);
-  /*                                   */
 
-  for ($row = 1; $row <= $highestRow; $row++){
+  for ($row = 1; $row <= $highestRow; $row++) {
     $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
-    if ($row == 1) continue;
-    /* Create Commerce Product */
-    $product = commerce_product_new('product');
-    $product->language = LANGUAGE_NONE;
-    if($rowData[0][1])  { $product->sku = $rowData[0][1];                                                                               }
-    if($user->uid)      { $product->uid = $user->uid;                                                                                   }
-    if($rowData[0][3])  { $product->title = $rowData[0][3];                                                                             }
-    if($rowData[0][17]) { $product->commerce_price['und'][0] = array('amount' => $rowData[0][17] * 100, 'currency_code' => "USD");      }
-    if($rowData[0][14]) { $product->field_list_price['und'][0] = array('amount' => $rowData[0][14] * 100, 'currency_code' => "USD");    }
-    if($rowData[0][18]) { $product->field_sale_price['und'][0] = array('amount' => $rowData[0][18] * 100, 'currency_code' => "USD");    }
-    if($rowData[0][16]) { $product->field_map_price['und'][0] = array('amount' => $rowData[0][16] * 100, 'currency_code' => "USD");     }
-    if($rowData[0][17]) { $product->field_retail_price['und'][0] = array('amount' => $rowData[0][17] * 100, 'currency_code' => "USD");  }
-    if($rowData[0][2])  { $product->field_upc['und'][0]['value'] = $rowData[0][2];                                                      }
-    if($rowData[0][0])  { $product->field_brand['und'][0]['tid'] = taxonomy_create($rowData[0][0], 11);                                 }
-    if($rowData[0][27]) { $product->field_item_condition['und'][0]['tid'] = taxonomy_create($rowData[0][27], 2);                        }
-    if($rowData[0][28]) { $product->field_quantity['und'][0]['value'] = $rowData[0][28];                                                }
-    if($rowData[0][4])  { $product->field_long_description['und'][0]['value'] = $rowData[0][4];                                         }
-    if($rowData[0][13]) { $product->field_red_notes['und'][0]['value'] = $rowData[0][13];                                               }
-    if($rowData[0][5])  { $product->field_bullet_points['und'][0]['value'] = $rowData[0][5];                                            }
-    if($rowData[0][6])  { $product->field_bullet_points['und'][1]['value'] = $rowData[0][6];                                            }
-    if($rowData[0][7])  { $product->field_bullet_points['und'][2]['value'] = $rowData[0][7];                                            }
-    if($rowData[0][8])  { $product->field_bullet_points['und'][3]['value'] = $rowData[0][8];                                            }
-    if($rowData[0][9])  { $product->field_bullet_points['und'][4]['value'] = $rowData[0][9];                                            }
-    if($rowData[0][10]) { $product->field_bullet_points['und'][5]['value'] = $rowData[0][10];                                           }
-    if($rowData[0][11]) { $product->field_bullet_points['und'][6]['value'] = $rowData[0][11];                                           }
-    if($rowData[0][12]) { $product->field_bullet_points['und'][7]['value'] = $rowData[0][12];                                           }
-    if($rowData[0][41]) { $product->field_bed_length['und'][0]['value'] = $rowData[0][41];                                              }
-    if($rowData[0][21]) { $product->field_length['und'][0]['value'] = $rowData[0][21];                                                  }
-    if($rowData[0][22]) { $product->field_height['und'][0]['value'] = $rowData[0][22];                                                  }
-    if($rowData[0][23]) { $product->field_width['und'][0]['value'] = $rowData[0][23];                                                   }
-    if($rowData[0][24]) { $product->field_weight['und'][0]['value'] = $rowData[0][24];                                                  }
-    /* Multi Taxonomy Fields */
-    if($rowData[0][36]) {
-      $year_field = explode('|', $rowData[0][36]);
-      if (is_array($year_field)) {
-        foreach ($year_field as $key => $value) {
-          $product->field_year['und'][$key]['tid'] = taxonomy_create($value, 4);
-        }
-      }
+    if ($row == 1) {
+      continue;
     }
-    if($rowData[0][37]) {
-      $make_field = explode('|', $rowData[0][37]);
-      if (is_array($make_field)) {
-        foreach ($make_field as $key => $value) {
-          $product->field_make['und'][$key]['tid'] = taxonomy_create($value, 5);
-        }
-      }
-    }
-    if($rowData[0][38]) {
-      $model_field = explode('|', $rowData[0][38]);
-      if (is_array($model_field)) {
-        foreach ($model_field as $key => $value) {
-          $product->field_model['und'][$key]['tid'] = taxonomy_create($value, 6);
-        }
-      }
-    }
-    if($rowData[0][39]) {
-      $doors_field = explode('|', $rowData[0][39]);
-      if (is_array($doors_field)) {
-        foreach ($doors_field as $key => $value) {
-          $product->field_doors['und'][$key]['tid'] = taxonomy_create($value, 8);
-        }
-      }
-    }
-    if($rowData[0][40]) {
-      $engine_field = explode('|', $rowData[0][40]);
-      if (is_array($engine_field)) {
-        foreach ($engine_field as $key => $value) {
-          $product->field_engine['und'][$key]['tid'] = taxonomy_create($value, 9);
-        }
-      }
-    }
-    /* IMAGES */
-    if($rowData[0][29]) {
-      $main_image = get_image($rowData[0][29]);
-      if ($main_image) {
-        $product->field_main_image['und'][0] = (array) $main_image;
-      }
-    }
-    if($rowData[0][30]) {
-      $image1 = get_image($rowData[0][30]);
-      if ($image1) {
-        $product->field_additional_images['und'][0] = (array) $image1;
-      }
-    }
-    if($rowData[0][31]) {
-      $image2 = get_image($rowData[0][31]);
-      if ($image2) {
-        $product->field_additional_images['und'][1] = (array) $image2;
-      }
-    }
-    if($rowData[0][32]) {
-      $image3 = get_image($rowData[0][32]);
-      if ($image3) {
-        $product->field_additional_images['und'][2] = (array) $image3;
-      }
-    }
-    if($rowData[0][33]) {
-      $image4 = get_image($rowData[0][33]);
-      if ($image4) {
-        $product->field_additional_images['und'][3] = (array) $image4;
-      }
-    }
-    if($rowData[0][34]) {
-      $image5 = get_image($rowData[0][34]);
-      if ($image5) {
-        $product->field_additional_images['und'][4] = (array) $image5;
-      }
-    }
-    if($rowData[0][35]) {
-      $image6 = get_image($rowData[0][35]);
-      if ($image6) {
-        $product->field_additional_images['und'][5] = (array) $image6;
-      }
-    }
-    commerce_product_save($product);
 
-    $node = new stdClass();
-    $node->title = $rowData[0][3];
-    $node->type = 'product_node_page';
-    node_object_prepare($node);
-    $node->uid = $user->uid;
-    $node->field_product_reference['und'][0]['product_id'] = $product->product_id;
-    node_save($node);
+    /* Determine if this product already exists from SKU */
+    if (!product_exist($rowData[0][1])) {
+
+      /* Create Commerce Product */
+      $product = commerce_product_new('product');
+      $product->language = LANGUAGE_NONE;
+
+      if ($rowData[0][1]) {
+        $product->sku = $rowData[0][1];
+      }
+      if ($user->uid) {
+        $product->uid = $user->uid;
+      }
+      if ($rowData[0][3]) {
+        $product->title = $rowData[0][3];
+      }
+      if ($rowData[0][17]) {
+        $product->commerce_price['und'][0] = array(
+          'amount' => $rowData[0][17] * 100,
+          'currency_code' => "USD"
+        );
+      }
+      if ($rowData[0][14]) {
+        $product->field_list_price['und'][0] = array(
+          'amount' => $rowData[0][14] * 100,
+          'currency_code' => "USD"
+        );
+      }
+      if ($rowData[0][18]) {
+        $product->field_sale_price['und'][0] = array(
+          'amount' => $rowData[0][18] * 100,
+          'currency_code' => "USD"
+        );
+      }
+      if ($rowData[0][16]) {
+        $product->field_map_price['und'][0] = array(
+          'amount' => $rowData[0][16] * 100,
+          'currency_code' => "USD"
+        );
+      }
+      if ($rowData[0][17]) {
+        $product->field_retail_price['und'][0] = array(
+          'amount' => $rowData[0][17] * 100,
+          'currency_code' => "USD"
+        );
+      }
+      if ($rowData[0][2]) {
+        $product->field_upc['und'][0]['value'] = $rowData[0][2];
+      }
+      if ($rowData[0][0]) {
+        $product->field_brand['und'][0]['tid'] = taxonomy_create($rowData[0][0], 11, NULL)->tid;
+      }
+      if ($rowData[0][27]) {
+        $product->field_item_condition['und'][0]['tid'] = taxonomy_create($rowData[0][27], 2, NULL)->tid;
+      }
+      if ($rowData[0][28]) {
+        $product->field_quantity['und'][0]['value'] = $rowData[0][28];
+      }
+      if ($rowData[0][4]) {
+        $product->field_long_description['und'][0]['value'] = $rowData[0][4];
+      }
+      if ($rowData[0][13]) {
+        $product->field_red_notes['und'][0]['value'] = $rowData[0][13];
+      }
+      if ($rowData[0][5]) {
+        $product->field_bullet_points['und'][0]['value'] = $rowData[0][5];
+      }
+      if ($rowData[0][6]) {
+        $product->field_bullet_points['und'][1]['value'] = $rowData[0][6];
+      }
+      if ($rowData[0][7]) {
+        $product->field_bullet_points['und'][2]['value'] = $rowData[0][7];
+      }
+      if ($rowData[0][8]) {
+        $product->field_bullet_points['und'][3]['value'] = $rowData[0][8];
+      }
+      if ($rowData[0][9]) {
+        $product->field_bullet_points['und'][4]['value'] = $rowData[0][9];
+      }
+      if ($rowData[0][10]) {
+        $product->field_bullet_points['und'][5]['value'] = $rowData[0][10];
+      }
+      if ($rowData[0][11]) {
+        $product->field_bullet_points['und'][6]['value'] = $rowData[0][11];
+      }
+      if ($rowData[0][12]) {
+        $product->field_bullet_points['und'][7]['value'] = $rowData[0][12];
+      }
+      if ($rowData[0][41]) {
+        $product->field_bed_length['und'][0]['value'] = $rowData[0][41];
+      }
+      if ($rowData[0][21]) {
+        $product->field_length['und'][0]['value'] = $rowData[0][21];
+      }
+      if ($rowData[0][22]) {
+        $product->field_height['und'][0]['value'] = $rowData[0][22];
+      }
+      if ($rowData[0][23]) {
+        $product->field_width['und'][0]['value'] = $rowData[0][23];
+      }
+      if ($rowData[0][24]) {
+        $product->field_weight['und'][0]['value'] = $rowData[0][24];
+      }
+      /* Multi Taxonomy Fields */
+      if ($rowData[0][36]) {
+        $year_field = explode('|', $rowData[0][36]);
+        if (is_array($year_field)) {
+          foreach ($year_field as $key => $value) {
+            $product->field_year['und'][$key]['tid'] = taxonomy_create($value, 4, NULL)->tid;
+          }
+        }
+      }
+      if ($rowData[0][37]) {
+        $make_field = explode('|', $rowData[0][37]);
+        if (is_array($make_field)) {
+          foreach ($make_field as $key => $value) {
+            $product->field_make['und'][$key]['tid'] = taxonomy_create($value, 5, NULL)->tid;
+          }
+        }
+      }
+      if ($rowData[0][38]) {
+        $model_field = explode('|', $rowData[0][38]);
+        if (is_array($model_field)) {
+          foreach ($model_field as $key => $value) {
+            $product->field_model['und'][$key]['tid'] = taxonomy_create($value, 6, NULL)->tid;
+          }
+        }
+      }
+      if ($rowData[0][39]) {
+        $doors_field = explode('|', $rowData[0][39]);
+        if (is_array($doors_field)) {
+          foreach ($doors_field as $key => $value) {
+            $product->field_doors['und'][$key]['tid'] = taxonomy_create($value, 8, NULL)->tid;
+          }
+        }
+      }
+      if ($rowData[0][40]) {
+        $engine_field = explode('|', $rowData[0][40]);
+        if (is_array($engine_field)) {
+          foreach ($engine_field as $key => $value) {
+            $product->field_engine['und'][$key]['tid'] = taxonomy_create($value, 9, NULL)->tid;
+          }
+        }
+      }
+      /* IMAGES */
+      if ($rowData[0][29]) {
+        $main_image = get_image($rowData[0][29]);
+        if ($main_image) {
+          $product->field_main_image['und'][0] = (array) $main_image;
+        }
+      }
+      if ($rowData[0][30]) {
+        $image1 = get_image($rowData[0][30]);
+        if ($image1) {
+          $product->field_additional_images['und'][0] = (array) $image1;
+        }
+      }
+      if ($rowData[0][31]) {
+        $image2 = get_image($rowData[0][31]);
+        if ($image2) {
+          $product->field_additional_images['und'][1] = (array) $image2;
+        }
+      }
+      if ($rowData[0][32]) {
+        $image3 = get_image($rowData[0][32]);
+        if ($image3) {
+          $product->field_additional_images['und'][2] = (array) $image3;
+        }
+      }
+      if ($rowData[0][33]) {
+        $image4 = get_image($rowData[0][33]);
+        if ($image4) {
+          $product->field_additional_images['und'][3] = (array) $image4;
+        }
+      }
+      if ($rowData[0][34]) {
+        $image5 = get_image($rowData[0][34]);
+        if ($image5) {
+          $product->field_additional_images['und'][4] = (array) $image5;
+        }
+      }
+      if ($rowData[0][35]) {
+        $image6 = get_image($rowData[0][35]);
+        if ($image6) {
+          $product->field_additional_images['und'][5] = (array) $image6;
+        }
+      }
+
+      /* Create Categories */
+      if($rowData[0][43]) {
+        $catParent = taxonomy_create($rowData[0][43], '12', NULL);
+        $catTid = $catParent;
+      };
+      if($rowData[0][44]) {
+        $cat1 = taxonomy_create($rowData[0][44], '12', $catParent->tid);
+        $catTid = $cat1;
+      };
+      if($rowData[0][45]) {
+        $cat2 = taxonomy_create($rowData[0][45], '12', $cat1->tid);
+        $catTid = $cat2;
+      };
+      if($rowData[0][46]) {
+        $cat3 = taxonomy_create($rowData[0][46], '12', $cat2->tid);
+        $catTid = $cat3;
+      };
+      if($rowData[0][47]) {
+        $cat4 = taxonomy_create($rowData[0][47], '12', $cat3->tid);
+        $catTid = $cat4;
+      };
+      if($rowData[0][48]) {
+        $cat5 = taxonomy_create($rowData[0][48], '12', $cat4->tid);
+        $catTid = $cat5;
+      }
+      if($rowData[0][49]) {
+        $cat6 = taxonomy_create($rowData[0][49], '12', $cat5->tid);
+        $catTid = $cat6;
+      };
+      if($rowData[0][50]) {
+        $cat7 = taxonomy_create($rowData[0][50], '12', $cat6->tid);
+        $catTid = $cat7;
+      };
+      if($rowData[0][51]) {
+        $cat8 = taxonomy_create($rowData[0][51], '12', $cat7->tid);
+        $catTid = $cat8;
+      };
+      if($rowData[0][52]) {
+        $cat9 = taxonomy_create($rowData[0][52], '12', $cat8->tid);
+        $catTid = $cat9;
+      };
+      if($rowData[0][53]) {
+        $cat10 = taxonomy_create($rowData[0][53], '12', $cat9->tid);
+        $catTid = $cat10;
+      };
+      $product->field_category['und'][0]['tid'] = $catTid->tid;
+
+      commerce_product_save($product);
+
+
+      $node = new stdClass();
+      $node->title = $rowData[0][3];
+      $node->type = 'product_node_page';
+      node_object_prepare($node);
+      $node->uid = $user->uid;
+      $node->field_product_reference['und'][0]['product_id'] = $product->product_id;
+      node_save($node);
+
+      drupal_set_message("Created - SKU: " . $rowData[0][1] . ' - PRODUCT: ' . $rowData[0][3]);
+    } else {
+      drupal_set_message("Product Already Exists - SKU: " . $rowData[0][1] . ' - PRODUCT: ' . $rowData[0][3], 'warning');
+    }
   }
 }
 
+function taxonomy_create($termName, $vid, $parent) {
+
+  $tid = key(taxonomy_get_term_by_name($termName));
+
+  if($tid) {
+    $tax = taxonomy_term_load($tid);
+    $tax->exists = '1';
+    return $tax;
+
+  } else {
+    $term = new stdClass();
+    $term->name = $termName;
+    $term->vid = $vid;
+    if($parent) {
+      $term->parent = $parent;
+    }
+    taxonomy_term_save($term);
+    return $term;
+  }
+}
+function product_exist($sku) {
+    $product = db_select('commerce_product', 'cp')
+      ->fields('cp', array('product_id'))
+      ->condition('sku', $sku)
+      ->execute()
+      ->fetchAssoc();
+
+  if($product['product_id']) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 function get_image($image_url) {
   $image_name = pathinfo($image_url)['basename'];
@@ -203,85 +366,3 @@ function get_image($image_url) {
     return false;
   }
 }
-function taxonomy_create($termName, $vid) {
-
-  $tax = key(taxonomy_get_term_by_name($termName));
-  if($tax) {
-    return $tax;
-  } else {
-    $term = new stdClass();
-    $term->name = $termName;
-    $term->vid = $vid;
-    taxonomy_term_save($term);
-    return $term->tid;
-  }
-}
-
-
-//
-//
-//
-//  foreach($content as $data) {
-//    $title = $data['title'];
-//    $url_path = $data['url_path'];
-//    $published_Date = $data['published_Date'];
-//    $tags = $data['tags'];
-//    $tag = explode(',', $tags);
-//    $image = $data['image'];
-//    $keywords = $data['keywords'];
-//    $description = $data['description'];
-//    $content = $data['content'];
-//
-//    $createdDate = strtotime($published_Date);
-//    $createdDate1 = date("Y-m-d", $createdDate);
-//
-//    //Get Image
-//    $imageURL = $serverURL.$image;
-//    $filename = basename($imageURL);
-//    $image = file_get_contents($imageURL);
-//    $file = file_save_data($image, 'public://'.$filename, FILE_EXISTS_RENAME);
-//
-//    //Create the Node
-//    $node = new stdClass();
-//    $node->title = $title;
-//    $node->type = "article";
-//    node_object_prepare($node);
-//    $node->language = LANGUAGE_NONE;
-//    $node->uid = '13';
-//    $node->status = 1;
-//    $node->promote = 0;
-//    $node->comment = 0;
-//
-//    $node->created = $createdDate;
-//
-//    $vid = taxonomy_vocabulary_machine_name_load("Tags");
-//    foreach($tag as $item) {
-//        $tax = taxonomy_get_term_by_name($item, $vocabulary = NULL);
-//        if($tax) {
-//            foreach($tax as $data) {
-//                $node->field_tags[$node->language][]['tid'] = $data->tid;
-//            }
-//        } else {
-//            $term = new stdClass();
-//            $term->name = $item;
-//            $term->vid = $vid->vid;
-//            taxonomy_term_save($term);
-//            $node->field_tags[$node->language][]['tid'] = $term->tid;
-//        }
-//    }
-//    $node->field_meta_description['und'][0]['metatags_quick'] = $description;
-//    $node->field_meta_keywords['und'][0]['metatags_quick'] = $keywords;
-//    $node->field_body['und'][0]['value'] = $content;
-//    $node->field_body['und'][0]['format'] = 'full_html';
-//    $node->body['und'][0]['format'] = 'full_html';
-//    $node->body['und'][0]['safe_value'] = $content;
-//    $node->body['und'][0]['value'] = $content;
-//    $node->field_image['und'][0]['fid'] = $file->fid;
-//
-//    node_save($node);
-//  }
-//  return " ";
-//}
-
-
-?>
