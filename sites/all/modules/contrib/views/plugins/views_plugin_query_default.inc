@@ -1320,9 +1320,9 @@ class views_plugin_query_default extends views_plugin_query {
     list($non_aggregates) = $this->compile_fields($fields_array, $query);
 
     if (count($this->having)) {
-      $this->has_aggregate = TRUE;
+      $this->has_aggregate = TRUE; 
     }
-    elseif (!$this->has_aggregate) {
+    elseif (!$this->has_aggregate && isset($this->view->display_handler)) {
       // Allow 'GROUP BY' even no aggregation function has been set.
       $this->has_aggregate = $this->view->display_handler->get_option('group_by');
     }

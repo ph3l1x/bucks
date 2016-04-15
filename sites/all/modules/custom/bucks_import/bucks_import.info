@@ -3,4 +3,3 @@ description = Custom import script for updating the Drupal Commerce website prod
 core = 7.x
 package = Bucks Import Script
 
-dependencies[] = migrate
