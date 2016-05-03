@@ -85,33 +85,27 @@ function bucks_import_form_submit($form, &$form_state) {
       if ($rowData[0][3]) {
         $product->title = $rowData[0][3];
       }
-      if ($rowData[0][17]) {
+      if ($rowData[0][7]) {
         $product->commerce_price['und'][0] = array(
-          'amount' => $rowData[0][17] * 100,
+          'amount' => $rowData[0][7] * 100,
           'currency_code' => "USD"
         );
       }
-      if ($rowData[0][14]) {
-        $product->field_list_price['und'][0] = array(
-          'amount' => $rowData[0][14] * 100,
-          'currency_code' => "USD"
-        );
-      }
-      if ($rowData[0][18]) {
+      if ($rowData[0][9]) {
         $product->field_sale_price['und'][0] = array(
-          'amount' => $rowData[0][18] * 100,
+          'amount' => $rowData[0][9] * 100,
           'currency_code' => "USD"
         );
       }
-      if ($rowData[0][16]) {
-        $product->field_map_price['und'][0] = array(
-          'amount' => $rowData[0][16] * 100,
+      if ($rowData[0][5]) {
+        $product->field_cost['und'][0] = array(
+          'amount' => $rowData[0][5] * 100,
           'currency_code' => "USD"
         );
       }
-      if ($rowData[0][17]) {
+      if ($rowData[0][8]) {
         $product->field_retail_price['und'][0] = array(
-          'amount' => $rowData[0][17] * 100,
+          'amount' => $rowData[0][8] * 100,
           'currency_code' => "USD"
         );
       }
@@ -121,189 +115,195 @@ function bucks_import_form_submit($form, &$form_state) {
       if ($rowData[0][0]) {
         $product->field_brand['und'][0]['tid'] = taxonomy_create($rowData[0][0], 11, NULL)->tid;
       }
-      if ($rowData[0][27]) {
-        $product->field_item_condition['und'][0]['tid'] = taxonomy_create($rowData[0][27], 2, NULL)->tid;
+      if ($rowData[0][15]) {
+        $product->field_item_condition['und'][0]['tid'] = taxonomy_create($rowData[0][15], 2, NULL)->tid;
       }
-      if ($rowData[0][28]) {
-        $product->field_quantity['und'][0]['value'] = $rowData[0][28];
+      if ($rowData[0][16]) {
+        $product->field_quantity['und'][0]['value'] = $rowData[0][16];
       }
       if ($rowData[0][4]) {
         $product->field_long_description['und'][0]['value'] = $rowData[0][4];
       }
-      if ($rowData[0][13]) {
-        $product->field_red_notes['und'][0]['value'] = $rowData[0][13];
-      }
-      if ($rowData[0][5]) {
-        $product->field_bullet_points['und'][0]['value'] = $rowData[0][5];
-      }
       if ($rowData[0][6]) {
-        $product->field_bullet_points['und'][1]['value'] = $rowData[0][6];
+        $product->field_jober['und'][0]['value'] = $rowData[0][6];
       }
-      if ($rowData[0][7]) {
-        $product->field_bullet_points['und'][2]['value'] = $rowData[0][7];
-      }
-      if ($rowData[0][8]) {
-        $product->field_bullet_points['und'][3]['value'] = $rowData[0][8];
-      }
-      if ($rowData[0][9]) {
-        $product->field_bullet_points['und'][4]['value'] = $rowData[0][9];
-      }
-      if ($rowData[0][10]) {
-        $product->field_bullet_points['und'][5]['value'] = $rowData[0][10];
-      }
-      if ($rowData[0][11]) {
-        $product->field_bullet_points['und'][6]['value'] = $rowData[0][11];
-      }
-      if ($rowData[0][12]) {
-        $product->field_bullet_points['und'][7]['value'] = $rowData[0][12];
-      }
-      if ($rowData[0][41]) {
-        $product->field_bed_length['und'][0]['value'] = $rowData[0][41];
-      }
-      if ($rowData[0][21]) {
-        $product->field_length['und'][0]['value'] = $rowData[0][21];
-      }
-      if ($rowData[0][22]) {
-        $product->field_height['und'][0]['value'] = $rowData[0][22];
-      }
-      if ($rowData[0][23]) {
-        $product->field_width['und'][0]['value'] = $rowData[0][23];
+      if ($rowData[0][30]) {
+        $product->field_bed_length['und'][0]['value'] = $rowData[0][30];
       }
       if ($rowData[0][24]) {
-        $product->field_weight['und'][0]['value'] = $rowData[0][24];
+        $product->field_fitment['und'][0]['value'] = $rowData[0][24];
+      }
+      if ($rowData[0][14]) {
+        $product->field_oversize['und'][0]['value'] = '1';
+      }
+      if ($rowData[0][10]) {
+        $product->field_length['und'][0]['value'] = $rowData[0][10];
+      }
+      if ($rowData[0][11]) {
+        $product->field_height['und'][0]['value'] = $rowData[0][11];
+      }
+      if ($rowData[0][12]) {
+        $product->field_width['und'][0]['value'] = $rowData[0][12];
+      }
+      if ($rowData[0][13]) {
+        $product->field_weight['und'][0]['value'] = $rowData[0][13];
       }
       /* Multi Taxonomy Fields */
-      if ($rowData[0][36]) {
-        $year_field = explode('|', $rowData[0][36]);
-        if (is_array($year_field)) {
-          foreach ($year_field as $key => $value) {
-            $product->field_year['und'][$key]['tid'] = taxonomy_create($value, 4, NULL)->tid;
-          }
-        }
-      }
-      if ($rowData[0][37]) {
-        $make_field = explode('|', $rowData[0][37]);
-        if (is_array($make_field)) {
-          foreach ($make_field as $key => $value) {
-            $product->field_make['und'][$key]['tid'] = taxonomy_create($value, 5, NULL)->tid;
-          }
-        }
-      }
-      if ($rowData[0][38]) {
-        $model_field = explode('|', $rowData[0][38]);
-        if (is_array($model_field)) {
-          foreach ($model_field as $key => $value) {
-            $product->field_model['und'][$key]['tid'] = taxonomy_create($value, 6, NULL)->tid;
-          }
-        }
-      }
-      if ($rowData[0][39]) {
-        $doors_field = explode('|', $rowData[0][39]);
+      if ($rowData[0][28]) {
+        $doors_field = explode('|', $rowData[0][28]);
         if (is_array($doors_field)) {
           foreach ($doors_field as $key => $value) {
             $product->field_doors['und'][$key]['tid'] = taxonomy_create($value, 8, NULL)->tid;
           }
         }
       }
-      if ($rowData[0][40]) {
-        $engine_field = explode('|', $rowData[0][40]);
+      if ($rowData[0][29]) {
+        $engine_field = explode('|', $rowData[0][29]);
         if (is_array($engine_field)) {
           foreach ($engine_field as $key => $value) {
             $product->field_engine['und'][$key]['tid'] = taxonomy_create($value, 9, NULL)->tid;
           }
         }
       }
+//        /* MAKE */
+//      if ($rowData[0][25]) {
+//        $make_field = explode('|', $rowData[0][25]);
+//        if (is_array($make_field)) {
+//          foreach ($make_field as $key => $value) {
+//            $product->field_make['und'][$key]['tid'] = taxonomy_create($value, 5, NULL)->tid;
+//          }
+//        }
+//      }
+//        /* MODEL */
+//      if ($rowData[0][26]) {
+//        $model_field = explode('|', $rowData[0][26]);
+//        if (is_array($model_field)) {
+//          foreach ($model_field as $key => $value) {
+//            $product->field_model['und'][$key]['tid'] = taxonomy_create($value, 6, NULL)->tid;
+//          }
+//        }
+//      }
+//        /* Year */
+//      if ($rowData[0][27]) {
+//        $year_field = explode('|', $rowData[0][27]);
+//        if (is_array($year_field)) {
+//          foreach ($year_field as $key => $value) {
+//            $product->field_year['und'][$key]['tid'] = taxonomy_create($value, 4, NULL)->tid;
+//          }
+//        }
+//      }
+
       /* IMAGES */
-      if ($rowData[0][29]) {
-        $main_image = get_image($rowData[0][29]);
+      if ($rowData[0][17]) {
+        $main_image = get_image($rowData[0][17]);
         if ($main_image) {
           $product->field_main_image['und'][0] = (array) $main_image;
         }
       }
-      if ($rowData[0][30]) {
-        $image1 = get_image($rowData[0][30]);
+      if ($rowData[0][18]) {
+        $image1 = get_image($rowData[0][18]);
         if ($image1) {
           $product->field_additional_images['und'][0] = (array) $image1;
         }
       }
-      if ($rowData[0][31]) {
-        $image2 = get_image($rowData[0][31]);
+      if ($rowData[0][19]) {
+        $image2 = get_image($rowData[0][19]);
         if ($image2) {
           $product->field_additional_images['und'][1] = (array) $image2;
         }
       }
-      if ($rowData[0][32]) {
-        $image3 = get_image($rowData[0][32]);
+      if ($rowData[0][20]) {
+        $image3 = get_image($rowData[0][20]);
         if ($image3) {
           $product->field_additional_images['und'][2] = (array) $image3;
         }
       }
-      if ($rowData[0][33]) {
-        $image4 = get_image($rowData[0][33]);
+      if ($rowData[0][21]) {
+        $image4 = get_image($rowData[0][21]);
         if ($image4) {
           $product->field_additional_images['und'][3] = (array) $image4;
         }
       }
-      if ($rowData[0][34]) {
-        $image5 = get_image($rowData[0][34]);
+      if ($rowData[0][22]) {
+        $image5 = get_image($rowData[0][22]);
         if ($image5) {
           $product->field_additional_images['und'][4] = (array) $image5;
         }
       }
-      if ($rowData[0][35]) {
-        $image6 = get_image($rowData[0][35]);
+      if ($rowData[0][23]) {
+        $image6 = get_image($rowData[0][23]);
         if ($image6) {
           $product->field_additional_images['und'][5] = (array) $image6;
         }
       }
+      /* Make Model Year Fields */
+//      if($rowData[0][25]) {
+//        if(strpos($rowData, '|') !== false) {
+//          $makeItems = explode('|', $rowData[0][25]);
+//        } else {
+//          $mmyParent = taxonomy_create($rowData[0][25], '27', NULL);
+//          $mmyTid = $mmyParent;
+//        }
+//      }
+//      if($rowData[0][26]) {
+//        $modelTid = taxonomy_create($rowData[0][26], '27', $mmyParent->tid);
+//        $mmyTid = $modelTid;
+//      }
+//      if($rowData[0][27]) {
+//        $makeTid = taxonomy_create($rowData[0][27], '27', $modelTid->tid);
+//        $mmyTid = $makeTid;
+//      }
+//      $product->field_make_model_year['und'][0]['tid'] = $mmyTid->tid;
 
       /* Create Categories */
-      if($rowData[0][43]) {
-        $catParent = taxonomy_create($rowData[0][43], '12', NULL);
+      if($rowData[0][31]) {
+        $catParent = taxonomy_create($rowData[0][31], '12', NULL);
         $catTid = $catParent;
       };
-      if($rowData[0][44]) {
-        $cat1 = taxonomy_create($rowData[0][44], '12', $catParent->tid);
+      if($rowData[0][32]) {
+        $cat1 = taxonomy_create($rowData[0][32], '12', $catParent->tid);
         $catTid = $cat1;
       };
-      if($rowData[0][45]) {
-        $cat2 = taxonomy_create($rowData[0][45], '12', $cat1->tid);
+      if($rowData[0][33]) {
+        $cat2 = taxonomy_create($rowData[0][33], '12', $cat1->tid);
         $catTid = $cat2;
       };
-      if($rowData[0][46]) {
-        $cat3 = taxonomy_create($rowData[0][46], '12', $cat2->tid);
+      if($rowData[0][34]) {
+        $cat3 = taxonomy_create($rowData[0][34], '12', $cat2->tid);
         $catTid = $cat3;
       };
-      if($rowData[0][47]) {
-        $cat4 = taxonomy_create($rowData[0][47], '12', $cat3->tid);
+      if($rowData[0][35]) {
+        $cat4 = taxonomy_create($rowData[0][35], '12', $cat3->tid);
         $catTid = $cat4;
       };
-      if($rowData[0][48]) {
-        $cat5 = taxonomy_create($rowData[0][48], '12', $cat4->tid);
+      if($rowData[0][36]) {
+        $cat5 = taxonomy_create($rowData[0][36], '12', $cat4->tid);
         $catTid = $cat5;
       }
-      if($rowData[0][49]) {
-        $cat6 = taxonomy_create($rowData[0][49], '12', $cat5->tid);
+      if($rowData[0][37]) {
+        $cat6 = taxonomy_create($rowData[0][37], '12', $cat5->tid);
         $catTid = $cat6;
       };
-      if($rowData[0][50]) {
-        $cat7 = taxonomy_create($rowData[0][50], '12', $cat6->tid);
+      if($rowData[0][38]) {
+        $cat7 = taxonomy_create($rowData[0][38], '12', $cat6->tid);
         $catTid = $cat7;
       };
-      if($rowData[0][51]) {
-        $cat8 = taxonomy_create($rowData[0][51], '12', $cat7->tid);
+      if($rowData[0][39]) {
+        $cat8 = taxonomy_create($rowData[0][39], '12', $cat7->tid);
         $catTid = $cat8;
       };
-      if($rowData[0][52]) {
-        $cat9 = taxonomy_create($rowData[0][52], '12', $cat8->tid);
+      if($rowData[0][40]) {
+        $cat9 = taxonomy_create($rowData[0][40], '12', $cat8->tid);
         $catTid = $cat9;
       };
-      if($rowData[0][53]) {
-        $cat10 = taxonomy_create($rowData[0][53], '12', $cat9->tid);
+      if($rowData[0][41]) {
+        $cat10 = taxonomy_create($rowData[0][41], '12', $cat9->tid);
         $catTid = $cat10;
       };
       $product->field_category['und'][0]['tid'] = $catTid->tid;
 
+ //     kpr($product);
+ //     die("UGH!");
       commerce_product_save($product);
 
 
