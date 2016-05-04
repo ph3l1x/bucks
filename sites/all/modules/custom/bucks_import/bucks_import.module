@@ -411,40 +411,43 @@ function get_image($image_url) {
 function bucks_import_node_presave($node) {
 
 
-  $product_sku = $node->field_sku['und'][0]['value'];
-  $product = commerce_product_load_by_sku(($product_sku));
+  if($node->type == 'product_node_page') {
+    $product_sku = $node->field_sku['und'][0]['value'];
+    $product = commerce_product_load_by_sku(($product_sku));
 
-  $product->field_length = $node->field_length;
-  $product->title = $node->title;
-  $product->status = $node->status;
-  $product->changed = $node->changed;
-  $product->field_make_model_year = $node->field_make_model_year;
-  $product->field_brand = $node->field_brand;
-  $product->field_upc = $node->field_upc;
-  $product->field_category = $node->field_category;
-  $product->field_item_condition = $node->field_item_condition;
-  $product->field_quantity = $node->field_quantity;
-  $product->field_jober = $node->field_jober;
-  $product->field_fitment = $node->field_fitment;
-  $product->commerce_price = $node->field_price;
-  $product->field_sale_price = $node->field_sale_price;
-  $product->field_retail_price = $node->field_retail_price;
-  $product->field_cost = $node->field_cost;
-  $product->field_long_description = $node->field_long_description;
-  $product->field_main_image = $node->field_main_image;
-  $product->field_additional_images = $node->field_additional_images;
-  $product->field_doors = $node->field_doors;
-  $product->field_engine = $node->field_engine;
-  $product->field_bed_length = $node->field_bed_length;
-  $product->field_height = $node->field_height;
-  $product->field_width = $node->field_width;
-  $product->field_length = $node->field_length;
-  $product->field_weight = $node->field_weight;
-  $product->field_oversize = $node->field_oversize;
-  $product->field_sale_start_date = $node->field_sale_start_date;
+    $product->field_length = $node->field_length;
+    $product->title = $node->title;
+    $product->status = $node->status;
+    $product->changed = $node->changed;
+    $product->field_make_model_year = $node->field_make_model_year;
+    $product->field_brand = $node->field_brand;
+    $product->field_upc = $node->field_upc;
+    $product->field_category = $node->field_category;
+    $product->field_item_condition = $node->field_item_condition;
+    $product->field_quantity = $node->field_quantity;
+    $product->field_jober = $node->field_jober;
+    $product->field_fitment = $node->field_fitment;
+    $product->commerce_price = $node->field_price;
+    $product->field_sale_price = $node->field_sale_price;
+    $product->field_retail_price = $node->field_retail_price;
+    $product->field_cost = $node->field_cost;
+    $product->field_long_description = $node->field_long_description;
+    $product->field_main_image = $node->field_main_image;
+    $product->field_additional_images = $node->field_additional_images;
+    $product->field_doors = $node->field_doors;
+    $product->field_engine = $node->field_engine;
+    $product->field_bed_length = $node->field_bed_length;
+    $product->field_height = $node->field_height;
+    $product->field_width = $node->field_width;
+    $product->field_length = $node->field_length;
+    $product->field_weight = $node->field_weight;
+    $product->field_oversize = $node->field_oversize;
+    $product->field_sale_start_date = $node->field_sale_start_date;
 
-  commerce_product_save($product);
+    commerce_product_save($product);
+  }
 }
+
 
 function bucks_import_form_alter(&$form, &$form_state, $form_id) {
   // Disable SKU field in node and commerce product

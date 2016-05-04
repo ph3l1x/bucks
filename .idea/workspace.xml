@@ -27,13 +27,13 @@
     <favorites_list name="bucks" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3187626">
+    <splitter split-orientation="horizontal" split-proportion="0.55144584">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="page.tpl.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="page.tpl.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/page.tpl.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2610">
+                <state relative-caret-position="254">
                   <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
                   <folding />
                 </state>
@@ -70,7 +70,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="test_html.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="test_html.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test_html.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="429">
@@ -97,8 +97,8 @@
           <file leaf-file-name="bucks_import.module" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="229">
-                  <caret line="431" column="12" selection-start-line="431" selection-start-column="12" selection-end-line="431" selection-end-column="12" />
+                <state relative-caret-position="211">
+                  <caret line="412" column="0" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
                   <folding>
                     <element signature="e#7515#7544#0#PHP" expanded="false" />
                     <element signature="e#8165#8185#0#PHP" expanded="false" />
@@ -484,15 +484,15 @@
       <workItem from="1460924567603" duration="26024000" />
       <workItem from="1461125230833" duration="5647000" />
       <workItem from="1462051693755" duration="14426000" />
-      <workItem from="1462131222796" duration="10059000" />
+      <workItem from="1462131222796" duration="12237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60951000" />
+    <option name="totallyTimeSpent" value="63129000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="61" y="1121" width="1822" height="984" extended-state="0" />
+    <frame x="61" y="1121" width="1822" height="984" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -813,22 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/commerce/modules/cart/theme/commerce-cart-block.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/commerce/modules/cart/includes/commerce_cart.pages.inc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -849,14 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3654">
           <caret line="203" column="22" selection-start-line="203" selection-start-column="22" selection-end-line="203" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/page.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2610">
-          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -887,10 +863,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/commerce/modules/cart/theme/commerce-cart-block.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/page.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="431" column="12" selection-start-line="431" selection-start-column="12" selection-end-line="431" selection-end-column="12" />
+        <state relative-caret-position="211">
+          <caret line="412" column="0" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
           <folding>
             <element signature="e#7515#7544#0#PHP" expanded="false" />
             <element signature="e#8165#8185#0#PHP" expanded="false" />
