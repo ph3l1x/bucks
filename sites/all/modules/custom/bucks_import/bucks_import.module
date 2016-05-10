@@ -10,7 +10,24 @@ function bucks_import_menu() {
         'access arguments' => array('access content'),
         'type' => MENU_NORMAL_ITEM,
     );
+    $items['api/categories'] = array(
+        'page callback' => 'category_api',
+        'access arguments' => array('access content'),
+        'page arguments' => array('category_api'),
+        'delivery callback' => 'drupal_json_output',
+        'type' => MENU_CALLBACK
+    );
     return $items;
+}
+function category_api() {
+    $terms = taxonomy_get_tree('12');
+//    $termData = array();
+//    foreach($terms as $k => $term) {
+//        $termData[$k]['name'] = $term->name;
+//        $termData[$k]['tid'] = $term->tid;
+//    }
+
+    return $terms;
 }
 
 function bucks_import_form($node, &$form_state) {
@@ -450,6 +467,10 @@ function bucks_import_node_presave($node) {
 
 
 function bucks_import_form_alter(&$form, &$form_state, $form_id) {
+  // Change where form posts its data
+  if($form_id == 'views_exposed_form') {
+    $form['#action'] = '/product_search';
+  }
   // Disable SKU field in node and commerce product
   if($form_id == 'product_node_page_node_form') {
     $form['field_sku']['#disabled'] = true;

@@ -1,3 +1,19 @@
+/////// FLAG HTML ///////////
+<div class="flagContainer">
+    <div class="flagContainerInner">
+        <div class="flagLeft">LEFT</div>
+        <div class="flagCenterContainer">
+            <div class="flagCenterContainerInner">
+                <div class="flagCenterContent">Some info that we want in banner goes here.</div>
+            </div>
+        </div>
+        <div class="flagRight">RIGHT</div>
+    </div>
+</div>
+///////////////////////////
+
+
+
 <?php
 
 if ($rowData[0][5]) {

@@ -136,7 +136,16 @@
           // Add empty option (if field is not required and not multiple
           // or this is not the first level and not multiple).
           if (!settings.settings.required || (settings.settings.required && parent_value != 0 && !settings.multiple)) {
-            options[options.length] = new Option(Drupal.t('- None -'), 0);
+            // Ryan custom updates
+            if(data.data[0].label == "Acura") {
+              options[options.length] = new Option(Drupal.t('- Make -'), 0);
+            } else if (data.data[0].label == "CL") {
+              options[options.length] = new Option(Drupal.t('- Model -'), 0);
+            } else if (data.data[0].label == "1997") {
+              options[options.length] = new Option(Drupal.t('- Year -'), 0);
+            }
+
+
           }
 
           if (settings.settings.create_new_terms) {

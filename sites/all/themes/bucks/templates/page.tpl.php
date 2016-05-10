@@ -200,7 +200,24 @@
 					</div>  <!-- #preface-container -->
 				</section>
 				<?php endif; ?>
-				
+
+
+				<section id="contentArea" class="container"> <!-- begin content column-->
+
+					<?php if (!empty($page['content_top'])): ?>
+						<section id="content-top-wrapper" class="content-top-wrapper wrapper <?php print $bento_ct_dark; print ' '; print $bento_bpct; ?>">
+							<div class="content-top-wrapper-inner">
+								<div id="content-top" class="region <?php print $bento_brct;?> clearfix">
+									<div class="inner">
+										<?php print render($page['content_top']); ?>
+									</div><!-- .inner -->
+								</div>  <!-- #content-top -->
+							</div> <!-- .content-top-wrapper-inner -->
+						</section>
+					<?php endif; ?>
+
+				</section>
+
 				<div id="content-wrapper" class="content-wrapper wrapper">
 					<div class="row">
 						<div id="content-container" class="container <?php print $bento_bcc;?>">	
@@ -213,20 +230,10 @@
 							</aside>  <!-- /#sidebar-first -->
 							<?php endif; ?>
 
-							<section id="contentArea"<?php print $content_column_class; ?>> <!-- begin content column-->
+							<section id="contentAreaMain"<?php print $content_column_class; ?>> <!-- begin content column-->
 
 
-								<?php if (!empty($page['content_top'])): ?>
-								<section id="content-top-wrapper" class="content-top-wrapper wrapper <?php print $bento_ct_dark; print ' '; print $bento_bpct; ?>">
-									<div class="content-top-wrapper-inner">
-										<div id="content-top" class="region <?php print $bento_brct;?> clearfix">
-											<div class="inner">
-												<?php print render($page['content_top']); ?>
-											</div><!-- .inner -->
-										</div>  <!-- #content-top -->
-									</div> <!-- .content-top-wrapper-inner -->
-								</section>
-								<?php endif; ?>    
+
 
 
 								<?php if (!empty($page['highlighted'])): ?>
@@ -242,7 +249,7 @@
 									</div>  <!-- .highlighted-wrapper-inner -->
 								</section>				
 								<?php endif; ?>
-								
+
 								<div class="content-region <?php print $bento_c_dark; ?>">
 
 									<a id="main-content"></a>
@@ -354,7 +361,7 @@
 							<div class="inner">
 								<div class="attribution-line-inside brf <?php print $bento_bra;?>">
 									<div class="inner-inner">
-										powered by Tribute Media - a <a href="http://www.tributemedia.com" target="_new" alt>web design &amp; marketing agency</a>.<?php if (!$logged_in) { 
+										powered by .<?php if (!$logged_in) {
 										print $login_link;
 										} ?>
 									</div>
