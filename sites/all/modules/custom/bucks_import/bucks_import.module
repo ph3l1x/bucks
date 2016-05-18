@@ -460,6 +460,7 @@ function bucks_import_node_presave($node) {
     $product->field_weight = $node->field_weight;
     $product->field_oversize = $node->field_oversize;
     $product->field_sale_start_date = $node->field_sale_start_date;
+    $product->field_featured = $node->field_featured;
 
     commerce_product_save($product);
   }

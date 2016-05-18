@@ -321,7 +321,7 @@
 			</section>
 			<?php endif; ?>
 
-			<footer class="footer-outer <?php print $bento_f_dark; print ' '; print $bento_bppost; ?>">
+			<footer class="footer-outer container <?php print $bento_f_dark; print ' '; print $bento_bppost; ?>">
 				<div class="footer-outer-inner">
 				
 					<?php if ($page['footer']): ?>

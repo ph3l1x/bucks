@@ -70,7 +70,7 @@ body {
     > li:after {
       position: absolute;
       content: " ";
-      border-right: 1px solid #b0d23e;
+      border-right: 1px solid #800000;
       height: 34px;
       top: 1px;
       right: 1px;
@@ -78,7 +78,7 @@ body {
     > li:before {
       position: absolute;
       content: " ";
-      border-right: 1px solid #b0d23e;
+      border-right: 1px solid #800000;
       height: 34px;
       top: 1px;
       left: 0px;
@@ -97,6 +97,7 @@ body {
       border-right: 1px solid black;
       font-size: 18px;
       margin-top: -1px;
+      color: #e0cc00;
       padding: 6px 12px;
       transition: color 0.3s ease-in-out 0s;
     }
@@ -106,7 +107,7 @@ body {
     > li > a:hover {
       background-image: none;
       background: #000000;
-      color: #b0d23e;
+      color: #e0cc00;
     }
     ul.sf-depth-2 {
       background-color: black;
@@ -117,7 +118,7 @@ body {
           transition: color 0.3s ease-in-out 0s;
         }
         a:hover {
-          color: #b0d23e;
+          color: #e0cc00;
         }
       }
     }
@@ -129,13 +130,13 @@ nav {
   height: 35px;
   position: relative;
   z-index: 10;
-  background: #b0d23e;
-  border-top: 1px solid #b0d23e;
-  border-bottom: 1px solid #b0d23e;
-  background: -moz-linear-gradient(top, #c5eb46 0%, #b0d23e 50%, #9ebd35 100%);
-  background: -webkit-linear-gradient(top, #c5eb46 0%, #b0d23e 50%, #9ebd35 100%);
-  background: linear-gradient(to bottom, #c5eb46 0%, #b0d23e 50%, #9ebd35 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c5eb46', endColorstr='#9ebd35', GradientType=0);
+  background: #b30000;
+  border-top: 1px solid #800000;
+  border-bottom: 1px solid #800000;
+  background: -moz-linear-gradient(top, #b30000 0%, #980000 50%, #800000 100%);
+  background: -webkit-linear-gradient(top, #b30000 0%, #980000 50%, #800000 100%);
+  background: linear-gradient(to bottom, #b30000 0%, #980000 50%, #800000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b30000', endColorstr='#800000', GradientType=0);
 }
 
 #preface {
@@ -220,7 +221,7 @@ nav {
 
     h2.block-title {
       background: #2B2B2A;
-      color: #AED23D;
+      color: #e0cc00;
       text-align: center;
       margin-bottom: 0;
       font-weight: bold;
@@ -304,8 +305,8 @@ nav {
   }
   .flagRight {
     position: absolute;
-    right: -25px;
-    top: 2px;
+    right: -28px;
+    top: 0;
   }
   .flagCenterContainer {
     padding-top: 2px;
@@ -317,7 +318,7 @@ nav {
     .flagCenterContainerInner {
       background: -moz-linear-gradient(top, rgba(150, 180, 52, 1) 0%, rgba(255, 255, 255, 0) 100%), -moz-linear-gradient(left, rgba(150, 180, 52, 1) 0%, rgba(176, 210, 62, 0.75) 25%, rgba(176, 210, 62, 0) 100%), #b0d23e;
       background: -webkit-linear-gradient(top, rgba(150, 180, 52, 1) 0%, rgba(255, 255, 255, 0) 100%), -webkit-linear-gradient(left, rgba(150, 180, 52, 1) 0%, rgba(176, 210, 62, 0.75) 25%, rgba(176, 210, 62, 0) 100%), #b0d23e;
-      background: linear-gradient(to bottom, rgba(150, 180, 52, 1) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(to right, rgba(150, 180, 52, 1) 0%, rgba(176, 210, 62, 0.75) 25%, rgba(176, 210, 62, 0) 100%), #b0d23e;
+      background: linear-gradient(to bottom, #800000 0, rgba(255, 255, 255, 0) 100%), linear-gradient(to right, #800000, rgba(179, 0, 0, .75) 25%, rgba(176, 210, 62, 0) 100%), #b30000;
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#96b434', endColorstr='#00ffffff', GradientType=0), progid:DXImageTransform.Microsoft.gradient(startColorstr='#96b434', endColorstr='#00b0d23e', GradientType=1), #b0d23e;
       height: 84px;
     }
@@ -329,6 +330,7 @@ nav {
 }
 
 #block-views-brand-cycle-block {
+  display: none;
   clear: both;
   .view-brand-cycle {
     text-align: center;
@@ -367,10 +369,10 @@ aside.sidebar-first {
     text-shadow: 0 1px 5px #000;
     border-bottom: 1px solid #000;
     margin-bottom: 0;
-    background: -moz-linear-gradient(top, #c5eb46 0%, #b0d23e 50%, #9ebd35 100%);
-    background: -webkit-linear-gradient(top, #c5eb46 0%, #b0d23e 50%, #9ebd35 100%);
-    background: linear-gradient(to bottom, #c5eb46 0%, #b0d23e 50%, #9ebd35 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c5eb46', endColorstr='#9ebd35', GradientType=0);
+    background: -moz-linear-gradient(top, #b30000 0%, #9a0000 50%, #800000 100%);
+    background: -webkit-linear-gradient(top, #b30000 0%, #9a0000 50%, #800000 100%);
+    background: linear-gradient(to bottom, #b30000 0%, #9a0000 50%, #800000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b30000', endColorstr='#800000', GradientType=0);
   }
   ul {
     padding: 0;
@@ -383,4 +385,62 @@ aside.sidebar-first {
       }
     }
   }
+}
+
+#superfish-1 > li > ul {
+  right: -180px;
+  left: inherit;
+  width: 180px;
+  top: 0;
+}
+
+.front {
+  #main-content {
+    display: none;
+  }
+  h1.page-header {
+    display: none;
+  }
+}
+
+.content-region {
+  background: #ffffff;
+  padding: 20px 10px;
+}
+
+#content-container {
+  padding-right: 0;
+}
+
+#contentAreaMain {
+  padding-right: 0;
+}
+
+#block-views-featured-products-block-block {
+  h2.block-title {
+    font-family: "Yanone Kaffeesatz";
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    box-shadow: 0 2px 5px #000000;
+    padding: 5px 10px;
+    background: -moz-linear-gradient(top, #b30000 0%, #9a0000 50%, #800000 100%);
+    background: -webkit-linear-gradient(top, #b30000 0%, #9a0000 50%, #800000 100%);
+    background: linear-gradient(to bottom, #b30000 0%, #9a0000 50%, #800000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b30000', endColorstr='#800000', GradientType=0);
+  }
+  .views-row {
+    min-height: 220px;
+  }
+}
+
+footer {
+  margin-top: 15px !important;
+  padding: 0;
+  background: -moz-linear-gradient(top, #b30000 0%, #9a0000 50%, #800000 100%);
+  background: -webkit-linear-gradient(top, #b30000 0%, #9a0000 50%, #800000 100%);
+  background: linear-gradient(to bottom, #b30000 0%, #9a0000 50%, #800000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b30000', endColorstr='#800000', GradientType=0);
 }
