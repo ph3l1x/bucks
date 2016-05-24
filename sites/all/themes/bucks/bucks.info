@@ -44,6 +44,7 @@ stylesheets[all][] = css/commerce.css
 stylesheets[all][] = css/misc.css
 stylesheets[all][] = css/feature-colors.css
 
+stylesheets[all][] = css/font-awesome.min.css
 stylesheets[all][] = css/style.min.css
 
 ;;;;;;;;;;;;;;;;;;;;;

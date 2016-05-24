@@ -344,11 +344,7 @@
 							<div id="footer-information-container" class="container <?php print $bento_bcf;?>">
 								<div id="footer-information" class="region <?php print $bento_brf;?> clearfix" >
 									<div class="inner">
-										<div>&copy;<?php echo date("Y"); print ' '; print $site_name; ?></div>
-
-										<?php if ($page['information']): ?>
-											<?php print render($page['information']); ?>
-										<?php endif; ?>
+										<div>&copy;<?php echo date("Y"); print ' ';?>Bucks 4x4. All Rights Reserved. Powered by <a href="http://www.mindimage.net" target="_BLANK">Mindimage Web Development</a></div>
 									</div> <!-- .inner -->
 								</div> <!-- #footer-information -->
 							</div> <!-- #footer-information-container -->
@@ -356,19 +352,19 @@
 					</div> <!-- .footer-information-wrapper -->
 
 					
-					<div id="attribution-line" class="attribution-wrapper wrapper">
-						<div id="attribution-container" class="container <?php print $bento_bcf;?>">
-							<div class="inner">
-								<div class="attribution-line-inside brf <?php print $bento_bra;?>">
-									<div class="inner-inner">
-										powered by .<?php if (!$logged_in) {
-										print $login_link;
-										} ?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div><!-- #attribution-line -->
+<!--					<div id="attribution-line" class="attribution-wrapper wrapper">-->
+<!--						<div id="attribution-container" class="container --><?php //print $bento_bcf;?><!--">-->
+<!--							<div class="inner">-->
+<!--								<div class="attribution-line-inside brf --><?php //print $bento_bra;?><!--">-->
+<!--									<div class="inner-inner">-->
+<!--										powered by .--><?php //if (!$logged_in) {
+//										print $login_link;
+//										} ?>
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div><!-- #attribution-line -->
 
 				</div> <!-- .footer-outer-inner -->
 			</footer> <!-- .footer-outer -->
