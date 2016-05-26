@@ -29,32 +29,17 @@
                             tid = v.tid;
                             matched = $(".block-superfish a[title='" + returnTermName + "']");
                         matched.attr('href', '/product_search/field_category/' + cleanTermName.toLowerCase() + '-' + tid);
-                      console.log(matched);
-                        // if(matched == returnTermName) {
-                        //     console.log("THIS: ", matched);
-                        //     $(this).attr('href', 'xxxx' + returnTermName);
-                        //     console.log('MATCHED: ' + returnTermName);
-                        // }
-
                     });
-//                     console.log(data);
-//                     $('.block-superfish').find('a').each(function() {
-//                         console.log("XXX");
-//                         var linkTermName = $(this).attr('title');
-//                             //returnTermName = data->name,
-//                            // returnTID = data->tid;
-//
-// console.log(data);
-//                        // console.log(returnTID);
-//                        // console.log(linkTermName);
-
- //                   })
                 },
                 error: function () {
 
                 }
             });
         }
+
+        /* Add Additional Images info on product page */
+        $('.field-name-field-additional-images .field-label').html('<i class="fa fa-search-plus" aria-hidden="true"></i><span> Additional Images</span>');
+        $('.form-type-textfield label').html('Qty:');
     });
 })(jQuery);
 
