@@ -108,3 +108,19 @@
     }
   }
 }
+
+.content-region {
+  float: left;
+}
+
+.view-faucet-search-product-display {
+  .views-row {
+    width: 50%;
+    float: left;
+  }
+}
+.page-product-search {
+  #contentArea {
+    display: none;
+  }
+}

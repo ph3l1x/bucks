@@ -42,7 +42,7 @@ body {
 }
 
 #block-menu-menu-secondary-menu {
-  h2.block-title {
+  h2 {
     display: none;
   }
   ul {
@@ -563,4 +563,63 @@ footer {
 
 .btn-success:hover {
   background: #A00000;
+}
+
+.picture-left {
+  padding: 0 10px 10px 0;
+  float: left;
+}
+
+.picture-right {
+  float: right;
+  padding: 0 0 10px 10px;
+}
+
+.content-container {
+  h2 {
+    text-transform: uppercase;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+  }
+}
+
+.not-front {
+  #contentArea {
+    display: none;
+  }
+}
+
+#node-549 {
+  .meetme {
+    height: 390px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+  .meetme-inner {
+    padding: 10px;
+  }
+  .meet-me-picture {
+
+  }
+  .meet-me-info-bio {
+    position: relative;
+    top: 30px;
+  }
+  .meet-me-info {
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 335px;
+    background: #353533;
+    color: white;
+    padding: 10px;
+    height: 397px;
+  }
+  .meet-me-info.meet-me-up {
+    position: absolute;
+    top: 0;
+    transition: all 1.5s ease;
+  }
 }
