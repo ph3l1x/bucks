@@ -17,7 +17,7 @@
 
         /* Modify Category Menu links to redirect to product_search page */
 
-        var categoryApiUrl = 'http://bucks/api/categories';
+        var categoryApiUrl = 'http://bucks4x4.com/api/categories';
         if ($('#block-superfish-1').length > 0) {
             $.ajax(categoryApiUrl, {
                 success: function (data) {
@@ -56,8 +56,7 @@
             $('.meetme').mouseleave(function () {
                 $(this).find('.meet-me-info').removeClass('meet-me-up');
             });
-            console.log('WIDTH: ', imageWidth);
-            console.log("HEIGHT: ", imageHeight);
+
 
             $(window).resize(function () {
                 var imageWidth = $('.meet-me-picture img').width(),
@@ -73,8 +72,6 @@
                 $('.meetme').mouseleave(function () {
                     $(this).find('.meet-me-info').removeClass('meet-me-up');
                 });
-                console.log('WIDTH: ', imageWidth);
-                console.log("HEIGHT: ", imageHeight);
             });
         });
 

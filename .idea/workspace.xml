@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e54782-22ef-4d0b-b341-6405a855dd93" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module" afterPath="$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/hierarchical_select/modules/hs_menu.module" afterPath="$PROJECT_DIR$/sites/all/modules/hierarchical_select/modules/hs_menu.module" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/bucks/css/product-page.css" afterPath="$PROJECT_DIR$/sites/all/themes/bucks/css/product-page.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/bucks/css/product-page.min.css" afterPath="$PROJECT_DIR$/sites/all/themes/bucks/css/product-page.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/bucks/css/sass/product-page.scss" afterPath="$PROJECT_DIR$/sites/all/themes/bucks/css/sass/product-page.scss" />
@@ -13,7 +11,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/bucks/css/style.css" afterPath="$PROJECT_DIR$/sites/all/themes/bucks/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/bucks/css/style.min.css" afterPath="$PROJECT_DIR$/sites/all/themes/bucks/css/style.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/themes/bucks/js/bucks.js" afterPath="$PROJECT_DIR$/sites/all/themes/bucks/js/bucks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
     </list>
     <ignored path="bucks.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +37,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.47201017">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="page.tpl.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="page.tpl.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/page.tpl.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="182">
-                  <caret line="341" column="92" selection-start-line="341" selection-start-column="92" selection-end-line="341" selection-end-column="92" />
+                <state relative-caret-position="134">
+                  <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -80,6 +77,16 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="product-page-template.tpl.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/product-page-template.tpl.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="396">
+                  <caret line="22" column="77" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -87,21 +94,19 @@
           <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/style.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-9654">
-                  <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+                <state relative-caret-position="184">
+                  <caret line="331" column="32" selection-start-line="331" selection-start-column="32" selection-end-line="331" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="bucks.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="bucks.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/js/bucks.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="197">
-                  <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-                  <folding>
-                    <element signature="e#845#1573#0" expanded="false" />
-                  </folding>
+                <state relative-caret-position="1248">
+                  <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -119,8 +124,8 @@
           <file leaf-file-name="product-page.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/product-page.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2052">
-                  <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+                <state relative-caret-position="2016">
+                  <caret line="112" column="3" selection-start-line="112" selection-start-column="3" selection-end-line="112" selection-end-column="3" />
                   <folding />
                 </state>
               </provider>
@@ -158,13 +163,13 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="bucks_import.module" pinned="false" current-in-tab="false">
+          <file leaf-file-name="bucks_import.module" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="192">
-                  <caret line="432" column="88" selection-start-line="432" selection-start-column="88" selection-end-line="432" selection-end-column="88" />
+                <state relative-caret-position="414">
+                  <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
                   <folding>
-                    <element signature="e#8142#8171#0#PHP" expanded="false" />
+                    <element signature="e#9528#9557#0#PHP" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -216,18 +221,19 @@
         <option value="$PROJECT_DIR$/sites/all/themes/bucks/templates/views-view-fiekds-featured-products-block-tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/bucks/templates/views-view-unformatted--featured-products-block.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/bucks/css/font-awesome.min.css" />
-        <option value="$PROJECT_DIR$/sites/all/themes/bucks/templates/page.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/bucks/bucks.info" />
         <option value="$PROJECT_DIR$/sites/all/themes/bento/bento.info" />
         <option value="$PROJECT_DIR$/sites/all/themes/bucks/css/product-page.min.css" />
         <option value="$PROJECT_DIR$/sites/all/themes/bucks/templates/field-name-field-make-model-year.tpl.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/bucks/templates/field--field-make-model-year.tpl.php" />
-        <option value="$PROJECT_DIR$/sites/all/themes/bucks/css/sass/product-page.scss" />
         <option value="$PROJECT_DIR$/sites/all/modules/hierarchical_select/modules/hs_menu.module" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/sites/all/themes/bucks/css/sass/style.scss" />
-        <option value="$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module" />
         <option value="$PROJECT_DIR$/sites/all/themes/bucks/js/bucks.js" />
+        <option value="$PROJECT_DIR$/sites/all/themes/bucks/css/sass/product-page.scss" />
+        <option value="$PROJECT_DIR$/sites/all/themes/bucks/templates/page.tpl.php" />
+        <option value="$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module" />
+        <option value="$PROJECT_DIR$/sites/all/themes/bucks/templates/product-page-template.tpl.php" />
       </list>
     </option>
   </component>
@@ -248,8 +254,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="98" />
-    <option name="y" value="1147" />
+    <option name="x" value="65" />
+    <option name="y" value="1210" />
     <option name="width" value="1822" />
     <option name="height" value="984" />
   </component>
@@ -278,7 +284,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -498,15 +503,52 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bucks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bucks" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libraries" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bucks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bucks" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/bucks.sql" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../homesinboise" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
@@ -577,29 +619,33 @@
       <workItem from="1464069402772" duration="17224000" />
       <workItem from="1464394063437" duration="673000" />
       <workItem from="1465957178917" duration="8717000" />
-      <workItem from="1466555223269" duration="8578000" />
+      <workItem from="1466555223269" duration="10080000" />
+      <workItem from="1466980678712" duration="7000" />
+      <workItem from="1466980880481" duration="13000" />
+      <workItem from="1467767789844" duration="2451000" />
+      <workItem from="1468207412355" duration="4040000" />
+      <workItem from="1468297664434" duration="10048000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154060000" />
+    <option name="totallyTimeSpent" value="172121000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="98" y="1147" width="1822" height="984" extended-state="0" />
-    <editor active="false" />
+    <frame x="65" y="1210" width="1822" height="984" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32687652" sideWeight="0.510917" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25465116" sideWeight="0.4932961" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23953488" sideWeight="0.48908296" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12274775" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12837838" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32687652" sideWeight="0.510917" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2139535" sideWeight="0.4932961" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23953488" sideWeight="0.48908296" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -607,6 +653,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -634,22 +681,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/commerce/modules/cart/theme/commerce-cart-block.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/commerce/modules/cart/includes/commerce_cart.pages.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -662,9 +693,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="70" selection-start-line="3" selection-start-column="70" selection-end-line="3" selection-end-column="70" />
-          <folding>
-            <element signature="e#845#1573#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -796,13 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/style.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/bucksSearch.php" />
     <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/html.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -897,14 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/modules/commerce/modules/cart/theme/commerce-cart-block.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/commerce/modules/cart/includes/commerce_cart.pages.inc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -949,14 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/product-page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/hierarchical_select/modules/hs_menu.module">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -976,43 +982,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1836">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/modules/commerce/modules/cart/theme/commerce-cart-block.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/style.scss">
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/style.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9654">
-          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+        <state relative-caret-position="184">
+          <caret line="0" column="6498" selection-start-line="0" selection-start-column="6468" selection-end-line="0" selection-end-column="6498" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/product-page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="112" column="3" selection-start-line="112" selection-start-column="3" selection-end-line="112" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/js/bucks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1248">
+          <caret line="73" column="19" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/page.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="341" column="92" selection-start-line="341" selection-start-column="92" selection-end-line="341" selection-end-column="92" />
+        <state relative-caret-position="134">
+          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="331" column="32" selection-start-line="331" selection-start-column="32" selection-end-line="331" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="432" column="88" selection-start-line="432" selection-start-column="88" selection-end-line="432" selection-end-column="88" />
+        <state relative-caret-position="414">
+          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
           <folding>
-            <element signature="e#8142#8171#0#PHP" expanded="false" />
+            <element signature="e#9528#9557#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/js/bucks.js">
+    <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/product-page-template.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding>
-            <element signature="e#845#1573#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="396">
+          <caret line="22" column="77" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
+          <folding />
         </state>
       </provider>
     </entry>
