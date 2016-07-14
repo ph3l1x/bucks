@@ -74,6 +74,12 @@
                 });
             });
         });
+        /* Create Custom Taxonomy Superfish Menu Links */
+        $('#superfish-1').find('a').each(function() {
+            console.log($(this).attr('href'));
+            console.log($(this));
+            $(this).attr('href', 'afadsfadfadf');
+        })
 
     });
 })(jQuery);

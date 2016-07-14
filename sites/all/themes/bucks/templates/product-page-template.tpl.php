@@ -10,7 +10,7 @@
         <div class="productItemContainer">
             <div class="productItemContainerInner">
                 <div class="productLeft">
-                    <img src="<?php if($node->field_main_image['und'][0]['uri']) {
+                    <img src="<?php if(isset($node->field_main_image['und'][0]['uri'])) {
                         print image_style_url('product_list', $node->field_main_image['und'][0]['uri']);
                     } else {
                         ?>  Some default image tag here

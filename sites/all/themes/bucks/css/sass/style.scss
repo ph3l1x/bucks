@@ -405,6 +405,7 @@ aside.sidebar-first {
 .content-region {
   background: #ffffff;
   padding: 20px 10px;
+  float: left;
 }
 
 #content-container {
@@ -621,4 +622,13 @@ footer {
     top: 0;
     transition: all 1.5s ease;
   }
+}
+
+#block-facetapi-7is4rstr0adpl2cenywqp0bp3za886b1 {
+  clear: both;
+}
+
+.view-faucet-search-product-display .views-row {
+  float: left;
+  width: 100%;
 }
