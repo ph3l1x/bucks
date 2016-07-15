@@ -137,7 +137,19 @@ nav {
     #block-block-2 .salesSpecials a:hover {
       color: #b0d23e;
       transition: color 0.3s ease-in-out 0s; }
+  #block-block-2 .cartCount {
+    position: absolute;
+    background: red;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    right: 0;
+    top: 5px;
+    text-align: center;
+    font-size: 10px;
+    color: white; }
   #block-block-2 .cartItems {
+    position: relative;
     float: right; }
     #block-block-2 .cartItems .cartText {
       float: left;
@@ -460,4 +472,36 @@ footer {
 
 .view-faucet-search-product-display .views-row {
   float: left;
-  width: 100%; }
+  width: 100%;
+  clear: both; }
+  .view-faucet-search-product-display .views-row .views-field-field-main-image {
+    float: left;
+    padding-right: 15px; }
+  .view-faucet-search-product-display .views-row .productItemCenter {
+    float: left;
+    width: 40%; }
+  .view-faucet-search-product-display .views-row .productItemTitle a {
+    font-family: "Yanone Kaffeesatz", arial;
+    font-size: 20px;
+    color: black; }
+  .view-faucet-search-product-display .views-row .productItemTitle a:hover {
+    text-decoration: none;
+    color: red; }
+  .view-faucet-search-product-display .views-row .productItemRight {
+    float: left;
+    padding-left: 15px; }
+  .view-faucet-search-product-display .views-row .productButton {
+    padding: 10px 0; }
+  .view-faucet-search-product-display .views-row .productItemBrand div, .view-faucet-search-product-display .views-row .productItemSku div {
+    font-size: 10px;
+    font-weight: bold; }
+  .view-faucet-search-product-display .views-row .productButton a {
+    background: -moz-linear-gradient(top, #b30000 0%, #9a0000 50%, #800000 100%);
+    background: -webkit-linear-gradient(top, #b30000 0%, #9a0000 50%, #800000 100%);
+    background: linear-gradient(to bottom, #b30000 0%, #9a0000 50%, #800000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b30000', endColorstr='#800000', GradientType=0);
+    padding: 10px;
+    color: yellow;
+    border-radius: 5px; }
+  .view-faucet-search-product-display .views-row .productButton a:hover {
+    color: white; }

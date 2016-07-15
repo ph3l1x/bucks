@@ -34,6 +34,24 @@
 
     </div>
 </div>
+
+
+
+
+/* REMOVE */
+<div class="productItemListContainer">
+    <div class="productItemListContainerInner">
+        <div class="productItemTitle">[title]</div>
+        <div class="productItemCenter">
+            <div class="productItemDescription">[field_long_description]</div>
+        </div>
+        <div class="productItemRight">
+            <div class="productItemBrand">[field_product_reference_field_brand_name]</div>
+            <div class="productItemSku">[field_sku]</div>
+            <div class="productItemButton">[nothing_1]</div>
+        </div>
+    </div>
+</div>
 <?php
 kpr($node);
 }
