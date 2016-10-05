@@ -1,8 +1,6 @@
 <?php
 
-function bucks_import_menu()
-{
-
+function bucks_import_menu() {
     $items['admin/config/system/product_import'] = array(
         'title' => 'Bucks Custom Product Import Script',
         'description' => 'Custom Script to import products into Bucks 4X4 Website',
@@ -18,103 +16,19 @@ function bucks_import_menu()
         'delivery callback' => 'drupal_json_output',
         'type' => MENU_CALLBACK
     );
-    $items['product_category/%'] = array(
-        'title' => 'Products',
-        'description' => 'Custom Products Search',
-        'access arguments' => array('access content'),
-        'page arguments' => array(1),
-        'access callback' => TRUE,
-        'page callback' => array('product_page'),
-        'type' => MENU_NORMAL_ITEM
-    );
+//    $items['product_category/%'] = array(
+//        'title' => 'Products',
+//        'description' => 'Custom Products Search',
+//        'access arguments' => array('access content'),
+//        'page arguments' => array(1),
+//        'access callback' => TRUE,
+//        'page callback' => array('product_page'),
+//        'type' => MENU_NORMAL_ITEM
+//    );
     return $items;
 }
 
-function bucks_import_theme()
-{
-    return array(
-        'product_page_template' => array(
-            'template' => 'productpagetemplate'
-        )
-    );
-}
-
-function product_page($args)
-{
-
-    if (taxonomy_get_children($args)) {
-        $tids = taxonomy_get_children($args);
-        $taxParents = array();
-        foreach ($tids as $v) {
-            $taxParents[] = $v->tid;
-        }
-        $nodes = taxonomy_select_nodes($taxParents);
-    } else {
-        $tids = $args;
-        $nodes = taxonomy_select_nodes($tids);
-    }
-
-    return theme('product_page_template', array(
-        'nids' => $nodes,
-        'term' => taxonomy_term_load($args)
-    ));
-
-    // kpr(taxonomy_select_nodes($tids));
-
-
-//  kpr(taxonomy_get_parents_all($args));
-    // kpr(taxonomy_get_tree('12', '36870', '1'));
-    return 'cja';
-}
-
-//function bucks_import_taxonomy_menu_path()
-//{
-//    $output = array('taxonomy_menu_path' => t('fart'));
-//    return $output;
-//}
-
-//function taxonomy_menu_path($vid, $tid) {
-//    if ($tid == 0) {
-//        //get all of the terms for the vocab
-//        $vtids = _taxonomy_menu_get_terms($vid);
-//        $end = implode(' ', $vtids);
-//        $path = "taxonomy/term/$end";
-//    }
-//    else {
-//        $path = url('session-location/view/' . $tid);
-        // Url adds a '/' to the beginning so remove it now.
-     //   $path = substr($path, 1);
-//        if (variable_get('taxonomy_menu_display_descendants_' . $vid, FALSE)) {
-//            // Use 'all' at the end of the path
-//            if (variable_get('taxonomy_menu_end_all_' . $vid, FALSE)) {
-//                $path .= '/all';
-//            }
-//            else {
-//                //we wait to run this instead of durning the if above
-//                //because we only wan to run it once.
-//                $terms = taxonomy_get_tree($vid, $tid);
-//                foreach ($terms as $term) {
-//                    $tids[] = $term->tid;
-//                }
-//                if ($tids) {
-//                    $end = implode(' ', $tids);
-//                    $path .= ' '. $end;
-//                }
-//            }
-//        }
-//    }
-//
-//    return $path;
-//}
-
-/* disable default taxonomy views */
-//function bucks_import_menu_alter(&$items) {
-//  unset($items['taxonomy/term/%taxonomy_term']);
-//  unset($items['taxonomy/term/%taxonomy_term/view']);
-//  unset($items['taxonomy/term/%taxonomy_term/feed']);
-//}
-function category_api()
-{
+function category_api() {
     $terms = taxonomy_get_tree('12');
     $termData = array();
     foreach ($terms as $k => $term) {
@@ -124,10 +38,62 @@ function category_api()
 
     return $terms;
 }
+function product_exist($sku) {
+    $product = db_select('commerce_product', 'cp')
+        ->fields('cp', array('product_id'))
+        ->condition('sku', $sku)
+        ->execute()
+        ->fetchAssoc();
 
-//function bucks_import_form($node, &$form_state) {
-function bucks_import_form($node, &$form_state)
-{
+    if ($product['product_id']) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function get_image($image_url, $file_url) {
+    if($image_url) {
+        $image_name = pathinfo($image_url)['basename'];
+        @$file_temp = file_get_contents($image_url);
+        if ($file_temp) {
+            $file_temp = file_save_data($file_temp, 'public://product_images/' . $image_name, FILE_EXISTS_RENAME);
+            return $file_temp;
+        } else {
+            return false;
+        }
+    }
+    if($file_url) {
+        $file_name = pathinfo($file_url)['basename'];
+        @$file_temp = file_get_contents($file_url);
+        if($file_temp) {
+            $file_temp = file_save_data($file_temp, 'public://product_files/' . $file_name, FILE_EXISTS_RENAME);
+            return $file_temp;
+        } else {
+            return false;
+        }
+    }
+}
+function taxonomy_create($termName, $vid, $parent) {
+
+    $tid = key(taxonomy_get_term_by_name($termName));
+
+    if ($tid) {
+        $tax = taxonomy_term_load($tid);
+        $tax->exists = '1';
+        return $tax;
+
+    } else {
+        $term = new stdClass();
+        $term->name = $termName;
+        $term->vid = $vid;
+        if ($parent) {
+            $term->parent = $parent;
+        }
+        taxonomy_term_save($term);
+        return $term;
+    }
+}
+function bucks_import_form($node, &$form_state) {
 
     $form = array('#attributes' => array('enctype' => "multipart/form-data"));
 
@@ -148,7 +114,6 @@ function bucks_import_form($node, &$form_state)
 
     return $form;
 }
-
 
 function bucks_import_form_submit($form, &$form_state)
 {
@@ -174,22 +139,23 @@ function bucks_import_form_submit($form, &$form_state)
     $highestRow = $sheet->getHighestRow();
     $highestColumn = $sheet->getHighestColumn();
 
-    /* DELETE ALL PRODUCTS.... */
-
-//  $product_ids = db_select('commerce_product', 'p')->fields('p', array('product_id'))->execute()->fetchCol();
-//  $node_ids = db_select('node', 'p')->fields('p', array('nid'))->condition('p.type', 'product_node_page')->execute()->fetchCol();
-//
-//  commerce_product_delete_multiple($product_ids);
-//  node_delete_multiple($node_ids);
+    /***********************************
+     ******* DELETE ALL PRODUCTS *******
+     ***********************************/
+    $product_ids = db_select('commerce_product', 'p')->fields('p', array('product_id'))->execute()->fetchCol();
+    $node_ids = db_select('node', 'p')->fields('p', array('nid'))->condition('p.type', 'product_node_page')->execute()->fetchCol();
+    commerce_product_delete_multiple($product_ids);
+    node_delete_multiple($node_ids);
+    /** Delete Products END **/
 
     for ($row = 1; $row <= $highestRow; $row++) {
         $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
         if ($row == 1) {
             continue;
         }
-
         /* Determine if this product already exists from SKU */
         if (!product_exist($rowData[0][1])) {
+
 
             /* Create Commerce Product */
             $product = commerce_product_new('product');
@@ -303,125 +269,93 @@ function bucks_import_form_submit($form, &$form_state)
                 $product->field_weight['und'][0]['value'] = $rowData[0][13];
                 $node->field_weight['und'][0]['value'] = $rowData[0][13];
             }
+
             /* Multi Taxonomy Fields */
             if ($rowData[0][28]) {
-                $doors_field = explode('|', $rowData[0][28]);
-                if (is_array($doors_field)) {
-                    foreach ($doors_field as $key => $value) {
-                        $doorsTax = taxonomy_create($value, 8, NULL)->tid;
-                        $product->field_doors['und'][$key]['tid'] = $doorsTax;
-                        $node->field_doors['und'][$key]['tid'] = $doorsTax;
-                    }
-                }
+                $doorsTax = taxonomy_create($rowData[0][28], 8, NULL)->tid;
+                $product->field_doors['und'][]['tid'] = $doorsTax;
+                $node->field_doors['und'][]['tid'] = $doorsTax;
+
+//                $doors_field = explode('|', $rowData[0][28]);
+//                if (is_array($doors_field)) {
+//                    foreach ($doors_field as $key => $value) {
+//                        $doorsTax = taxonomy_create($value, 8, NULL)->tid;
+//                        $product->field_doors['und'][$key]['tid'] = $doorsTax;
+//                        $node->field_doors['und'][$key]['tid'] = $doorsTax;
+//                    }
+//                }
             }
             if ($rowData[0][29]) {
+                $engineTax = taxonomy_create($rowData[0][29], 9, NULL)->tid;
+                $product->field_engine['und'][]['tid'] = $engineTax;
+                $node->field_engine['und'][]['tid'] = $engineTax;
                 $engine_field = explode('|', $rowData[0][29]);
-                if (is_array($engine_field)) {
-                    foreach ($engine_field as $key => $value) {
-                        $engineTax = taxonomy_create($value, 9, NULL)->tid;
-                        $product->field_engine['und'][$key]['tid'] = $engineTax;
-                        $node->field_engine['und'][$key]['tid'] = $engineTax;
-                    }
-                }
+//                if (is_array($engine_field)) {
+//                    foreach ($engine_field as $key => $value) {
+//                        $engineTax = taxonomy_create($value, 9, NULL)->tid;
+//                        $product->field_engine['und'][$key]['tid'] = $engineTax;
+//                        $node->field_engine['und'][$key]['tid'] = $engineTax;
+//                    }
+//                }
             }
-            /* Make Model Year Fields */
-//      if($rowData[0][25]) {
-//        if(strpos($rowData, '|') !== false) {
-//          $makeItems = explode('|', $rowData[0][25]);
-//        } else {
-//          $mmyParent = taxonomy_create($rowData[0][25], '27', NULL);
-//          $mmyTid = $mmyParent;
-//        }
-//      }
-//      if($rowData[0][26]) {
-//        $modelTid = taxonomy_create($rowData[0][26], '27', $mmyParent->tid);
-//        $mmyTid = $modelTid;
-//      }
-//      if($rowData[0][27]) {
-//        $makeTid = taxonomy_create($rowData[0][27], '27', $modelTid->tid);
-//        $mmyTid = $makeTid;
-//      }
-//      $product->field_make_model_year['und'][0]['tid'] = $mmyTid->tid;
-//        /* MAKE */
-//      if ($rowData[0][25]) {
-//        $make_field = explode('|', $rowData[0][25]);
-//        if (is_array($make_field)) {
-//          foreach ($make_field as $key => $value) {
-//            $product->field_make['und'][$key]['tid'] = taxonomy_create($value, 5, NULL)->tid;
-//          }
-//        }
-//      }
-//        /* MODEL */
-//      if ($rowData[0][26]) {
-//        $model_field = explode('|', $rowData[0][26]);
-//        if (is_array($model_field)) {
-//          foreach ($model_field as $key => $value) {
-//            $product->field_model['und'][$key]['tid'] = taxonomy_create($value, 6, NULL)->tid;
-//          }
-//        }
-//      }
-//        /* Year */
-//      if ($rowData[0][27]) {
-//        $year_field = explode('|', $rowData[0][27]);
-//        if (is_array($year_field)) {
-//          foreach ($year_field as $key => $value) {
-//            $product->field_year['und'][$key]['tid'] = taxonomy_create($value, 4, NULL)->tid;
-//          }
-//        }
-//      }
-
             /* IMAGES */
             if ($rowData[0][17]) {
-                $main_image = get_image($rowData[0][17]);
+                $main_image = get_image($rowData[0][17], NULL);
                 if ($main_image) {
                     $product->field_main_image['und'][0] = (array)$main_image;
                     $node->field_main_image['und'][0] = (array)$main_image;
                 }
             }
             if ($rowData[0][18]) {
-                $image1 = get_image($rowData[0][18]);
+                $image1 = get_image($rowData[0][18], NULL);
                 if ($image1) {
                     $product->field_additional_images['und'][0] = (array)$image1;
                     $node->field_additional_images['und'][0] = (array)$image1;
                 }
             }
             if ($rowData[0][19]) {
-                $image2 = get_image($rowData[0][19]);
+                $image2 = get_image($rowData[0][19], NULL);
                 if ($image2) {
                     $product->field_additional_images['und'][1] = (array)$image2;
                     $node->field_additional_images['und'][1] = (array)$image2;
                 }
             }
             if ($rowData[0][20]) {
-                $image3 = get_image($rowData[0][20]);
+                $image3 = get_image($rowData[0][20], NULL);
                 if ($image3) {
                     $product->field_additional_images['und'][2] = (array)$image3;
                     $node->field_additional_images['und'][2] = (array)$image3;
                 }
             }
             if ($rowData[0][21]) {
-                $image4 = get_image($rowData[0][21]);
+                $image4 = get_image($rowData[0][21], NULL);
                 if ($image4) {
                     $product->field_additional_images['und'][3] = (array)$image4;
                     $node->field_additional_images['und'][3] = (array)$image4;
                 }
             }
             if ($rowData[0][22]) {
-                $image5 = get_image($rowData[0][22]);
+                $image5 = get_image($rowData[0][22], NULL);
                 if ($image5) {
                     $product->field_additional_images['und'][4] = (array)$image5;
                     $node->field_additional_images['und'][4] = (array)$image5;
                 }
             }
             if ($rowData[0][23]) {
-                $image6 = get_image($rowData[0][23]);
-                if ($image6) {
-                    $product->field_additional_images['und'][5] = (array)$image6;
-                    $node->field_additional_images['und'][5] = (array)$image6;
+                $file = get_image(NULL, $rowData[0][23]);
+                if ($file) {
+                    $product->field_pdf_file['und'][5] = array (
+                        'fid' => $file->fid,
+                        'display' => 1,
+                        'descrption' => ''
+                        );
+                    $node->field_pdf_file['und'][5] = array (
+                        'fid' => $file->fid,
+                        'display' => 1,
+                        'descrption' => ''
+                    );
                 }
             }
-
-
             /* Create Categories */
             if ($rowData[0][31]) {
                 $catParent = taxonomy_create($rowData[0][31], '12', NULL);
@@ -474,117 +408,12 @@ function bucks_import_form_submit($form, &$form_state)
             $node->field_product_reference['und'][0]['product_id'] = $product->product_id;
             node_save($node);
 
-            drupal_set_message("Created - SKU: " . $rowData[0][1] . ' - PRODUCT: ' . $rowData[0][3]);
+
+            drupal_set_message("Created - SKU: " . $rowData[0][1] . ' - PRODUCT: ' . $rowData[0][3] . ' - Reference Product ID: ' . $product->product_id);
+
         } else {
             drupal_set_message("Product Already Exists - SKU: " . $rowData[0][1] . ' - PRODUCT: ' . $rowData[0][3], 'warning');
         }
     }
-}
 
-function taxonomy_create($termName, $vid, $parent)
-{
-
-    $tid = key(taxonomy_get_term_by_name($termName));
-
-    if ($tid) {
-        $tax = taxonomy_term_load($tid);
-        $tax->exists = '1';
-        return $tax;
-
-    } else {
-        $term = new stdClass();
-        $term->name = $termName;
-        $term->vid = $vid;
-        if ($parent) {
-            $term->parent = $parent;
-        }
-        taxonomy_term_save($term);
-        return $term;
-    }
-}
-
-function product_exist($sku)
-{
-    $product = db_select('commerce_product', 'cp')
-        ->fields('cp', array('product_id'))
-        ->condition('sku', $sku)
-        ->execute()
-        ->fetchAssoc();
-
-    if ($product['product_id']) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function get_image($image_url)
-{
-    $image_name = pathinfo($image_url)['basename'];
-    @$file_temp = file_get_contents($image_url);
-    if ($file_temp) {
-        $file_temp = file_save_data($file_temp, 'public://product_images/' . $image_name, FILE_EXISTS_RENAME);
-        return $file_temp;
-    } else {
-        return false;
-    }
-}
-
-//function bucks_import_node_presave($node) {
-//
-//// Make sure that this is only running when editing a node not using the database import
-//
-//  if($node->type == 'product_node_page') {
-//    $product_sku = $node->field_sku['und'][0]['value'];
-//    $product = commerce_product_load_by_sku(($product_sku));
-//
-//    $product->field_length = $node->field_length;
-//    $product->title = $node->title;
-//    $product->status = $node->status;
-//    $product->changed = $node->changed;
-//    $product->field_make_model_year = $node->field_make_model_year;
-//    $product->field_brand = $node->field_brand;
-//    $product->field_upc = $node->field_upc;
-//    $product->field_category = $node->field_category;
-//    $product->field_item_condition = $node->field_item_condition;
-//    $product->field_quantity = $node->field_quantity;
-//    $product->field_jober = $node->field_jober;
-//    $product->field_fitment = $node->field_fitment;
-//    $product->commerce_price = $node->field_price;
-//    $product->field_sale_price = $node->field_sale_price;
-//    $product->field_retail_price = $node->field_retail_price;
-//    $product->field_cost = $node->field_cost;
-//    $product->field_long_description = $node->field_long_description;
-//    $product->field_main_image = $node->field_main_image;
-//    $product->field_additional_images = $node->field_additional_images;
-//    $product->field_doors = $node->field_doors;
-//    $product->field_engine = $node->field_engine;
-//    $product->field_bed_length = $node->field_bed_length;
-//    $product->field_height = $node->field_height;
-//    $product->field_width = $node->field_width;
-//    $product->field_length = $node->field_length;
-//    $product->field_weight = $node->field_weight;
-//    $product->field_oversize = $node->field_oversize;
-//    $product->field_sale_start_date = $node->field_sale_start_date;
-//    $product->field_featured = $node->field_featured;
-//
-//    commerce_product_save($product);
-//  }
-//}
-
-
-function bucks_import_form_alter(&$form, &$form_state, $form_id)
-{
-    // Change where form posts its data
-    if ($form_id == 'views_exposed_form') {
-        $form['#action'] = '/product_search';
-    }
-    // Disable SKU field in node and commerce product
-    if ($form_id == 'product_node_page_node_form') {
-        $form['field_sku']['#disabled'] = true;
-    }
-    if ($form_id == 'commerce_product_ui_product_form') {
-        $form['sku']['#disabled'] = true;
-    }
-    return $form;
 }
