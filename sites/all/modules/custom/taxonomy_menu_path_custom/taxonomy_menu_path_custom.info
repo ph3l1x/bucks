@@ -1,0 +1,14 @@
+; $Id: taxonomy_menu_path_custom.info,v 1.1.2.2 2009/10/31 18:39:33 indytechcook Exp $
+core          = "7.x"
+dependencies[] = taxonomy
+dependencies[] = taxonomy_menu
+description   = "Enables Custom path base to Taxonomy Menu."
+name          = "Taxonomy Menu Custom Path"
+package       = Taxonomy Menu
+
+; Information added by drupal.org packaging script on 2010-08-03
+version = "7.x-1.0"
+core = "7.x"
+project = "taxonomy_menu"
+
+
