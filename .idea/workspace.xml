@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00e54782-22ef-4d0b-b341-6405a855dd93" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.bak.module" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.bak.module" afterPath="$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.bak.module" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module" afterPath="$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module" />
     </list>
     <ignored path="bucks.iws" />
@@ -28,7 +28,7 @@
     <favorites_list name="bucks" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.34282017">
+    <splitter split-orientation="horizontal" split-proportion="0.14407815">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="page.tpl.php" pinned="false" current-in-tab="false">
@@ -74,8 +74,8 @@
           <file leaf-file-name="bucks_import.bak.module" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.bak.module">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="233">
-                  <caret line="475" column="0" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
+                <state relative-caret-position="180">
+                  <caret line="485" column="46" selection-start-line="485" selection-start-column="46" selection-end-line="485" selection-end-column="46" />
                   <folding>
                     <element signature="e#12050#12079#0#PHP" expanded="false" />
                   </folding>
@@ -96,95 +96,116 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/style.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3582">
-                  <caret line="199" column="17" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="bucks.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/js/bucks.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="308">
-                  <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="13" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="bucks_import.module" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="379">
-                  <caret line="411" column="124" selection-start-line="411" selection-start-column="124" selection-end-line="411" selection-end-column="124" />
-                  <folding>
-                    <element signature="e#10465#10528#0#PHP" expanded="false" />
-                    <element signature="e#11246#11294#0#PHP" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="product-page.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/product-page.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2016">
-                  <caret line="112" column="3" selection-start-line="112" selection-start-column="3" selection-end-line="112" selection-end-column="3" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views-view-unformatted--featured-products-block.tpl.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/views-view-unformatted--featured-products-block.tpl.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="13" column="74" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
-                  <folding>
-                    <element signature="e#7#113#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views-view.tpl.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/views-view.tpl.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views-view--product-display-nodes.tpl.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/views-view--product-display-nodes.tpl.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="954">
-                  <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
-                  <folding>
-                    <element signature="e#7#909#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/style.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="3582">
+                      <caret line="199" column="17" selection-start-line="199" selection-start-column="17" selection-end-line="199" selection-end-column="17" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="bucks.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/js/bucks.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="308">
+                      <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/test.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="234">
+                      <caret line="13" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="bucks_import.module" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="213">
+                      <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
+                      <folding>
+                        <element signature="e#11989#12052#0#PHP" expanded="false" />
+                        <element signature="e#12770#12818#0#PHP" expanded="false" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="product-page.scss" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/css/sass/product-page.scss">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="2016">
+                      <caret line="112" column="3" selection-start-line="112" selection-start-column="3" selection-end-line="112" selection-end-column="3" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="views-view-unformatted--featured-products-block.tpl.php" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/views-view-unformatted--featured-products-block.tpl.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="144">
+                      <caret line="13" column="74" selection-start-line="13" selection-start-column="74" selection-end-line="13" selection-end-column="74" />
+                      <folding>
+                        <element signature="e#7#113#0#PHP" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="views-view.tpl.php" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/views-view.tpl.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="234">
+                      <caret line="38" column="10" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="views-view--product-display-nodes.tpl.php" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/sites/all/themes/bucks/templates/views-view--product-display-nodes.tpl.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="954">
+                      <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+                      <folding>
+                        <element signature="e#7#909#0#PHP" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="bucks_import.module" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="428">
+                      <caret line="473" column="17" selection-start-line="473" selection-start-column="17" selection-end-line="473" selection-end-column="17" />
+                      <folding>
+                        <element signature="e#11989#12052#0#PHP" expanded="false" />
+                        <element signature="e#12770#12818#0#PHP" expanded="false" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
@@ -648,12 +669,12 @@
       <workItem from="1468207412355" duration="4040000" />
       <workItem from="1468297664434" duration="25819000" />
       <workItem from="1475639061181" duration="155000" />
-      <workItem from="1475639229644" duration="8525000" />
+      <workItem from="1475639229644" duration="19100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196572000" />
+    <option name="totallyTimeSpent" value="207147000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="1104" width="1859" height="1023" extended-state="0" />
@@ -1062,8 +1083,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.bak.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="475" column="0" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="485" column="46" selection-start-line="485" selection-start-column="46" selection-end-line="485" selection-end-column="46" />
           <folding>
             <element signature="e#12050#12079#0#PHP" expanded="false" />
           </folding>
@@ -1072,11 +1093,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sites/all/modules/custom/bucks_import/bucks_import.module">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="411" column="124" selection-start-line="411" selection-start-column="124" selection-end-line="411" selection-end-column="124" />
+        <state relative-caret-position="213">
+          <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
           <folding>
-            <element signature="e#10465#10528#0#PHP" expanded="false" />
-            <element signature="e#11246#11294#0#PHP" expanded="false" />
+            <element signature="e#11989#12052#0#PHP" expanded="false" />
+            <element signature="e#12770#12818#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

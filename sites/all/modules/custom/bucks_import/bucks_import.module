@@ -73,9 +73,59 @@ function get_image($image_url, $file_url) {
         }
     }
 }
+function taxonomy_create_year($termName, $vid, $parent) {
+
+    $query = new EntityFieldQuery;
+    $result = $query
+        ->entityCondition('entity_type','taxonomy_term')
+        ->propertyCondition('name', $termName)
+        ->propertyCondition('vid', $vid)
+        ->execute();
+
+    $tid = array_shift($result['taxonomy_term'])->tid;
+
+    if($tid) {
+        $yearInfo = taxonomy_get_tree($vid, $parent, NULL);
+        foreach ($yearInfo as $value) {
+            if ($value->name == $termName) {
+                $tax = taxonomy_term_load($tid);
+                $tax->exists = '1';
+                return $tax;
+            } else {
+                $term = new stdClass();
+                $term->name = $termName;
+                $term->vid = $vid;
+                if ($parent) {
+                    $term->parent = $parent;
+                }
+                taxonomy_term_save($term);
+                return $term;
+            }
+        }
+    } else {
+        $term = new stdClass();
+        $term->name = $termName;
+        $term->vid = $vid;
+        if ($parent) {
+            $term->parent = $parent;
+        }
+        taxonomy_term_save($term);
+        return $term;
+    }
+
+}
 function taxonomy_create($termName, $vid, $parent) {
 
-    $tid = key(taxonomy_get_term_by_name($termName));
+//    $tid = key(taxonomy_get_term_by_name($termName, $vid));
+//    $tid = taxonomy_get_term_by_name($termName, $vid);
+    $query = new EntityFieldQuery;
+    $result = $query
+        ->entityCondition('entity_type','taxonomy_term')
+        ->propertyCondition('name', $termName)
+        ->propertyCondition('vid', $vid)
+        ->execute();
+
+    $tid = array_shift($result['taxonomy_term'])->tid;
 
     if ($tid) {
         $tax = taxonomy_term_load($tid);
@@ -403,6 +453,27 @@ function bucks_import_form_submit($form, &$form_state)
             };
             $product->field_category['und'][0]['tid'] = $catTid->tid;
             $node->field_category['und'][0]['tid'] = $catTid->tid;
+
+            /* Create Year - Make - Model */
+
+            if($rowData[0][25]) {
+                $mmyParent = taxonomy_create($rowData[0][25], '29', NULL);
+//                $mmyTid = $mmyParent;
+            }
+            if($rowData[0][26]) {
+                $model = taxonomy_create($rowData[0][26], '29', $mmyParent->tid);
+//                $mmyTid = $model;
+            }
+            if($rowData[0][27]) {
+                $theYears = explode('|', $rowData[0][27]);
+                foreach($theYears as $value) {
+                    $year = taxonomy_create_year($value, '29', $model->tid);
+                    $mmyTid = $year;
+//                    $product->field_make_model_year['und'][0]['tid'] = $mmyTid->tid;
+//                    $node->field_make_model_year['und'][0]['tid'] = $mmyTid->tid;
+                }
+            }
+
 
             commerce_product_save($product);
             $node->field_product_reference['und'][0]['product_id'] = $product->product_id;
