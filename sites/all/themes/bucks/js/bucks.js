@@ -81,6 +81,10 @@
         //     $(this).attr('href', 'afadsfadfadf');
         // })
 
+        // Add Default fields for Year Make Model
+
+        // $('#edit-mmy-select-1').html("<option value='' selected='selected'>Make</option>");
+        // $('#edit-mmy-select-1')[0].options[0].selected = true;
     });
 })(jQuery);
 
