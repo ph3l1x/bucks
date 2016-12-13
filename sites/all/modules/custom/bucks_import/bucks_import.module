@@ -117,6 +117,7 @@ function taxonomy_create_year($termName, $vid, $parent) {
             return $tax;
         }
     }
+    return $tax;
 }
 function taxonomy_create($termName, $vid, $parent) {
 
@@ -475,6 +476,7 @@ function bucks_import_form_submit($form, &$form_state)
                 foreach($theYears as $value) {
                     $year = taxonomy_create_year($value, '29', $model->tid);
                     $mmyTid = $year;
+                    var_dump($mmyTid);
                     if(isset($mmyTid)) {
                         $product->field_make_model_year['und'][]['tid'] = $mmyTid->tid;
                         $node->field_make_model_year['und'][]['tid'] = $mmyTid->tid;
@@ -485,7 +487,6 @@ function bucks_import_form_submit($form, &$form_state)
             commerce_product_save($product);
             $node->field_product_reference['und'][0]['product_id'] = $product->product_id;
             node_save($node);
-
 
             drupal_set_message("Created - SKU: " . $rowData[0][1] . ' - PRODUCT: ' . $rowData[0][3] . ' - Reference Product ID: ' . $product->product_id);
 
@@ -523,7 +524,5 @@ function bucks_import_form_submit($form, &$form_state)
             node_save($node);
             drupal_set_message("Product Already Exists - SKU: " . $rowData[0][1] . ' - PRODUCT: ' . $rowData[0][3], 'warning');
         }
-        kpr($rowData);
     }
-    dpm(debug_backtrace());
 }

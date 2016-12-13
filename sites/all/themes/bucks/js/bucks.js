@@ -28,7 +28,8 @@
                             cleanTermName = cleanTermName.replace(' ', '-'),
                             tid = v.tid;
                         matched = $(".block-superfish a[title='" + returnTermName + "']");
-                        matched.attr('href', '/product_search/field_category/' + cleanTermName.toLowerCase() + '-' + tid);
+                        // matched.attr('href', '/product_search/field_category/' + cleanTermName.toLowerCase() + '-' + tid);
+                        matched.attr('href', '/cat_search?cat=' + tid);
                     });
                 },
                 error: function () {

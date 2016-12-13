@@ -29,11 +29,6 @@
         <?php print $field->separator; ?>
     <?php endif; ?>
 
-    <?php
-
-    kpr($field);
-    ?>
-
     <?php print $field->wrapper_prefix; ?>
     <?php print $field->label_html; ?>
     <?php print $field->content; ?>
