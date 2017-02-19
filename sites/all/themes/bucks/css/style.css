@@ -1,12 +1,12 @@
 body {
-  background-image: url('images/off-road.jpg');
+  background-image: url("images/off-road.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed; }
 
 #header-wrapper {
-  background-image: url('images/diamond.jpg');
+  background-image: url("images/diamond.jpg");
   background-repeat: repeat;
   position: relative;
   min-height: 75px; }
@@ -31,6 +31,7 @@ body {
 
 #block-menu-menu-secondary-menu h2 {
   display: none; }
+
 #block-menu-menu-secondary-menu ul {
   float: right;
   list-style: none;
@@ -169,6 +170,7 @@ nav {
   padding-right: 0;
   padding-left: 0;
   margin-bottom: 0; }
+
 #content-top-wrapper #block-views-exp-product-display-nodes-page {
   float: left;
   padding-left: 10px;
@@ -215,15 +217,19 @@ nav {
 
 #views-exposed-form-product-display-nodes-page .views-exposed-widget.views-submit-button {
   width: 100%; }
+
 #views-exposed-form-product-display-nodes-page .views-exposed-form.views-exposed-widget.form-submit {
   margin: 0; }
+
 #views-exposed-form-product-display-nodes-page .views-submit-button button {
   margin: 0;
   float: right;
   margin-right: 20px; }
+
 #views-exposed-form-product-display-nodes-page #edit-mmy-select-1 {
   margin-top: 5px;
   margin-bottom: 5px; }
+
 #views-exposed-form-product-display-nodes-page #edit-mmy-select-2 {
   margin-bottom: 5px; }
 
@@ -309,6 +315,7 @@ aside.sidebar-first {
 
 .front #main-content {
   display: none; }
+
 .front h1.page-header {
   display: none; }
 
@@ -337,6 +344,7 @@ aside.sidebar-first {
   background: -webkit-linear-gradient(top, #b30000 0%, #9a0000 50%, #800000 100%);
   background: linear-gradient(to bottom, #b30000 0%, #9a0000 50%, #800000 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b30000', endColorstr='#800000', GradientType=0); }
+
 #block-views-featured-products-block-block .views-row {
   min-height: 220px; }
 
@@ -453,11 +461,14 @@ footer {
   overflow: hidden;
   margin-bottom: 15px;
   padding: 0; }
+
 #node-549 .meetme-inner {
   padding: 10px; }
+
 #node-549 .meet-me-info-bio {
   position: relative;
   top: 30px; }
+
 #node-549 .meet-me-info {
   transition: all 0.5s ease;
   position: absolute;
@@ -466,6 +477,7 @@ footer {
   color: white;
   padding: 10px;
   height: 397px; }
+
 #node-549 .meet-me-info.meet-me-up {
   position: absolute;
   top: 0;
@@ -523,12 +535,14 @@ footer {
   border-bottom: 1px solid lightgrey;
   margin-bottom: 20px;
   padding-bottom: 10px; }
+
 .view-product-display-nodes .views-field-field-main-image {
   float: left;
   padding-right: 20px;
   width: 220px; }
   .view-product-display-nodes .views-field-field-main-image img {
     max-width: 200px; }
+
 .view-product-display-nodes .views-field-commerce-price div {
   text-align: right;
   width: 100%;
@@ -537,12 +551,44 @@ footer {
   padding-top: 10px;
   font-family: "Yanone Kaffeesatz", Arial;
   color: #A00000; }
+
 .view-product-display-nodes .views-field-title a {
   color: black;
   font-size: 18px;
   font-weight: bold; }
+
 .view-product-display-nodes .views-field-title:hover {
   text-decoration: underline; }
+
 .view-product-display-nodes .views-field-add-to-cart-form {
   float: right;
   margin-right: 20px; }
+
+#block-jump-menu-jump-menu-m-main-menu {
+  display: none !important; }
+  #block-jump-menu-jump-menu-m-main-menu .block-title {
+    display: none; }
+
+#secondary-navigation {
+  display: none; }
+
+@media (max-width: 990px) {
+  #main-navigation ul.sf-menu > li > a {
+    font-size: 12px;
+    top: 5px; } }
+
+@media (max-width: 768px) {
+  #block-jump-menu-jump-menu-m-main-menu {
+    display: block !important;
+    top: 77px;
+    position: relative; }
+  #site-info {
+    text-align: left;
+    top: -22px;
+    position: relative; }
+  #block-views-exp-product-display-nodes-page {
+    width: 100%; }
+  #superfish-1-accordion li {
+    background: white; }
+    #superfish-1-accordion li ul.sf-hidden li {
+      background: #eee; } }

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="c0421801-2a8d-45d9-95c3-1a7b0c2f2fdd" name="Bucks" url="http://bucks.mindimage.net">
-        <fileTransfer host="ftp.perfect-computing.com" port="21">
-          <option name="port" value="21" />
+      <webServer id="c0421801-2a8d-45d9-95c3-1a7b0c2f2fdd" name="Bucks" url="http://www.bucks4x4.com">
+        <fileTransfer host="www.bucks4x4.com" port="22" rootFolder="/var/www/bucks4x4.com" accessType="SFTP">
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

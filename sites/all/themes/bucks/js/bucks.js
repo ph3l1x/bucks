@@ -17,11 +17,10 @@
 
         /* Modify Category Menu links to redirect to product_search page */
 
-        var categoryApiUrl = 'http://bucks4x4.com/api/categories';
+        var categoryApiUrl = 'https://bucks4x4.com/api/categories';
         if ($('#block-superfish-1').length > 0) {
             $.ajax(categoryApiUrl, {
                 success: function (data) {
-
                     $.each(data, function (k, v) {
                         var returnTermName = v.name,
                             cleanTermName = returnTermName.replace(/[^\w\s]/gi, ''),

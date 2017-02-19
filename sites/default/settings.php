@@ -213,13 +213,13 @@
  * @endcode
  */
 $databases = array (
-  'default' => 
+  'default' =>
   array (
-    'default' => 
+    'default' =>
     array (
-      'database' => 'bucks',
-      'username' => 'bucks',
-      'password' => '8F976rLvfvfywSPY',
+      'database' => 'bucks4x4',
+      'username' => 'root',
+      'password' => 'giznad0',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
@@ -280,7 +280,8 @@ $drupal_hash_salt = 'PR_aWCnP1KRhgKXmuIpTTvLw8x498AqLsHtA5Aby6WU';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-# $base_url = 'http://www.example.com';  // NO trailing slash!
+ $conf['https'] = TRUE;
+ $base_url = 'https://www.bucks4x4.com';  // NO trailing slash!
 
 /**
  * PHP settings:
@@ -337,7 +338,7 @@ ini_set('session.cookie_lifetime', 2000000);
  * between your various domains. Make sure to always start the $cookie_domain
  * with a leading dot, as per RFC 2109.
  */
-# $cookie_domain = '.example.com';
+ $cookie_domain = 'bucks4x4.com';
 
 /**
  * Variable overrides:

@@ -9,6 +9,14 @@ function bucks_import_menu() {
         'access arguments' => array('access content'),
         'type' => MENU_NORMAL_ITEM,
     );
+  $items['admin/config/system/products_delete'] = array(
+    'title' => 'Bucks Delete All Products',
+    'description' => 'Delete All Products from Bucks',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('bucks_delete_form'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
     $items['api/categories'] = array(
         'page callback' => 'category_api',
         'access arguments' => array('access content'),
@@ -29,6 +37,11 @@ function bucks_import_menu() {
 }
 
 function category_api() {
+  drupal_add_http_header('Content-Type', 'application/json');
+  drupal_add_http_header('Access-Control-Allow-Origin', '*');
+  drupal_add_http_header('Access-Control-Allow-Methods', 'GET');
+  drupal_add_http_header('Vary', 'Cookie,fastly-ssl', TRUE);
+  http_response_code(200);
     $terms = taxonomy_get_tree('12');
     $termData = array();
     foreach ($terms as $k => $term) {
@@ -170,6 +183,19 @@ function bucks_import_form($node, &$form_state) {
     return $form;
 }
 
+function bucks_delete_form($form, &$form_state) {
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Delete All Bucks Products')
+  );
+  return $form;
+}
+function bucks_delete_form_submit($form, &$form_state) {
+  $product_ids = db_select('commerce_product', 'p')->fields('p', array('product_id'))->execute()->fetchCol();
+  $node_ids = db_select('node', 'p')->fields('p', array('nid'))->condition('p.type', 'product_node_page')->execute()->fetchCol();
+  commerce_product_delete_multiple($product_ids);
+  node_delete_multiple($node_ids);
+}
 function bucks_import_form_submit($form, &$form_state)
 {
 
@@ -181,6 +207,7 @@ function bucks_import_form_submit($form, &$form_state)
     $file->status = FILE_STATUS_PERMANENT;
     $inputFileName = drupal_realpath($file->uri);
     file_save($file);
+    file_usage_add($file, 'bucks_import', 'bucks_import', $file->fid);
 
     try {
         $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
@@ -197,10 +224,10 @@ function bucks_import_form_submit($form, &$form_state)
     /***********************************
      ******* DELETE ALL PRODUCTS *******
      ***********************************/
-    $product_ids = db_select('commerce_product', 'p')->fields('p', array('product_id'))->execute()->fetchCol();
-    $node_ids = db_select('node', 'p')->fields('p', array('nid'))->condition('p.type', 'product_node_page')->execute()->fetchCol();
-    commerce_product_delete_multiple($product_ids);
-    node_delete_multiple($node_ids);
+//    $product_ids = db_select('commerce_product', 'p')->fields('p', array('product_id'))->execute()->fetchCol();
+//    $node_ids = db_select('node', 'p')->fields('p', array('nid'))->condition('p.type', 'product_node_page')->execute()->fetchCol();
+//    commerce_product_delete_multiple($product_ids);
+//    node_delete_multiple($node_ids);
     /** Delete Products END **/
 
     for ($row = 1; $row <= $highestRow; $row++) {

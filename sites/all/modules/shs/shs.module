@@ -28,6 +28,7 @@ function shs_menu() {
  * Implements hook_js().
  */
 function shs_js() {
+
   return array(
     'json' => array(
       'callback' => 'shs_json',
@@ -42,6 +43,7 @@ function shs_js() {
  * Menu callback to get data in JSON format.
  */
 function shs_json() {
+  http_response_code(200);
   $result = array(
     'success' => FALSE,
     'data' => array(),
@@ -333,6 +335,7 @@ function shs_field_widget_afterbuild($element, &$form_state) {
   // Add main Javascript behavior and style only once.
   if (count($js_added) == 0) {
     // Add behavior.
+
     drupal_add_js(drupal_get_path('module', 'shs') . '/js/shs.js');
     // Add styles.
     drupal_add_css(drupal_get_path('module', 'shs') . '/theme/shs.form.css');

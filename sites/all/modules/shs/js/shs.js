@@ -195,7 +195,7 @@
    */
   termAddNew = function($triggering_element, $container, term, base_id, level) {
     $.ajax({
-      url: Drupal.settings.basePath + 'js/shs/json',
+      url: Drupal.settings.basePath + '?q=js/shs/json',
       type: 'POST',
       dataType: 'json',
       cache: true,

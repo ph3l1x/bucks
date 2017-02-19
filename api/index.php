@@ -1,5 +1,6 @@
 <?php
-error_reporting(0);
+error_reporting(all);
+
 /* Connect to database */
 $db = new mysqli('localhost', 'root', 'giznad0', 'bucks');
 if ($db->connect_errno > 0) {
